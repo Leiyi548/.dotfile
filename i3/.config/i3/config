@@ -18,7 +18,7 @@ set $mod Mod1
 # make this font larger
 font pango:monospace 12
 
-# 设置壁纸(根据时间自动更换)
+# 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/feh/feh.sh
 
 # 系统闲置333秒后灭屏，666秒后系统挂起。
