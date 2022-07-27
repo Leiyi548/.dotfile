@@ -231,6 +231,7 @@ bindsym $mod+r mode "resize"
 
 # set float window
 for_window [class="netease-cloud-music"] floating enable
+for_window [class="Wine"] floating enable
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
