@@ -19,7 +19,7 @@ set $mod Mod1
 font pango:monospace 12
 
 # 设置壁纸(wallpaper)(根据时间自动更换)
-exec_always --no-startup-id ~/feh/feh.sh
+exec_always --no-startup-id ~/.dotfile/script/feh.sh
 
 # 系统闲置333秒后灭屏，666秒后系统挂起。
 exec --no-startup-id xset dpms 333 666
@@ -227,23 +227,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set float window
-for_window [class="netease-cloud-music"] floating enable resize set 640 480,move right 330px,move down 70px
+for_window [class="netease-cloud-music"] floating enable
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
-        # set i3status on top
         position top
-        # set i3status color
+        workspace_buttons on
         colors {
-        background #000000
-        statusline #ffffff
-
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
-}
+          separator #666666
+          background #000000
+          statusline #dddddd
+          focused_workspace #0088CC #0088CC #ffffff
+          active_workspace #333333 #333333 #ffffff
+          inactive_workspace #333333 #333333 #888888
+          urgent_workspace #2f343a #900000 #ffffff
+      }
 }
