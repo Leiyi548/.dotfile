@@ -115,7 +115,6 @@ alias ll="ls -a"
 alias ra="ranger"
 alias sudovim="sudo -E nvim"
 alias vim="nvim"
-alias vi="vim"
 alias lg="lazygit"
 # git alias
 alias ga="git add"
