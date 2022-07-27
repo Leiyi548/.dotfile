@@ -16,7 +16,7 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
-font pango:monospace 12
+font pango:FiraCode Nerd Font 12
 
 # set satusline (polybar)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -119,8 +119,6 @@ bindsym $mod+g split v
 bindsym $mod+f fullscreen toggle
 
 # use rofi serach exit window application
-# bindsym $mod+w exec rofi -show window
-bindsym $mod+w layout tabbed
 # use rofi as swicth windows tool
 bindsym $mod+s exec rofi -show window
 # use super+space like macos afried
@@ -136,6 +134,8 @@ bindsym $mod+Tab workspaceback_and_forth
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym $mod+Shift+t layout stacking
+bindsym $mod+w exec rofi -show window
+# bindsym $mod+w layout tabbed
 # 左右标签栏(标签式)
 bindsym $mod+t layout tabbed
 # 启动i3分屏

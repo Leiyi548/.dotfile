@@ -9,21 +9,38 @@
 general {
         colors = true
         interval = 5
+        color_good = "#81a1c1" # Light green
+        color_degraded = "#fafe7c" # Light yellow
+        color_bad = "#ff7770" # Light red
 }
 
 # order += "ipv6"
-# order += "wireless _first_"
+order += "volume master"
+order += "wireless _first_"
 # order += "ethernet _first_"
+# order += "battery all"
 order += "battery all"
-order += "memory"
 order += "disk /"
 # order += "load"
-order += "cpu_temperature 0"
+order += "memory"
 order += "tztime local"
 
+# wireless _first_ {
+#         format_up = "(%quality at %essid)"
+#         format_down = "down"
+# }
+
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = " %essid  "
+        format_down = " Down  "
+}
+
+volume master {
+        format = " %volume  "
+        format_muted = " %volume  "
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
 ethernet _first_ {
@@ -31,31 +48,17 @@ ethernet _first_ {
         format_down = "E: down"
 }
 
+
 battery all {
-        # format = "%status %percentage %remaining"
-	# format = "%status %percentage %remaining %emptytime"
-	format = "%status %percentage %remaining"
-
-
+        # format = "%status %percentage"
+        format = "%status %percentage"
+        hide_seconds = true
+        integer_battery_capacity = true
+        last_full_capacity = true
         format_down = "No battery"
-
-
-        status_chr = "⚡ CHR"
-
-
-        status_bat = "🔋 BAT"
-
-
-        status_unk = "? UNK"
-
-
-        status_full = "☻ FULL"
-
-
-        path = "/sys/class/power_supply/BAT%d/uevent"
-
-
-        # low_threshold = 10
+        status_chr = " +"
+        status_bat = ""
+        status_full = ""
 }
 
 disk "/" {
@@ -63,20 +66,15 @@ disk "/" {
 }
 
 load {
-        format = "%1min"
+        format = "CPU: %1min"
 }
 
 memory {
-        format = "%used | %available"
+        format = "  Mem %used"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        # format = "%Y-%m-%d %H:%M:%S"
-        format = " %m月-%d日 %H:%M "
-}
-
-cpu_temperature 0 {
-        format = "T: %degrees °C"
+        format = "   %a %d-%m-%Y    %H:%M  "
 }
