@@ -18,6 +18,9 @@ set $mod Mod1
 # make this font larger
 font pango:monospace 12
 
+# set satusline (polybar)
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 
