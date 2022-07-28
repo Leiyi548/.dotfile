@@ -175,7 +175,7 @@ key_bindings:
   - { key: V, mode: Vi|~Search, action: ToggleNormalSelection }
   - { key: V, mods: Shift, mode: Vi|~Search, action: ToggleLineSelection }
   - { key: V, mods: Control, mode: Vi|~Search, action: ToggleBlockSelection }
-  - { key: V, mods: Alt, mode: Vi|~Search, action: ToggleSemanticSelection }
+  # - { key: V, mods: Alt, mode: Vi|~Search, action: ToggleSemanticSelection }
   - { key: Return, mode: Vi|~Search, action: Open }
   - { key: K, mode: Vi|~Search, action: Up }
   - { key: J, mode: Vi|~Search, action: Down }
