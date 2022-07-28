@@ -244,6 +244,8 @@ key_bindings:
   - { key: X, mods: Super, chars: "\x02\x78" }
   # open tmux tree
   - { key: T, mods: Super, chars: "\x02\x77" }
+  # rename tmux window
+  - { key: R, mods: Super, chars: "\x02\x2c" }
   # switch with tmux window
   - { key: H, mods: Super, chars: "\x02\x08" }
   - { key: L, mods: Super, chars: "\x02\x0c" }
