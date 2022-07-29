@@ -80,7 +80,7 @@ globalkeys = gears.table.join(
 		{description = "start emasc client"}
 	),
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ "Mod4",           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ "Mod1", "Shift" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -118,7 +118,9 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
     -- Menubar
-    awful.key({ modkey }, "o", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
+    awful.key({ "Mod4" }, "o", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ "Mod4" }, "s", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show window  -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -129,6 +131,7 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
+    -- close this window
     awful.key({ modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
