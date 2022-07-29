@@ -211,7 +211,7 @@ awful.screen.connect_for_each_screen(function(s)
         y = 0,
         screen = s,
         height = 35,
-        width = 900,
+        width = 1400,
         stretch = false,
         bg = "#24283B", -- bar bg color
         border_width = 2,

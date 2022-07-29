@@ -15,17 +15,19 @@ xrandr --output eDP-1 --right-of HDMI1 --auto
 xrandr --output eDP-1 --rotate left
 
 # Compositor
-systemctl start v2raya.service
+# systemctl start v2raya.service
+systemctl start keyd
 picom --config ~/.config/awesome/config/picom.conf &
-run clash
+# run clash
 run fcitx5
 run flameshot
-run obs
-run qv2ray
+# run obs
+# run qv2ray
 # open start emacs server
 run emacs --daemon
 
 ####  swap Esc caps
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
 ###  Change the wallpaper
-~/.config/awesome/backgrund.sh
+# ~/.config/awesome/backgrund.sh
+~/.dotfile/feh.sh
