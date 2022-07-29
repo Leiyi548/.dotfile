@@ -24,10 +24,9 @@ run flameshot
 # run obs
 # run qv2ray
 # open start emacs server
-run emacs --daemon
 
 ####  swap Esc caps
 # setxkbmap -option caps:swapescape
 ###  Change the wallpaper
 # ~/.config/awesome/backgrund.sh
-~/.dotfile/feh.sh
+~/.dotfile/script/feh.sh
