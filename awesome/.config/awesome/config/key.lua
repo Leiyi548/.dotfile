@@ -86,7 +86,7 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "e", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey}, "p", function () awful.util.spawn("flameshot gui") end, 
+    awful.key({ "Mod4"}, "p", function () awful.util.spawn("flameshot gui") end, 
               {description = "take screenshot", group = "screen"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
