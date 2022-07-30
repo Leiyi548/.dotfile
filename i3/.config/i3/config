@@ -68,10 +68,10 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym Mod4+Return exec alacritty
-bindsym $mod+Return exec alacritty
+bindsym Mod4+Return exec alacritty
 
-# kill focused window
-bindsym $mod+Shift+q kill
+# cloase window
+bindsym mod4+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -82,10 +82,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym mod4+h focus left
+bindsym mod4+j focus down
+bindsym mod4+k focus up
+bindsym mod4+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -106,10 +106,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation (like vim vsplit)
-bindsym $mod+v split h
+bindsym mod4+v split h
 
 # split in vertical orientation (like vim hsplit)
-bindsym $mod+g split v
+bindsym mod4+g split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -117,11 +117,7 @@ bindsym $mod+f fullscreen toggle
 # use rofi serach exit window application
 # use rofi as swicth windows tool
 bindsym $mod+s exec rofi -show window
-# use super+space like macos afried
-bindsym Mod4+space exec "rofi -modi drun,run -show drun"
 
-# use flameshot to screenshot
-bindsym $mod+Shift+a exec "flameshot gui"
 
 
 # use alt tab to switch recent workspace
@@ -134,7 +130,6 @@ bindsym $mod+Ctrl+Left workspace prev
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym $mod+Shift+t layout stacking
-bindsym $mod+w exec rofi -show window
 # bindsym $mod+w layout tabbed
 # 左右标签栏(标签式)
 bindsym $mod+t layout tabbed
@@ -142,14 +137,14 @@ bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+f floating toggle
+bindsym mod4+f floating toggle
 
 # change focus between tiling / floating windows
 # 平铺桌面和浮动桌面进行切换 user super+space
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -229,6 +224,21 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# control light and  radio
+bindsym mod4+a exec "light -A 10"
+bindsym mod4+d exec "light -U 10"
+bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
+bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
+
+
+# quick open application
+bindsym mod4+b exec google-chrome-stable
+bindsym mod4+p exec "flameshot gui"
+
+#rofi -modi drun,run -show drun rofi
+bindsym Mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
+bindsym $mod+w exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
 # set float window
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
