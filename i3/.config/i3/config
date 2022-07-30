@@ -14,6 +14,8 @@ font pango:FiraCode Nerd Font 12
 # set satusline (polybar)
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# yay -S autotiling-git
+exec_always --no-startup-id autotiling
 # 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 
