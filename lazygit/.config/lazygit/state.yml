@@ -1,8 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/arcolinux/.dotfile
-- /home/arcolinux/tmp/download/Dotfile
-- /home/arcolinux/.config/nvim
+- /home/gideon/.dotfile
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
