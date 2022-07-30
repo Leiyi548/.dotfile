@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/gideon/.dotfile
+- /home/gideon/.config/nvim
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false
