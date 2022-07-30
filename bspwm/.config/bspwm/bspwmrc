@@ -37,4 +37,4 @@ bash ~/.dotfile/script/feh.sh &
 picom --config/polybar/launch.sh &
 fcitx5 &
 picom &
-flameshot
+flameshot &

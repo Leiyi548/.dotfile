@@ -76,7 +76,7 @@ globalkeys = gears.table.join(
 	),
 	-- emacs client
 	awful.key({modkey,"Shift" 	   }, "Return", function()
-		awful.spawn.easy_async_with_shell("emacsclient -c -a \"emacs\"") end, 
+		awful.spawn.easy_async_with_shell("emacsclient -c -a \"emacs\"") end,
 		{description = "start emasc client"}
 	),
     -- Standard program
