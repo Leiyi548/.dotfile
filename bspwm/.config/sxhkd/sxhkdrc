@@ -8,7 +8,7 @@
 #      ░ ░▒  ░ ░░░   ░▒ ░ ▒ ░▒░ ░░ ░▒ ▒░ ░ ▒  ▒        
 #      ░  ░  ░   ░    ░   ░  ░░ ░░ ░░ ░  ░ ░  ░        
 #            ░   ░    ░   ░  ░  ░░  ░      ░             
-
+#     https://github.com/baskerville/sxhkd
 # wm independent hotkeys
 #
 
@@ -25,12 +25,6 @@ super + @space
 alt + w
 	rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi
 
-# 调节亮度
-super + a
-	light -A 10
-
-super + d
-	light -U 10
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -45,9 +39,21 @@ super + Escape
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
+# Close App
+super + {_,shift + }c
+	bspc node -{c,k}
+
 super + q
 	bspc node -{c,k}
+
+# kill window
+super + shift +  q
+    xkill
+
+# Split horizontal, vertical or cancel
+super + {g,v,c}
+	bspc node -p {east,south,cancel}
+
 
 # alternate between the tiled and monocle layout
 super + m
@@ -58,7 +64,7 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-super + g
+super + s
 	bspc node -s biggest.window
 
 # open google-chrome-stable
@@ -69,8 +75,12 @@ super + b
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {s,shift + s,shift+f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen}
+
+# Toggle beetwen floating & tiled
+super + f
+    bspc node -t "~"{floating,tiled}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -110,6 +120,7 @@ super + {o,i}
 alt + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+
 #
 # preselect 预选
 #
@@ -145,3 +156,33 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# light/radio
+#
+super + {a,shift + a}
+	{light -A 10,amixer -q set Master 5%+ unmute}
+
+super + {d,shift + d}
+	{light -U 10,amixer -q set Master 5%- unmute}
+
+# Brighness control
+XF86MonBrightnessUp
+	light -A 10
+
+XF86MonBrightnessDown
+	light -U 10
+
+# Volume control
+XF86AudioRaiseVolume
+	amixer -q set Master 5%+ unmute
+
+XF86AudioLowerVolume
+	amixer -q set Master 5%- unmute
+
+XF86AudioMute
+	amixer -D pulse sset Master toggle-mute
+	
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
