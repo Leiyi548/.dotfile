@@ -14,4 +14,8 @@
 
 `make pkg -si`
 
+## 添加 dependence
 
+```sh
+sudo pacman -S git-delta cmake npm
+```
