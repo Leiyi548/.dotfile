@@ -6,7 +6,7 @@
 # mod1 is alt
 set $mod Mod4
 set $alt Mod1
-set $explorer ranger
+set $explorer thunr
 
 # default_orientation horizontal|vertical|auto
 default_orientation auto
