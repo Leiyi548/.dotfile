@@ -54,7 +54,7 @@ schemes:
       cyan: '0x29b7da'
       white: '0xd1d5da'
 
-colors: *light
+colors: *dark
 
 # 自动刷新
 live_config_reload: true
@@ -112,7 +112,7 @@ scrolling:
   auto_scroll: true
 
 font:
-  size: 11
+  size: 12
   draw_bold_text_with_bright_colors: true
   # 字体
   normal:
@@ -127,7 +127,8 @@ font:
     # family: 'JetBrainsMono Nerd Font' # ubuntu
     style: Bold
   italic:
-    family: 'JetBrainsMono Nerd Font'
+    # family: 'JetBrainsMono Nerd Font'
+    family: 'Operator Mono'
     # family: 'JetBrainsMono Nerd Font Mono' # for windows | ubuntu
     style: Italic
   bold_italic:
