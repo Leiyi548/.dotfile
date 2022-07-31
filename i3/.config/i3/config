@@ -247,11 +247,13 @@ bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 # quick open application
 bindsym mod4+b exec google-chrome-stable
 bindsym F1 exec "flameshot gui"
-bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/lock/lock.png_"
+# bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/lock/lock.png_"
+bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 #rofi -modi drun,run -show drun rofi
 bindsym Mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
 bindsym mod1+w exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
+
 # set float window
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
