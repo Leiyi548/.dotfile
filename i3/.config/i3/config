@@ -25,6 +25,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # yay -S autotiling-git
 # exec_always --no-starsudo systemctl restart keydtup-id autotiling
+
+
+exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
+
 # 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 # change keymap
@@ -132,7 +136,8 @@ bindsym mod4+bracketright workspace next
 bindsym mod4+Shift+t layout stacking
 # bindsym $mod+w layout tabbed
 # 左右标签栏(标签式)
-bindsym mod4+t layout tabbed
+# bindsym mod4+t layout tabbed
+bindsym mod4+t exec "~/.cargo/bin/i3-autolayout tabmode"
 # 启动i3分屏
 bindsym mod4+s layout toggle split
 
