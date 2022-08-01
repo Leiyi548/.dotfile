@@ -1,0 +1,476 @@
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"                                  __                                                         "
+"     ___     ___    ___   __  __ /\_\    ___ ___                                             "
+"    / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\                                           "
+"   /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \                                          "
+"   \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\                                         "
+"    \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/                                         "
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ 替换小技巧 ❱━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"  :s/old/new - 用new替换当前行第一个old。
+"  :s/old/new/g - 用new替换当前行所有的old。
+"  :n3,n2s/old/new/g - 用new替换文件n1行到n2行所有的old。
+"  :%s/old/new/g - 用new替换文件中所有的old。
+"  :%s/^/xxx/g - 在每一行的行首插入xxx，^表示行首。
+"  :%s/$/xxx/g - 在每一行的行尾插入xxx，$表示行尾。
+"  有替换命令末尾加上c，每个替换都将需要用户确认。 如：%s/old/new/gc，加上i则忽略大小写(ignore)。
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Setting ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 设置leader键为空格
+let mapleader=" "
+set timeoutlen=500
+" 防止按leader键乱移动
+nnoremap <SPACE> <nop>
+" 相对数字
+set number
+set relativenumber
+" 屏幕滚动时在光标上下方保留8行预览代码
+set so=8
+" 取消高亮
+" 设置寻找高亮
+set hlsearch
+set incsearch
+" 不区分大小写
+set ignorecase
+" 显示模式
+"set showmode
+set idearefactormode=keep
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end Setting ❱━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ UI and Terminal ❱━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" change colorscheme
+nnoremap <leader>sc :action ChangeColorScheme<cr>
+" 改变视图
+nnoremap <leader>Z :action ChangeView<cr>
+nnoremap <leader>z :action ToggleDistractionFreeMode<cr>
+" focus terminal
+" nnoremap <c-t> :action ActivateTerminalToolWindow<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end UI and Terminal ❱━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Plugins ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ===
+" === Open Plugins
+" ===
+" reference: https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+set ideajoin
+set NERDTree
+set surround
+" 移除多光标插件，目前没有发现有好的键位设置
+set multiple-cursors
+set commentary "能用gcc gc+motion来注释代码
+" bug: 这个是有 bug 有时候回不去输入法，不知道为什么
+set keep-english-in-normal-and-restore-in-insert
+set easymotion
+set argtextobj
+set highlightedyank
+set textobj-entire
+set textobj-indent
+set matchit
+" ===
+" === multiple-cursors
+" ===
+" 目前使用默认键位
+" <A-n> start multiple-cursor | next match
+" <A-x> skip this match
+" <A-p> remove current match and go back to previous one
+" 修改键位设置（Example）
+" map mc <A-n>
+" map mc <A-x>
+" map mc <A-p>
+" ===
+" === easymotion
+" ===
+nmap ss <Plug>(easymotion-s2)
+nmap E <Plug>(easymotion-s)
+nmap sl <Plug>(easymotion-bd-jk)
+nmap sw <Plug>(easymotion-bd-w)
+" use easymotion to replace orginal f F t T
+" nmap f <Plug>(easymotion-fl)
+" nmap F <Plug>(easymotion-Fl)
+" nmap t <Plug>(easymotion-tl)
+" nmap T <Plug>(easymotion-Tl)
+
+" vmap E <Plug>(easymotion-s)
+" vmap f <Plug>(easymotion-fl)
+" vmap F <Plug>(easymotion-Fl)
+" vmap t <Plug>(easymotion-tl)
+" vmap T <Plug>(easymotion-Tl)
+
+" ===
+" === NERDTree
+" ===
+""""Usage""""
+" o <key> open menu in NERDTree
+" O <key> Recursively open the selected directory
+" i <key> Open selected file in a split window (horizontal)
+" gi <key> Same as i, but leave the cursor on the NERDTree
+" s <key> Open selected file in a new vsplit
+" gs <key> Same as s, but leave the cursor on the NERDTree
+" m <key> open menu in NERDTree
+" A <key> Zoom (maximize/minimize) the NERDTree window"
+" K <key> Jump up inside directories at the current tree depth
+" J <key> Jump down inside directories at the current tree depth
+" x <key> Close the current nodes parent (not close flie)
+" X <key> Recursively close all children of the current node (not close flie)
+""""End""""
+" Toggle NERDTree
+nnoremap <leader>e :NERDTreeToggle<cr>
+" 弹出文件结构信息(相当于显示大纲)
+nnoremap <leader>o mm`m:action FileStructurePopup<cr>
+nnoremap <leader>O :action ActivateStructureToolWindow<cr>
+nnoremap <C-e> :NERDTree<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end Plugins ❱━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Move ❱━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 取消vim s键原生映射
+nnoremap s <Nop>
+vnoremap s <Nop>
+xnoremap s <Nop>
+" 快速关闭buffers
+" nnoremap X :q<cr>
+"关闭到只剩当前tab栏 close other buffer
+nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
+nnoremap x :action CloseEditor<cr>
+nnoremap X :action ReopenClosedTab<cr>
+" 使用tab键快速切换buffers
+nnoremap <TAB> :action NextTab<cr>
+nnoremap <S-TAB> :action PreviousTab<cr>
+vnoremap <TAB> :action NextTab<cr>
+vnoremap <S-TAB> :action PreviousTab<cr>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+" 上下方法的移动
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+" 多个项目窗口之间的移动
+nnoremap <leader>wp :action PreviousProjectWindow<cr>
+nnoremap <leader>wn :action NextProjectWindow<cr>
+nnoremap [e :action PreviousProjectWindow<cr>
+nnoremap ]e :action PreviousProjectWindow<cr>
+" 左右移动视野
+nnoremap zh :action EditorScrollLeft<cr>
+nnoremap zl :action EditorScrollRight<cr>
+" 像vscode一样行移动
+vnoremap J :action MoveLineDown<cr>
+vnoremap K :action MoveLineUp<cr>
+" 多行缩进在visual mode
+nnoremap > >gv
+vnoremap < <gv
+" 复制粘贴剪贴板
+nnoremap <leader>y "+y
+nnoremap <leader>yy "+yy
+" copy reference
+nnoremap <leader>yr :action CopyReference<cr>
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+vnoremap <leader>P "+p
+vnoremap Y y$
+nnoremap Y y$
+" 插入模式粘贴
+inoremap <C-v> <esc>"+pa
+" 其他模式快速移动
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+" 快速进行缩进
+nnoremap > >>
+nnoremap < <<
+" 更好的n N效果
+nnoremap n nzz
+nnoremap N Nzz
+" 更好的J效果
+nnoremap J mzJ`z
+" 快速选择一行操作不包括换行
+nnoremap cil ^C
+nnoremap dil ^D
+" 后退功能
+"nnoremap <leader>gb :action Back<cr>
+"nnoremap <leader>gb :action JumpToLastChange<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end Move ❱━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Debug ❱━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 打上断点或取消断点
+nnoremap <leader>dt :action ToggleLineBreakpoint<cr>
+" 取消所有的断点
+nnoremap <leader>dT :action Debugger.RemoveAllBreakpointsInFile<cr>
+" debug上次运行的类
+nnoremap <leader>dd :action Debug<cr>
+" debug当前(now)类
+nnoremap <leader>ds :action DebugClass<cr>
+" debug神器
+" StepInto (F9)
+nnoremap <leader>di :action ForceStepInto<cr>
+" ForceStepInto(CMD + SHIFT + F9)
+nnoremap <leader>df :action ForceStepInto<cr>
+" StepOver (F10) 光标向下
+nnoremap <leader>do :action StepOver<cr>
+" Resume (跳到下个断点运行)
+nnoremap <leader>dr :action Resume<cr>
+" StepOut (SHIFT+F10)
+nnoremap <leader>du :action StepOut<cr>
+" debug强制运行到光标处
+nnoremap <leader>dc :action ForceRunToCursor<cr>
+" 结束debug
+nnoremap <leader>dq :action Stop<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end Debug ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Run ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 设置运行配置 (未知)
+nnoremap <leader>rc :action RunConfiguration<cr>
+" 运行上次运行类
+nnoremap <leader>rr :action Run<cr>
+" 运行当前(now)类 (run file)
+nnoremap <leader>rf :action RunClass<cr>
+" 运行鼠标右击的run
+nnoremap <leader>ru :action EditorPopupMenu.Run<cr>
+" 停止运行
+nnoremap <leader>rp :action Stop<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━❰ end Run ❱━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ 重构篇 ❱━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 抽取方法重构(不熟悉)
+" nnoremap <leader>om :action ExtractMethod<cr>
+" 抽取接口重构(不熟悉)
+" nnoremap <leader>oi :action ExtractInterface<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end 重构篇 ❱━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ 窗口篇 ❱━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 激活run的运行窗口
+nnoremap <leader>wr  :action ActivateRunToolWindow<cr>
+" 隐藏窗口(windows hide)
+"nnoremap <leader>wh :action HideActiveWindow<cr>
+nnoremap <leader>wh :action HideAllWindows<cr>
+" 激活debug的运行窗口
+nnoremap <leader>wd :action ActivateDebugToolWindow<cr>
+" 口最大化windows max(就是保留代码编辑区[文件树什么都关掉,但是下面窗口还在])
+" nnoremap <leader>z :action MaximizeToolWindow<cr>
+"激活todo的窗口
+nnoremap <leader>wt :action ActivateTODOToolWindow<cr>
+" vim窗口操作
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+nnoremap sc <C-W>c
+nnoremap sv :vsplit<cr>
+nnoremap sg :split<cr>
+nnoremap su :action UnsplitAll<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end 窗口篇 ❱━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ create ❱━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 新建类
+nnoremap <leader>nc :action NewClass<cr>
+" 新建项目
+nnoremap <leader>np :action NewProject<cr>
+" 新建文件 (嘻嘻,啥都可以直接用快捷键建立,一个字爽)
+nnoremap <leader>ne :action NewElement<cr>
+" 删除当前文件 (快速删除)
+nnoremap <leader>nd :action SafeDelete<cr>
+" 复制文件元素
+nnoremap <leader>ny :action CopyElement<cr>
+" 代码环绕(快速添加if 或者while)
+nnoremap <leader>ns :action SurroundWith<cr>
+vnoremap <leader>ns :action SurroundWith<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end create ❱━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ 文件和跳转 ❱━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 重命名文件
+nnoremap <leader>rn :action RenameFile<cr>
+" 查找文件
+nnoremap <leader>ff mm`m:action GotoFile<cr>
+" buffer之间跳转
+nnoremap <leader>bf mm`m:action Switcher<cr>
+" live grep
+nnoremap <leader>ft mm`m:action FindInPath<cr>
+vnoremap <leader>ft mm`m:action FindInPath<cr>
+" 最近查看文件间相互跳转
+nnoremap <leader>fr mm`m:action RecentFiles<cr>
+" 查找用法
+<leader>fu :action FindUsages<cr>
+"跳转到声明
+nnoremap gd mm`m:action GotoDeclaration<cr>
+" 打开General菜单
+nnoremap go :action Generate<cr>
+" go to reference
+nnoremap gr :action FindUsages<cr>
+" nnoremap gr mm`m:action CallHierarchy<cr>
+" 跳转到实现类
+nnoremap gI mm`m:action GotoImplementation<cr>
+" 查找类
+nnoremap <leader>Fc mm`m:action GotoClass<cr>
+" 跳转SuperMethod
+nnoremap gS mm`m:action GotoSuperMethod<cr>
+" 搜索 action
+nnoremap <leader>Fa :action GotoAction<cr>
+" 显示书签
+nnoremap <leader>fm :action ShowBookmarks<cr>
+" 跳转上一个位置
+" cmd + [ (mac) ctrl + [ (windows)
+" 跳转下一个位置
+" cmd + ] (mac) ctrl + ] (windows)
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end 文件和跳转 ❱━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ LSP ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 显示action
+nnoremap <leader>; :action GotoAction<cr>
+" 格式化代码
+nnoremap <leader>lf :action ReformatCode<cr>
+" find symbol
+nnoremap gs :action GotoSymbol<cr>
+" 跳转下一个错误
+nnoremap <leader>lj :action GotoNextError<cr>
+nnoremap ]d :action GotoNextError<cr>
+" 跳转上一个错误
+nnoremap <leader>lk :action GotoPreviousError<cr>
+nnoremap [d :action GotoPreviousError<cr>
+" 命名元素
+nnoremap <leader>lr :action RenameElement<cr>
+" 快速显示文档
+nnoremap K  :action QuickJavaDoc<cr>
+" idea智能提示
+nnoremap ga :action ShowIntentionActions<cr>
+" 显示错误描述
+nnoremap gl :action ShowErrorDescription<cr>
+" 弹出参数信息(打类的时候有奇效)
+nnoremap gp :action ParameterInfo<cr>
+" 弹出类型定义
+nnoremap gt mm`m:action GotoTypeDeclaration<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end LSP ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Git ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 显示git菜单
+nnoremap <leader>gm :action Git.Menu<cr>
+nnoremap <leader>ga :action Git.Add<cr>
+nnoremap <leader>gb :action Git.Branches<cr>
+nnoremap <leader>gi :action Git.init<cr>
+nnoremap <leader>gP :action Git.pull<cr>
+nnoremap <leader>gB :action Github.Open.In.Browser<cr>
+" git-gutter emulation
+nnoremap ]c :action VcsShowNextChangeMarker<cr>
+nnoremap [c :action VcsShowPrevChangeMarker<cr>
+" nnoremap <leader>hu :action Vcs.RollbackChangedLines<cr>
+" nnoremap <leader>hp :action Vcs.ShowHistoryForBlock<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end Git ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Fold ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+vnoremap za :action CollapseSelection<cr>
+nnoremap zd :action CollapseDocComments<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end Fold ❱━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Show or Select ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 取消高亮
+nnoremap <leader>h :nohl<cr>
+" 显示jumpList
+nnoremap <leader>sj :jumps<cr>
+" 显示 history
+nnoremap <leader>sh :action LocalHistory<cr>
+" 相当于鼠标右键
+nnoremap <leader>sp :action ShowPopupMenu<cr>
+" 弹出类型信息 (显示这个是什么类型)
+nnoremap <leader>st :action ExpressionTypeInfo<cr>
+" Select in
+nnoremap <leader>si :action SelectIn<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end  ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+""" option config ----------------------------
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+sethandler <S- > a:ide
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+sethandler <C-S-6> a:ide
+sethandler <C-;> a:ide
+sethandler <C-S-;> a:ide
+sethandler <C-A> n:vim i:ide
+sethandler <C-B> a:ide
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-E> a:vim
+sethandler <C-F> a:ide
+sethandler <C-G> a:ide
+sethandler <C-H> a:vim
+sethandler <C-I> a:vim
+sethandler <C-J> a:vim
+sethandler <C-K> a:vim
+sethandler <C-L> a:vim
+sethandler <C-M> a:ide
+sethandler <C-N> n:ide i-x:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:ide
+sethandler <C-Q> a:vim
+sethandler <C-R> a:vim
+sethandler <C-S> a:ide
+sethandler <C-T> a:ide
+sethandler <C-U> a:vim
+sethandler <C-V> n:vim i-x:ide
+sethandler <C-W> a:ide
+sethandler <C-X> n:vim i-x:ide
+sethandler <C-Y> a:vim
+sethandler <C-[> a:ide
+sethandler <C-]> a:ide
+sethandler <C-\> a:ide

@@ -231,10 +231,10 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym mod1+r mode "default"
+        bindsym mod4+r mode "default"
 }
 
-bindsym mod1+r mode "resize"
+bindsym mod4+r mode "resize"
 
 
 # control light and  radio
@@ -255,8 +255,18 @@ bindsym Mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun -th
 bindsym mod1+w exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
 
 # set float window
+# xprop | grep WM_CLASS
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
+for_window [class="TelegramDesktop"] floating enable  resize set 800 480
+for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
+
+# 特定应用指定窗口
+assign [class="Code"] 2
+assign [class="TelegramDesktop"] 3
+assign [class="yesplaymusic"] 4
+assign [class="obsidian"] 7
+assign [class="jetbrains-idea"] 8
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
