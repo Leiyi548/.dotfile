@@ -95,6 +95,7 @@ while getopts 'ac:dhlos' opt; do
     l) search_opts+=( '-l' ) ;;
     o) loop=1 ;;
     s) small=1 ;;
+    v) exit 0 ;;
   esac
 done
 shift "$((OPTIND-1))"
@@ -163,7 +164,6 @@ case "$search_cmd" in
         search_opts+=( '--exclude-dir=.git' )
         search_opts+=( '--exclude-dir=.hg' )
         search_opts+=( '--exclude-dir=.svn' )
-        search_opts+=( '--exclude-dir=.ttf' )
       fi
     fi
     if [[ -z "$search_str" ]]; then

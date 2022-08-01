@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/arcolinux/.oh-my-zsh"
+export ZSH="/home/gideon/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -78,25 +78,27 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	#git
-	z
+	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	zsh-completions
+	z
 )
 
 source $ZSH/oh-my-zsh.sh
 
-
 # User configuration
-
-# use neovim as default editor
-export EDITOR="nvim" 
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -107,41 +109,15 @@ export EDITOR="nvim"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# my custom alias
-alias s="neofetch"
-alias cl="clear"
-alias cls="clear"
-alias ll="ls -a"
-alias ra="ranger"
-alias sudovim="sudo -E nvim"
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias ra="ranger"
+alias ll="ls -la"
+alias s="neofetch"
+alias cls="clear"
+alias cl="clear"
 alias lg="lazygit"
-# git alias
-alias ga="git add"
-alias gc="git commit"
-alias gcm="git commit -m"
-alias gs="git status -s"
-alias gS="git status"
-alias gco="git checkout"
-alias gb="git branch"
-alias gcz="git cz"
-alias gmc="gitmoji -c"
-# special command
-alias weather='curl -H "Accept-Language: zh" wttr.in/nanchang'
-
-# tmux alias here
-alias ta="tmux attach -t"
-alias tad="tmux attach -d -t"
-alias ts="tmux new-session -s"
-alias tl="tmux list-sessions"
-alias tksv="tmux kill-server"
-alias tkss="tmux kill-session -t"
-
-# wifi
-alias showwif="nmcli device wifi list"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # fzf configuration
@@ -149,11 +125,9 @@ alias showwif="nmcli device wifi list"
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 # enable completion
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-# colorscheme
-# export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-#  --color=fg:#cbccc6,bg:#1f2430,hl:#707a8c
-#  --color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
-#  --color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
-#  --color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff'
-bindkey -s ^f "~/.dotfile/script/fv.sh"
+export PATH=~/.cargo/bin:$PATH
+export EDITOR=nvim
+bindkey -s ^f "~/.dotfile/script/fv.sh\n"
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
