@@ -264,6 +264,7 @@ for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right
 # 特定应用指定窗口
 assign [class="Code"] 2
 assign [class="TelegramDesktop"] 3
+assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
 assign [class="obsidian"] 7
 assign [class="jetbrains-idea"] 8
