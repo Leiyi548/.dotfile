@@ -8,12 +8,10 @@ set $mod Mod4
 set $alt Mod1
 set $explorer thunr
 
+workspace_auto_back_and_forth yes
 # default_orientation horizontal|vertical|auto
 default_orientation auto
-
 focus_follows_mouse yes
-
-# workspace_auto_back_and_forth yes
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
@@ -21,13 +19,7 @@ font pango:FiraCode Nerd Font 12
 
 # set satusline (polybar)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# yay -S autotiling-git
-# exec_always --no-starsudo systemctl restart keydtup-id autotiling
-
-
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-
 # 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 # change keymap
@@ -39,35 +31,27 @@ exec --no-startup-id xset dpms 333 666
 exec --no-startup-id fcitx5
 # 终端透明
 exec --no-startup-id picom
-
 #设置窗口边框等等
 new_window none
 new_float normal
 hide_edge_borders both
-
 #设置窗口间距
 gaps inner 8
 gaps outer 8
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -82,8 +66,8 @@ bindsym XF86MonBrightnessDgwn exec light -U 10 # decrease screen brightness
 floating_modifier $mod
 floating_minimum_size 100 x 100
 floating_maximum_size -1 x -1
-
 # start a terminal
+
 #bindsym Mod4+Return exec alacritty
 bindsym Mod4+Return exec kitty
 
