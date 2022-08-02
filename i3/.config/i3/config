@@ -13,8 +13,7 @@ default_orientation auto
 
 focus_follows_mouse yes
 
-workspace_auto_back_and_forth yes
-show_marks yes
+# workspace_auto_back_and_forth yes
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
@@ -71,10 +70,10 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDgwn exec light -U 10 # decrease screen brightness
@@ -98,22 +97,11 @@ bindsym mod4+k focus up
 bindsym mod4+l focus right
 
 # alternatively, you can use the cursor keys:
-# bindsym mod4+Left focus left
-# bindsym mod4+Down focus down
-# bindsym mod4+Up focus up
-# bindsym mod4+Right focus right
-
 # move focused window
 bindsym mod4+Shift+h move left
 bindsym mod4+Shift+j move down
 bindsym mod4+Shift+k move up
 bindsym mod4+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym mod4+Shift+Left move left
-bindsym mod4+Shift+Down move down
-bindsym mod4+Shift+Up move up
-bindsym mod4+Shift+Right move right
 
 # split in horizontal orientation (like vim vsplit)
 bindsym mod4+v split h
@@ -203,8 +191,6 @@ bindsym mod1+Shift+7 move container to workspace number $ws7,workspace number $w
 bindsym mod1+Shift+8 move container to workspace number $ws8,workspace number $ws8
 bindsym mod1+Shift+9 move container to workspace number $ws9,workspace number $ws9
 bindsym mod1+Shift+0 move container to workspace number $ws10,workspace number $ws10
-# 指定在指定窗口启动
-assign [class="firefox"] $ws9
 
 
 # reload the configuration file
@@ -248,7 +234,6 @@ bindsym mod4+d exec "light -U 10"
 bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
 bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 
-
 # quick open application
 bindsym mod4+b exec google-chrome-stable
 bindsym F1 exec "flameshot gui"
@@ -273,21 +258,4 @@ assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
 assign [class="obsidian"] 7
 assign [class="jetbrains-idea"] 8
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         status_command i3status
-#         position top
-#         workspace_buttons on
-#         colors {
-#           separator #666666
-#           background #000000
-#           statusline #dddddd
-#           focused_workspace #0088CC #0088CC #ffffff
-#           active_workspace #333333 #333333 #ffffff
-#           inactive_workspace #333333 #333333 #888888
-#           urgent_workspace #2f343a #900000 #ffffff
-#       }
-# }
+assign [class="firefox"] $ws9
