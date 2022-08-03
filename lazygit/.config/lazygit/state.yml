@@ -2,6 +2,7 @@ lastupdatecheck: 0
 recentrepos:
 - /home/gideon/.dotfile
 - /home/gideon/.config/nvim
+- /home/gideon/tmp/picom
 startuppopupversion: 5
 customcommandshistory: []
 hidecommandlog: false

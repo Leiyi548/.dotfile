@@ -28,7 +28,7 @@ exec --no-startup-id xset dpms 333 666
 # fcitx5输入法
 exec --no-startup-id fcitx5
 # 终端透明
-exec --no-startup-id picom
+exec --no-startup-id picom --experimental-backends --config ~/.dotfile/script/picom.conf
 #设置窗口边框等等
 new_window none
 new_float normal
@@ -230,12 +230,14 @@ bindsym mod1+w exec "rofi -no-config -no-lazy-grab -show window -modi drun -them
 # xprop | grep WM_CLASS
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
+for_window [class="Nutstore"] floating enable
 for_window [class="TelegramDesktop"] floating enable  resize set 800 480
 for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
 
 # 特定应用指定窗口
 assign [class="Code"] 2
 assign [class="TelegramDesktop"] 3
+assign [class="Nutstore"] 3
 assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
 assign [class="obsidian"] 7
