@@ -27,7 +27,9 @@ exec --no-startup-id xset dpms 333 666
 # 登录自动启动软件
 # fcitx5输入法
 exec --no-startup-id fcitx5
-# 终端透明
+# 坚果云
+exec --no-startup-id Nutstore
+# picom
 exec --no-startup-id picom --experimental-backends --config ~/.dotfile/script/picom.conf
 #设置窗口边框等等
 new_window none
