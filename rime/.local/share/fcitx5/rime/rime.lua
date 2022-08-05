@@ -1,3 +1,4 @@
+---@diagnostic disable: lowercase-global, undefined-global
 function date_translator(input, seg)
    if (input == "orq") then
       --- Candidate(type, start, end, text, comment)

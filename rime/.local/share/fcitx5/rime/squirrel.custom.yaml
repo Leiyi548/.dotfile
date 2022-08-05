@@ -35,5 +35,5 @@ patch:
   "style/line_spacing": 12                  # 候选词的行间距
   "style/color_scheme": metro
   "style/display_tray_icon": false
-  "style/text_orientation": horizontal  # horizontal | vertical
+  "style/text_orientation": vertical  # horizontal | vertical
   

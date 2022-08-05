@@ -235,6 +235,8 @@ for_window [class="Wine"] floating enable
 for_window [class="Nutstore"] floating enable
 for_window [class="TelegramDesktop"] floating enable  resize set 800 480
 for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
+for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480,move right 330px,move down 70px
+for_window [class="Thunar"] floating enable  resize set 640 480,move right 330px,move down 70px
 
 # 特定应用指定窗口
 assign [class="Code"] 2
@@ -245,3 +247,11 @@ assign [class="yesplaymusic"] 4
 assign [class="obsidian"] 7
 assign [class="jetbrains-idea"] 8
 assign [class="firefox"] $ws9
+
+# Scratch
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+# bindsym mod1+m [class="Alacritty"] scratchpad show; move position center
+# exec_always --no-startup-id alacritty

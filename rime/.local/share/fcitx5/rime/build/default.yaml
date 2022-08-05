@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     default: 1654509031
-    default.custom: 1659072078
+    default.custom: 1659623499
     key_bindings: 1654509031
     key_bindings.custom: 0
     punctuation: 1654509031
@@ -14,7 +14,7 @@ ascii_composer:
     Control_L: noop
     Control_R: noop
     Shift_L: commit_code
-    Shift_R: noop
+    Shift_R: commit_code
 config_version: 0.40
 key_binder:
   bindings:

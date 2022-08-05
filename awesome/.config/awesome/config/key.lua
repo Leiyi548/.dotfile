@@ -25,13 +25,13 @@ globalkeys = gears.table.join(
     awful.key({ "Mod4",           }, "Tab", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
-    awful.key({ modkey,           }, "j",
+    awful.key({ "Mod4",           }, "j",
         function ()
             awful.client.focus.byidx( 1)
         end,
         {description = "focus next by index", group = "client"}
     ),
-    awful.key({ modkey,           }, "k",
+    awful.key({ "Mod4",           }, "k",
         function ()
             awful.client.focus.byidx(-1)
         end,
@@ -118,9 +118,9 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
     -- Menubar
-    awful.key({ "Mod4" }, "o", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
+    awful.key({ "Mod4" }, "space", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({ "Mod4" }, "s", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show window  -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
+    awful.key({ "Mod1" }, "s", function() awful.util.spawn("rofi -no-config -no-lazy-grab -show window  -modi drun -theme ~/.config/awesome/rofi/launcher.rasi") end,
               {description = "show the menubar", group = "launcher"})
 )
 

@@ -1,5 +1,5 @@
 # Rime schema settings
-# encoding: utf-8
+# encoding: utf-true
 
 schema:
   schema_id: flypy
@@ -30,11 +30,11 @@ engine:
   processors:
     - ascii_composer
     - recognizer
-    - key_binder
+    - key_binder # 使用逗号和句号进行翻页
     - speller
-    - punctuator
-    - selector
-    - navigator
+    - punctuator # 处理字符号按键
+    - selector # 选字，换页
+    - navigator # 移动插入点
     - express_editor
   segmentors:
     - ascii_segmentor
