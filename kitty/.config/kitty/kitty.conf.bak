@@ -10,10 +10,10 @@ font_family      FiraCode Nerd Font
 bold_font        FiraCode Nerd Font
 italic_font      JetBrainsMono Nerd Font
 bold_italic_font Operator Mono
-font_size 18.0
+font_size 16.0
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Light Soft
+# Atom One Light
 include current-theme.conf
 # END_KITTY_THEME

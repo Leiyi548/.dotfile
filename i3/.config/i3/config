@@ -212,7 +212,7 @@ mode "resize" {
 bindsym mod4+r mode "resize"
 
 
-# control light and  radio
+# control light and  sound
 bindsym mod4+a exec "light -A 10"
 bindsym mod4+d exec "light -U 10"
 bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
