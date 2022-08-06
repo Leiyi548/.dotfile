@@ -134,7 +134,7 @@ bindsym mod4+m move position mouse
 bindsym mod1+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+p focus parent
+bindsym $mod+shift+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -226,7 +226,7 @@ bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 #rofi -modi drun,run -show drun rofi
 bindsym Mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
-bindsym mod1+w exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
+bindsym mod4+p exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
 
 # set float window
 # xprop | grep WM_CLASS
