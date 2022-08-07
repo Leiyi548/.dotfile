@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gs="git status -s"
 alias vim="nvim"
 alias ra="ranger"
 alias ll="ls -la"
