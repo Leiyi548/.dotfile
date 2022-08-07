@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/gideon/.dotfile
+- /home/gideon/picom
 - /home/gideon/st
 - /home/gideon/dwm
 - /home/gideon/.config/nvim
