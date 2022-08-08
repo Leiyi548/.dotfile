@@ -1,0 +1,1 @@
+sudo pacman -U openvpn-xor-arch-x86_64.pkg.tar.zst
