@@ -124,9 +124,9 @@ alias lg="lazygit"
 
 # fzf configuration
 # fzf 判断是否存在，然后引用。
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
 # enable completion
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
 export PATH=~/.cargo/bin:$PATH
 export EDITOR=nvim
 bindkey -s ^f "~/.dotfile/script/fv.sh\n"
