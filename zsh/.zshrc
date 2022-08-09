@@ -127,7 +127,7 @@ alias lg="lazygit"
 [ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
 # enable completion
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
-bindkey -s ^f "~/.dotfile/script/fv.sh\n"
+bindkey -s ^f "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 
