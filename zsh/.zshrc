@@ -127,9 +127,12 @@ alias lg="lazygit"
 [ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
 # enable completion
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
+bindkey -s ^f "~/.dotfile/script/fv.sh\n"
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
+
+# path
 export PATH=~/.cargo/bin:$PATH
 export EDITOR=nvim
-bindkey -s ^f "~/.dotfile/script/fv.sh\n"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
