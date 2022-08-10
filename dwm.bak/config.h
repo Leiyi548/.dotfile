@@ -16,7 +16,7 @@ static const int overviewgappi = 24; /* overview时 窗口与边缘 缝隙大小
 static const int overviewgappo = 60; /* overview时 窗口与窗口 缝隙大小 */
 static const int showbar = 1;        /* 是否显示状态栏 */
 static const int topbar = 1;         /* 指定状态栏位置 0底部 1顶部 */
-static const float mfact = 0.5;      /* 主工作区 大小比例 */
+static const float mfact = 0.6;      /* 主工作区 大小比例 */
 static const int nmaster = 1;        /* 主工作区 窗口数量 */
 static const unsigned int snap = 10;          /* 边缘依附宽度 */
 static const unsigned int baralpha = 0xc0;    /* 状态栏透明度 */
@@ -83,7 +83,7 @@ static Key keys[] = {
      togglesystray,
      {0}}, /* super +            |  切换 托盘栏显示状态 */
 
-    {MODKEY,
+    {ALTKEY,
      XK_Tab,
      focusstack,
      {.i = +1}}, /* super tab          |  本tag内切换聚焦窗口 */
@@ -113,7 +113,7 @@ static Key keys[] = {
      tagtoright,
      {0}}, /* super shift bracketright  |  将本窗口移动到右边tag */
 
-    {MODKEY, XK_t, toggleoverview, {0}}, /* super t            |  显示所有tag 或
+    {MODKEY, XK_Tab, toggleoverview, {0}}, /* super t            |  显示所有tag 或
                                       点击可以快速跳转到聚焦窗口的tag */
 
     {MODKEY,
@@ -229,7 +229,7 @@ static Key keys[] = {
      {.ui = H_EXPAND}}, /* super alt l   |  调整窗口 */
 
     /* spawn + SHCMD 执行对应命令 */
-    {MODKEY, XK_Return, spawn, SHCMD("alacritty")},
+    {MODKEY, XK_Return, spawn, SHCMD("kitty")},
     {MODKEY | ShiftMask, XK_a, spawn, SHCMD("flameshot")},
     {MODKEY, XK_space, spawn,
      SHCMD("rofi -no-config -no-lazy-grab -show drun -modi drun -theme "
@@ -266,7 +266,7 @@ static Button buttons[] = {
     /* click               event mask       button            function argument
      */
     {ClkStatusText, 0, Button1, spawn,
-     SHCMD("~/scripts/app-starter.sh fst")}, // 左键        |  点击状态栏   |
+     SHCMD("~/scripts/app-starter.sh fkitty")}, // 左键        |  点击状态栏   |
                                              // 打开float st
     {ClkWinTitle,
      0,
