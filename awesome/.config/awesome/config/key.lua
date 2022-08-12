@@ -275,12 +275,12 @@ clientbuttons = gears.table.join(
 )
 
 
-local _my_tags = {"","a","s","d","f","i","o","p"}
+local _my_tags = {"","1","2","3","4","5","6","7","8","9"}
 for i = 1, 9 do
   globalkeys = gears.table.join(globalkeys,
     -- View tag only.
     --awful.key({ modkey }, "#".. i + 9,
-    awful.key({ modkey }, _my_tags[i + 1],
+    awful.key({ altkey }, _my_tags[i + 1],
       function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -290,7 +290,7 @@ for i = 1, 9 do
       end,
       {description = "view tag #"..i, group = "tag"}),
     -- Toggle tag display.
-    awful.key({ modkey, "Control" }, "#" .. i + 9,
+    awful.key({ altkey, "Control" }, "#" .. i + 9,
       function ()
         local screen = awful.screen.focused()
         local tag = screen.tags[i]
@@ -301,7 +301,7 @@ for i = 1, 9 do
       {description = "toggle tag #" .. i, group = "tag"}),
     -- Move client to tag.
     --awful.key({ modkey, "Shift" }, "#" .. i + 9,
-    awful.key({ modkey, "Shift" }, _my_tags[i + 1],
+    awful.key({ altkey, "Shift" }, _my_tags[i + 1],
       function ()
         if client.focus then
           local tag = client.focus.screen.tags[i]
