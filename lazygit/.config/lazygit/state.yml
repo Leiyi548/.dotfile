@@ -1,9 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
-- /home/ewell/.emacs.d
-- /home/ewell/.doom.d
+- /home/ewell/tmp/awesome-config
 - /home/ewell/.config/nvim
+- /home/ewell/.doom.d
+- /home/ewell/.emacs.d
 - /home/ewell/.dotfile/wallpaper
 startuppopupversion: 5
 customcommandshistory: []
