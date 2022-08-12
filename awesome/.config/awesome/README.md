@@ -37,7 +37,7 @@ cd ~/.config/awesome && ./install.sh
 | `modkey+ctrl+n`                | 恢复隐藏的窗口                             |
 | `modkey+tab`                   | 切换最近两个窗口                           |
 | `modkey+esc`                   | 切换最近两个工作区                         |
-| `modkey+[a,s,d,f,i,o,p]`       | 切换工作区                                 |
+| `altkey+[1,2,3,4,5……,9]`       | 切换工作区                                 |
 | `modkey+shift+[a,s,d,f,i,o,p]` | 移动当前窗口到指定工作区                   |
 | `modkey+enter`                 | 打开终端                                   |
 | `modkey+Ctrl+j/k`              | 切换屏幕                                   |

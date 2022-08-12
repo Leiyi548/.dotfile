@@ -8,6 +8,7 @@ local brightness_subscribe_script = [[
    while (inotifywait -e modify /sys/class/backlight/?*/brightness -qq) do echo; done
 "]]
 
+-- 获得亮度百分比
 local brightness_script = [[
    sh -c "
    brightnessctl i | grep -oP '\(\K[^%\)]+'

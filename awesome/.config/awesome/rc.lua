@@ -33,7 +33,8 @@ local theme_path = string.format("%s/.config/awesome/theme/theme.lua", os.getenv
 beautiful.init(theme_path)
 
 awful.spawn.with_shell("bash ~/.config/awesome/shell/autostart.sh")
-awful.spawn.with_shell("setxkbmap -option caps:swapescape")
+-- keyd have issue in here
+-- awful.spawn.with_shell("setxkbmap -option caps:swapescape")
 
 awful.screen.connect_for_each_screen(function(s)
   bling.module.tiled_wallpaper("O", s, {
