@@ -10,14 +10,15 @@ function run {
 
 # Resolution
 #xrandr --output HDMI1 --mode 1920x1080 --same-as eDP1 --auto &
-xrandr --output HDMI-1 --auto --primary
-xrandr --output eDP-1 --right-of HDMI1 --auto
-xrandr --output eDP-1 --rotate left
+# xrandr --output HDMI-1 --auto --primary
+# xrandr --output eDP-1 --right-of HDMI1 --auto
+# xrandr --output eDP-1 --rotate left
 
 # Compositor
 # systemctl start v2raya.service
 systemctl start keyd
-picom --config ~/.config/awesome/config/picom.conf &
+picom --experimental-backends --config ~/.dotfile/script/picom.conf & 
+# picom --config ~/.config/awesome/config/picom.conf &
 # run clash
 run fcitx5
 run flameshot
