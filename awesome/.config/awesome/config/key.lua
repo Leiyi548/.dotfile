@@ -24,7 +24,7 @@ globalkeys = gears.table.join(
     {description = "view previous", group = "tag"}),
   awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
     {description = "view next", group = "tag"}),
-  awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
+  awful.key({ altkey,           }, "Tab", awful.tag.history.restore,
     {description = "go back", group = "tag"}),
 
   awful.key({ modkey,           }, "j",
@@ -143,9 +143,10 @@ globalkeys = gears.table.join(
     {description = "increase the number of columns", group = "layout"}),
   awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
     {description = "decrease the number of columns", group = "layout"}),
-  awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
+  -- change layout
+  awful.key({ modkey,           }, "s", function () awful.layout.inc( 1)                end,
     {description = "select next", group = "layout"}),
-  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
+  awful.key({ modkey, "Shift"   }, "s", function () awful.layout.inc(-1)                end,
     {description = "select previous", group = "layout"}),
 
   awful.key({ modkey, "Control" }, "n",
@@ -160,7 +161,7 @@ globalkeys = gears.table.join(
     end,
     {description = "restore minimized", group = "client"}),
   -- Menubar
-  awful.key({ modkey }, "d", function() awful.util.spawn("rofi -theme ~/.config/awesome/rofis/"..rofi_theme .."/config.rasi  -show drun") end,
+  awful.key({ modkey }, "space", function() awful.util.spawn("rofi -theme ~/.config/awesome/rofis/"..rofi_theme .."/config.rasi  -show drun") end,
     {description = "show the menubar", group = "rofi apps"}),
   awful.key({modkey},"p",function ()
     awful.util.spawn("rofi -theme ~/.config/awesome/rofis/" .. rofi_theme .. "/config.rasi -show window")
@@ -171,7 +172,7 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
-  awful.key({ modkey,           }, "g",
+  awful.key({ altkey,           }, "f",
     function (c)
       c.fullscreen = not c.fullscreen
       c:raise()
