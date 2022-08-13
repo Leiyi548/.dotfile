@@ -104,8 +104,12 @@ globalkeys = gears.table.join(
       function() awesome.emit_signal("volume_refresh") end)
   end,{ description = "Set the brightness to reduce", group = "brightness"}),
   -- lock screen
+  -- awful.key({modkey, 		       }, "u", function()
+  --   awful.spawn.easy_async_with_shell("bash ~/.config/awesome/shell/lock.sh") end,
+  --   {description = "Screen lock screen"}
+  -- ),
   awful.key({modkey, 		       }, "u", function()
-    awful.spawn.easy_async_with_shell("bash ~/.config/awesome/shell/lock.sh") end,
+    awful.spawn.easy_async_with_shell("~/.config/polybar/script/sysmenu") end,
     {description = "Screen lock screen"}
   ),
   -- emacs client
@@ -180,7 +184,7 @@ clientkeys = gears.table.join(
     {description = "toggle fullscreen", group = "client"}),
   awful.key({ modkey            }, "q",      function (c) c:kill()                         end,
     {description = "close", group = "client"}),
-  awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
+  awful.key({ modkey            }, "f",  awful.client.floating.toggle                     ,
     {description = "toggle floating", group = "client"}),
   awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)           end,
     {description = "swap with next client by index", group = "client"}),

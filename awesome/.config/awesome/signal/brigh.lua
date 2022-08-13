@@ -5,7 +5,7 @@ local awful = require("awful")
 
 local brightness_subscribe_script = [[
    bash -c "
-   while (inotifywait -e modify /sys/class/backlight/?*/brightness -qq) do echo; done
+   while (inotifywait -e modify /sys/class/backlight/intel_backlight/brightness -qq) do echo; done
 "]]
 
 -- 获得亮度百分比

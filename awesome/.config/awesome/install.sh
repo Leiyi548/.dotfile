@@ -44,13 +44,18 @@ install_rely() {
 		echo -e "\n   [*]install i3-lock"
     yay -S i3lock-fancy picom-jonaburg-git
 	fi
+
+	if [[ ! -f "/usr/bin/inotifywait" ]]; then
+		echo -e "\n   [*]install inotify-tools"
+    sudo pacman -S inotify-tools
+	fi
 }
 
 # Main 
 main() {
 	install_fonts
-	# install_awesome_configuration
-	# install_rely
+	install_awesome_configuration
+	install_rely
 }
 
 

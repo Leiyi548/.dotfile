@@ -131,17 +131,26 @@ awful.screen.connect_for_each_screen(function(s)
     buttons         = taglist_buttons
   }
 
-  -- Tasklist
+  -- Tasklist 改变状态栏显示应用鼠标操作
+  -- 1 是鼠标左键 2 是鼠标中键 3 是鼠标右键
   local tasklist_buttons = gears.table.join(
     awful.button({}, 1, function(c)
+      -- TODO: 当我鼠标点击这个 tag 的时候就只显示这个 tag
       if c == client.focus then
         c.minimized = true
       else
         c:emit_signal("request::activate", "tasklist", { raise = true })
+        -- c.maximized = true
       end
-    end), awful.button({}, 3, function()
+    end), awful.button({}, 2, function()
       awful.menu.client_list({ theme = { width = 150 } })
-    end), awful.button({}, 2, function() awful.client.focus.byidx(1) end)
+    end), awful.button({}, 3, function(c)
+      -- awful.client.focus.byidx(1)
+      -- 如果这个标签页显示,那么就把它隐藏
+      if c == client.focus then
+        c.minimized = true
+      end
+    end)
   )
 
   s.tasklist = awful.widget.tasklist {
