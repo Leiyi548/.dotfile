@@ -280,8 +280,8 @@ clientbuttons = gears.table.join(
 )
 
 
-local _my_tags = {"","1","2","3","4","5","6","7","8","9"}
-for i = 1, 9 do
+local _my_tags = {"","1","2","3","4","5","6","7","8","9","0"}
+for i = 1, #_my_tags do
   globalkeys = gears.table.join(globalkeys,
     -- View tag only.
     --awful.key({ modkey }, "#".. i + 9,

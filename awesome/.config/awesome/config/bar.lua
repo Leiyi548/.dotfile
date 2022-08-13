@@ -30,7 +30,7 @@ bling.widget.task_preview.enable {
 }
 
 bling.widget.tag_preview.enable {
-  show_client_content = false, -- Whether or not to show the client content
+  show_client_content = true, -- Whether or not to show the client content
   x = 10, -- The x-coord of the popup
   y = 10, -- The y-coord of the popup
   scale = 0.15, -- The scale of the previews compared to the screen
@@ -47,7 +47,9 @@ bling.widget.tag_preview.enable {
 awful.screen.connect_for_each_screen(function(s)
 
   -- Set tags and default layout
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7","8","9" }, s, awful.layout.suit.tile)
+  awful.tag({ "1.", "2.", "3.ﬄ", "4.", "5.", "6.漣", "7.","8.","9. ","10."}, s, awful.layout.suit.tile)
+
+
 
   local taglist_buttons = gears.table.join(
     awful.button({}, 1, function(t) t:view_only() end),
@@ -135,20 +137,29 @@ awful.screen.connect_for_each_screen(function(s)
   -- 1 是鼠标左键 2 是鼠标中键 3 是鼠标右键
   local tasklist_buttons = gears.table.join(
     awful.button({}, 1, function(c)
-      -- TODO: 当我鼠标点击这个 tag 的时候就只显示这个 tag
+      -- 当我鼠标点击这个 tag 的时候就只显示这个 tag
+        while true do
+          local every_c = awful.client.next(1)
+          if every_c ~= nil and every_c ~= c then
+            every_c.minimized = true
+          else
+            break
+        end
+      end
+      c:emit_signal("request::activate", "tasklist", { raise = true })
+        -- c.minimized = true
+    end), awful.button({}, 2, function(c)
+      -- 中键杀死当前应用
+      c:kill()
+      -- 显示 menu 这个 menu 里面可以显示所有窗口
+      -- awful.menu.client_list({ theme = { width = 150 } })
+    end), awful.button({}, 3, function(c)
+      -- awful.client.focus.byidx(1)
+      -- 如果这个标签页显示,那么就把它隐藏,没有显示就让它显示
       if c == client.focus then
         c.minimized = true
       else
         c:emit_signal("request::activate", "tasklist", { raise = true })
-        -- c.maximized = true
-      end
-    end), awful.button({}, 2, function()
-      awful.menu.client_list({ theme = { width = 150 } })
-    end), awful.button({}, 3, function(c)
-      -- awful.client.focus.byidx(1)
-      -- 如果这个标签页显示,那么就把它隐藏
-      if c == client.focus then
-        c.minimized = true
       end
     end)
   )
@@ -209,7 +220,7 @@ awful.screen.connect_for_each_screen(function(s)
 
   -- Clock
   myclock = awful.widget.textclock(
-    '<span font="Sarasa Mono K Bold 15"> %H:%M </span>', 5
+    '<span font="Sarasa Mono K Bold 15"> %m-%d | %H:%M </span>', 5
   )
 
   -- Create the top bar
