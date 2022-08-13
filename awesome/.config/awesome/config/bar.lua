@@ -231,10 +231,10 @@ awful.screen.connect_for_each_screen(function(s)
     y = 0,
     screen = s,
     height = 35,
-    width = 900,
+    width = 1200,
     stretch = false,
     bg = "#1A1B26", -- bar bg color
-    border_width = 0,
+    border_width = 3,
     border_color = "#3f4859";
   })
 

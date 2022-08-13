@@ -19,16 +19,17 @@ theme.dir = string.format('%s/.config/awesome/theme', os.getenv('HOME'))
 
 theme.bg_normal     = "#1A1B26"
 theme.bg_focus      = "#1A1B26"
+-- theme.bg_focus      = "#9BCED7"
 theme.bg_urgent     = "#1A1B26"
 theme.bg_minimize   = "#1A1B26"
 theme.bg_systray    = theme.bg_normal
 
-theme.useless_gap   = 18
-theme.border_width  = 1
-theme.border_radius = 20
-theme.border_normal = "#16161e"
-theme.border_focus  = "#16161e"
-theme.border_marked = "#16161e"
+theme.useless_gap   = 16
+theme.border_width  = 5
+theme.border_radius = 5
+theme.border_normal = "#1A1B26"
+theme.border_focus  = "#80d1ff"
+theme.border_marked = "#1A1B26"
 
 -- widgets
 

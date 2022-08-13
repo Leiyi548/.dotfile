@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
+- /home/ewell/tmp/neovim
 - /home/ewell/.config/nvim
 - /home/ewell/.doom.d
 - /home/ewell/.emacs.d
