@@ -13,6 +13,7 @@ local theme = {}
 -- themes
 
 theme.font          = "Sarasa Mono K 13"
+-- theme.font          = "FiraCode Nerd Font 13"
 
 theme.dir = string.format('%s/.config/awesome/theme', os.getenv('HOME'))
 
@@ -34,7 +35,8 @@ theme.border_marked = "#16161e"
 theme.taglist_fg = "#80d1ff"
 theme.taglist_fg_empty = "#3f4859"
 theme.taglist_fg_occupied = "#949eb3"
-theme.taglist_font = "SHYF-2020 25"
+-- theme.taglist_font = "SHYF-2020 25"
+theme.taglist_font = "FiraCode Nerd Font 13"
 
 -- menu
 
