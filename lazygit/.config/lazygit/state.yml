@@ -1,8 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
-- /home/ewell/tmp/neovim
+- /home/ewell/tillingwindow/dwm
+- /home/ewell/tillingwindow/st
 - /home/ewell/.config/nvim
+- /home/ewell/.local/share/nvim/site/pack/packer/start/lualine.nvim
+- /home/ewell/tmp/neovim
 - /home/ewell/.doom.d
 - /home/ewell/.emacs.d
 - /home/ewell/.dotfile/wallpaper
