@@ -244,6 +244,7 @@ bindsym mod1+r exec "rofi -no-config -no-lazy-grab -show drun -modi run"
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Nutstore"] floating enable
+for_window [class="icalingua"] floating enable
 for_window [class="TelegramDesktop"] floating enable  resize set 800 480
 for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
 for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480,move right 330px,move down 70px
