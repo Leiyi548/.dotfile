@@ -30,11 +30,20 @@ exec --no-startup-id fcitx5
 # 坚果云
 exec --no-startup-id Nutstore
 # picom
-exec --no-startup-id picom --experimental-backends --config ~/.dotfile/script/picom.conf
+exec --no-startup-id picom
 #设置窗口边框等等
 new_window none
 new_float normal
 hide_edge_borders both
+#border width
+default_border pixel 4
+
+# border colors
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+client.focused #3082F1 #3082F1 #F8F8F2 #3082F1 #3082F1
+client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
+client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
+
 #设置窗口间距
 gaps inner 8
 gaps outer 8
@@ -60,7 +69,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDgwn exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -106,12 +115,12 @@ bindsym mod4+bracketright workspace next
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym mod4+Shift+t layout stacking
-# bindsym $mod+w layout tabbed
-# 左右标签栏(标签式)
-# bindsym mod4+t layout tabbed
-bindsym mod4+t exec "~/.cargo/bin/i3-autolayout tabmode"
+# bindsy--file-layout /tmp/i3-autolayout-tabmode.savem $mod+w layout tabbed
+# 左右标--file-layout /tmp/i3-autolayout-tabmode.save签栏(标签式)
+# bindsym mod4+t layout tabbed moncle
+# bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
 # 启动i3分屏
-bindsym mod4+s layout toggle split
+bindsym mod4+t layout toggle split
 
 # toggle tiling / floating
 bindsym mod4+f floating toggle
@@ -127,10 +136,10 @@ bindsym $mod+Right move right 20 px
 bindsym mod4+c move absolute position center
 
 # Move container to the current position of the cursor
-bindsym mod4+m move position mouse
+bindsym mod4+shift+m move position mouse
 
 # change focus between tiling / floating windows
-# 平铺桌面和浮动桌面进行切换 user super+space
+# 焦点在平铺桌面和浮动桌面进行切换user super+space
 bindsym mod1+space focus mode_toggle
 
 # focus the parent container
@@ -221,12 +230,13 @@ bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 # quick open application
 bindsym mod4+b exec google-chrome-stable
 bindsym F1 exec "flameshot gui"
-# bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/lock/lock.png_"
-bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
+bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/01.png"
+# bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 #rofi -modi drun,run -show drun rofi
-bindsym Mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
-bindsym mod4+p exec "rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi"
+bindsym mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun"
+bindsym mod4+p exec "rofi -no-config -no-lazy-grab -show window -modi drun"
+bindsym mod1+r exec "rofi -no-config -no-lazy-grab -show drun -modi run"
 
 # set float window
 # xprop | grep WM_CLASS

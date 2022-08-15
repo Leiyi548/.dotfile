@@ -15,8 +15,7 @@ function run {
 #xrandr --output HDMI1 --rotate  normal
 # Compositor
 #systemctl start v2raya.service
-picom --config ~/.config/awesome/config/picom.conf &
-run clash
+picom &
 run fcitx5
 run flameshot
 #run obs

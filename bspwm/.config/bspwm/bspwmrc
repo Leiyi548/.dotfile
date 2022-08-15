@@ -4,10 +4,10 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 # bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-bspc config border_width         0
-bspc config window_gap          10
+bspc config border_width         3
+bspc config window_gap          12
 # Border
-bspc config focused_border_color        "#22292B"
+bspc config focused_border_color        "#0366D6"
 bspc config normal_border_color         "#22292B"
 bspc config active_border_color         "#22292B"
 
@@ -32,9 +32,9 @@ bspc rule -a feh state=floating
 bspc rule -a netease-cloud-music state=floating
 
 # autostart shell
-bash ~/.config/polybar/launch.sh &
 bash ~/.dotfile/script/feh.sh &
-picom --config/polybar/launch.sh &
 fcitx5 &
 picom &
 flameshot &
+# 状态栏
+bash ~/.config/polybar/launch.sh --material

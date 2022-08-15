@@ -23,10 +23,9 @@ super + Escape
 #
 # bspwm hotkeys
 #
-# rofi
 
 # quit/reload bspwm
-super + alt + {q,r}
+super + ctrl + {q,r}
 	bspc {quit,wm -r}
 
 # Close App
@@ -98,7 +97,7 @@ super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
+alt + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
@@ -151,11 +150,11 @@ super + {Left,Down,Up,Right}
 #
 # light/radio
 #
-super + {a,shift + a}
-	{light -A 10,amixer -q set Master 5%+ unmute}
-
-super + {d,shift + d}
-	{light -U 10,amixer -q set Master 5%- unmute}
+# super + {a,shift + a}
+# 	{light -A 10,amixer -q set Master 5%+ unmute}
+#
+# super + {d,shift + d}
+# 	{light -U 10,amixer -q set Master 5%- unmute}
 
 # Brighness control
 XF86MonBrightnessUp
@@ -182,12 +181,13 @@ XF86Audio{Next,Prev,Play,Stop}
 # software
 # 
 super + @space
-	rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/rofi/launcher.rasi
-
-alt + w
-	rofi -no-config -no-lazy-grab -show window -modi drun -theme ~/.config/awesome/rofi/launcher.rasi
+  rofi -theme ~/.config/awesome/rofis/rofi/config.rasi  -show drun
 
 super + p
-  flameshot gui
+  rofi -theme ~/.config/awesome/rofis/rofi/config.rasi  -show window
+
 super + u
   i3lock -i ~/.dotfile/wallpaper/lock.png
+
+F1
+  flameshot gui
