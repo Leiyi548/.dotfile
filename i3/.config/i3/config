@@ -117,7 +117,8 @@ bindsym mod4+bracketright workspace next
 bindsym mod4+Shift+t layout stacking
 # bindsy--file-layout /tmp/i3-autolayout-tabmode.savem $mod+w layout tabbed
 # 左右标--file-layout /tmp/i3-autolayout-tabmode.save签栏(标签式)
-# bindsym mod4+t layout tabbed moncle
+bindsym mod4+m layout tabbed
+bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
 # 启动i3分屏
 bindsym mod4+t layout toggle split
