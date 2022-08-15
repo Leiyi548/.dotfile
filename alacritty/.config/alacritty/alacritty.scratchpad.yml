@@ -66,10 +66,10 @@ window.opacity: 0.5
 window:
   # 启动窗口大小
   dimensions:
-    # columns: 140
-    # lines: 60
-    columns: 0
-    lines: 0
+    columns: 140
+    lines: 60
+    # columns: 0
+    # lines: 0
 
   # 边缘空白
   padding:
