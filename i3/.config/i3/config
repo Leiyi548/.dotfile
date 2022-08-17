@@ -20,6 +20,8 @@ font pango:FiraCode Nerd Font 12
 # set satusline (polybar)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
+# falmeshot
+exec_always --no-startup-id flameshot
 # 设置壁纸(wallpaper)(根据时间自动更换)
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 # 系统闲置333秒后灭屏，666秒后系统挂起。
@@ -235,9 +237,9 @@ bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/01.png"
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 #rofi -modi drun,run -show drun rofi
-bindsym mod4+space exec "rofi -no-config -no-lazy-grab -show drun -modi drun"
-bindsym mod4+p exec "rofi -no-config -no-lazy-grab -show window -modi drun"
-bindsym mod1+r exec "rofi -no-config -no-lazy-grab -show drun -modi run"
+bindsym mod4+space exec "rofi -show drun"
+bindsym mod4+p exec "rofi -show window -modi drun"
+bindsym mod1+r exec "rofi -show run"
 
 # set float window
 # xprop | grep WM_CLASS
