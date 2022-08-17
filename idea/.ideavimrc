@@ -125,12 +125,19 @@ nmap sw <Plug>(easymotion-bd-w)
 """"End""""
 " Toggle NERDTree
 nnoremap <leader>e :NERDTreeToggle<cr>
-" 弹出文件结构信息(相当于显示大纲)
-nnoremap <leader>o mm`m:action FileStructurePopup<cr>
-nnoremap <leader>O :action ActivateStructureToolWindow<cr>
 nnoremap <C-e> :NERDTree<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━❰ end Plugins ❱━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━❰ Open ❱━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" 弹出文件结构信息(相当于显示大纲)
+nnoremap <leader>oo mm`m:action FileStructurePopup<cr>
+nnoremap <leader>os :action ActivateStructureToolWindow<cr>
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━❰ end Open ❱━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
@@ -140,26 +147,6 @@ nnoremap <C-e> :NERDTree<cr>
 nnoremap s <Nop>
 vnoremap s <Nop>
 xnoremap s <Nop>
-" 快速关闭buffers
-" nnoremap X :q<cr>
-"关闭到只剩当前tab栏 close other buffer
-nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
-nnoremap x :action CloseEditor<cr>
-nnoremap X :action ReopenClosedTab<cr>
-" 使用tab键快速切换buffers
-nnoremap <TAB> :action NextTab<cr>
-nnoremap <S-TAB> :action PreviousTab<cr>
-vnoremap <TAB> :action NextTab<cr>
-vnoremap <S-TAB> :action PreviousTab<cr>
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
 " 上下方法的移动
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
@@ -326,8 +313,8 @@ vnoremap <leader>ns :action SurroundWith<cr>
 nnoremap <leader>rn :action RenameFile<cr>
 " 查找文件
 nnoremap <leader>ff mm`m:action GotoFile<cr>
-" buffer之间跳转
-nnoremap <leader>bf mm`m:action Switcher<cr>
+" 保存文件
+nnoremap <leader>fs :action SaveDocument<cr>
 " live grep
 nnoremap <leader>ft mm`m:action FindInPath<cr>
 vnoremap <leader>ft mm`m:action FindInPath<cr>
@@ -361,6 +348,35 @@ nnoremap <leader>fm :action ShowBookmarks<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+nnoremap <TAB> :action NextTab<cr>
+nnoremap <S-TAB> :action PreviousTab<cr>
+vnoremap <TAB> :action NextTab<cr>
+vnoremap <S-TAB> :action PreviousTab<cr>
+" buffer之间跳转
+nnoremap <leader>bb mm`m:action Switcher<cr>
+"关闭到只剩当前tab栏 close other buffer
+nnoremap <leader>bk :action CloseEditor<cr>
+nnoremap x :action CloseEditor<cr>
+nnoremap X :action ReopenClosedTab<cr>
+nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
+" 使用tab键快速切换buffers
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━❰ end Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ LSP ❱━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 " 显示action
@@ -371,10 +387,10 @@ nnoremap <leader>lf :action ReformatCode<cr>
 nnoremap gs :action GotoSymbol<cr>
 " 跳转下一个错误
 nnoremap <leader>lj :action GotoNextError<cr>
-nnoremap ]d :action GotoNextError<cr>
+nnoremap ]e :action GotoNextError<cr>
 " 跳转上一个错误
 nnoremap <leader>lk :action GotoPreviousError<cr>
-nnoremap [d :action GotoPreviousError<cr>
+nnoremap [e :action GotoPreviousError<cr>
 " 命名元素
 nnoremap <leader>lr :action RenameElement<cr>
 " 快速显示文档
@@ -402,8 +418,8 @@ nnoremap <leader>gi :action Git.init<cr>
 nnoremap <leader>gP :action Git.pull<cr>
 nnoremap <leader>gB :action Github.Open.In.Browser<cr>
 " git-gutter emulation
-nnoremap ]c :action VcsShowNextChangeMarker<cr>
-nnoremap [c :action VcsShowPrevChangeMarker<cr>
+nnoremap ]d :action VcsShowNextChangeMarker<cr>
+nnoremap [d :action VcsShowPrevChangeMarker<cr>
 " nnoremap <leader>hu :action Vcs.RollbackChangedLines<cr>
 " nnoremap <leader>hp :action Vcs.ShowHistoryForBlock<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
