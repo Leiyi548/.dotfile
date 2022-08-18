@@ -104,7 +104,7 @@ bindsym mod4+v split h
 # split in vertical orientation (like vim hsplit)
 bindsym mod4+g split v
 
-# enter fullscreen mode for the focused container
+# enter fullscreen mode for the focused container because alt-f in cmd line move to word end
 bindsym mod1+f fullscreen toggle
 
 # use alt tab to switch recent workspace
@@ -117,17 +117,16 @@ bindsym mod4+bracketright workspace next
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym mod4+Shift+t layout stacking
-# bindsy--file-layout /tmp/i3-autolayout-tabmode.savem $mod+w layout tabbed
+# 启动i3分Resize屏
+bindsym mod4+s layout toggle split
 # 左右标--file-layout /tmp/i3-autolayout-tabmode.save签栏(标签式)
-bindsym mod4+m layout tabbed
+bindsym mod4+t layout tabbed
 bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
-# 启动i3分屏
-bindsym mod4+t layout toggle split
 
 # toggle tiling / floating
 bindsym mod4+f floating toggle
-bindsym mod4+button3 floating toggle
+bindsym mod4+button2 floating toggle
 # Move container, but make floating containers
 # move more than the default
 bindsym $mod+Left move left 20 px
@@ -221,14 +220,13 @@ mode "resize" {
         bindsym mod4+r mode "default"
 }
 
-bindsym mod4+r mode "resize"
-
+bindsym mod1+r mode "resize"
 
 # control light and  sound
-bindsym mod4+a exec "light -A 10"
-bindsym mod4+d exec "light -U 10"
-bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
-bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
+# bindsym mod4+a exec "light -A 10"
+# bindsym mod4+d exec "light -U 10"
+# bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
+# bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 
 # quick open application
 bindsym mod4+b exec google-chrome-stable
@@ -239,7 +237,7 @@ bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/01.png"
 #rofi -modi drun,run -show drun rofi
 bindsym mod4+space exec "rofi -show drun"
 bindsym mod4+p exec "rofi -show window -modi drun"
-bindsym mod1+r exec "rofi -show run"
+bindsym mod4+r exec "rofi -show run"
 
 # set float window
 # xprop | grep WM_CLASS
@@ -254,6 +252,8 @@ for_window [class="Thunar"] floating enable  resize set 640 480,move right 330px
 
 # 特定应用指定窗口
 assign [class="Code"] 2
+assign [class="Code"] 2
+assign [class="icalingua"] 3
 assign [class="TelegramDesktop"] 3
 assign [class="Nutstore"] 3
 assign [class="netease-cloud-music"] 4
