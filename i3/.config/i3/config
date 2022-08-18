@@ -1,58 +1,54 @@
 # i3 config file (v4)
-#
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# mod4 is windows in linux is super
-# mod1 is alt
 set $mod Mod4
-set $alt Mod1
+set $term kitty
 set $explorer thunr
 
 workspace_auto_back_and_forth yes
-# default_orientation horizontal|vertical|auto
-default_orientation auto
-focus_follows_mouse yes
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
 font pango:FiraCode Nerd Font 12
+# ===
+# === 设置特定效果
+# ===
+# set float window
+# xprop | grep WM_CLASS
+for_window [class="netease-cloud-music"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="Nutstore"] floating enable
+for_window [class="icalingua"] floating enable
+for_window [class="TelegramDesktop"] floating enable  resize set 800 480
+for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
+for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480,move right 330px,move down 70px
+for_window [class="Thunar"] floating enable  resize set 640 480,move right 330px,move down 70px
 
-# set satusline (polybar)
+# 特定应用指定窗口
+assign [class="Code"] 2
+assign [class="Emacs"] 2
+assign [class="icalingua"] 3
+assign [class="TelegramDesktop"] 3
+assign [class="Nutstore"] 3
+assign [class="netease-cloud-music"] 4
+assign [class="yesplaymusic"] 4
+assign [class="obsidian"] 7
+assign [class="jetbrains-idea"] 8
+assign [class="firefox"] $ws9
+
+###
+### 开机启动项目
+###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-# falmeshot
 exec_always --no-startup-id flameshot
-# 设置壁纸(wallpaper)(根据时间自动更换)
+exec_always --no-startup-id nutstore
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 # 系统闲置333秒后灭屏，666秒后系统挂起。
 exec --no-startup-id xset dpms 333 666
-# 登录自动启动软件
-# fcitx5输入法
 exec --no-startup-id fcitx5
-# 坚果云
 exec --no-startup-id Nutstore
-# picom
 exec --no-startup-id picom
-#设置窗口边框等等
-new_window none
-new_float normal
-hide_edge_borders both
-#border width
-default_border pixel 4
-
-# border colors
-# <colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused #3082F1 #3082F1 #F8F8F2 #3082F1 #3082F1
-client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
-client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
-
-#设置窗口间距
-gaps inner 8
-gaps outer 8
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-# Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -63,8 +59,30 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+###
+### 窗口边框
+###
+new_window none
+new_float normal
+hide_edge_borders both
+#border width
+default_border pixel 4
+# border colors
+# <colorclass> <border> <background> <text> <indicator> <child_border>
+client.focused #3082F1 #3082F1 #F8F8F2 #3082F1 #3082F1
+client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
+client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+#===
+#=== i3-gaps 设定
+#===
+gaps inner 8
+gaps outer 8
+# 如果打开这个的话,如果你是只有一个窗口的话,那么就不显示 gaps 和 边框
+# smart_gaps on
+
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -79,10 +97,19 @@ floating_minimum_size 100 x 100
 floating_maximum_size -1 x -1
 # start a terminal
 
-#bindsym Mod4+Return exec alacritty
-bindsym Mod4+Return exec kitty
+#===
+#=== 启动常用软件
+#===
 
-# cloase window
+bindsym mod4+Return exec $term
+bindsym mod4+Shift+Return exec emacs
+bindsym mod4+b exec google-chrome-stable
+
+#===
+#=== i3 基础键位
+#===
+
+# close window
 bindsym mod4+q kill
 
 # change focus
@@ -91,12 +118,16 @@ bindsym mod4+j focus down
 bindsym mod4+k focus up
 bindsym mod4+l focus right
 
-# alternatively, you can use the cursor keys:
 # move focused window
 bindsym mod4+Shift+h move left
 bindsym mod4+Shift+j move down
 bindsym mod4+Shift+k move up
 bindsym mod4+Shift+l move right
+
+# focus the parent container
+bindsym $mod+a focus parent
+# focus the child container
+bindsym $mod+d focus child
 
 # split in horizontal orientation (like vim vsplit)
 bindsym mod4+v split h
@@ -104,54 +135,47 @@ bindsym mod4+v split h
 # split in vertical orientation (like vim hsplit)
 bindsym mod4+g split v
 
-# enter fullscreen mode for the focused container because alt-f in cmd line move to word end
-bindsym mod1+f fullscreen toggle
 
 # use alt tab to switch recent workspace
 bindsym mod1+Tab workspaceback_and_forth
 
-# use Ctrl+Alt+Left|Right to move workspace
+# use super+bracketleft/bracketright to move workspace
 bindsym mod4+bracketleft workspace prev
 bindsym mod4+bracketright workspace next
 
+#===
+#=== 布局切换
+#===
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym mod4+Shift+t layout stacking
-# 启动i3分Resize屏
+# 打开平铺模式
 bindsym mod4+s layout toggle split
-# 左右标--file-layout /tmp/i3-autolayout-tabmode.save签栏(标签式)
+# 打开标签(tabbed)模式
 bindsym mod4+t layout tabbed
+# 将tabbed 模式的所有应用以平铺方式显示出来
 bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
-
-# toggle tiling / floating
+# 将当前窗口浮动显示
 bindsym mod4+f floating toggle
 bindsym mod4+button2 floating toggle
-# Move container, but make floating containers
-# move more than the default
+# 全屏显示
+bindsym mod1+f fullscreen toggle
+# 移动浮动窗口,也能移动平铺窗口不过后面是没有,只是移动位置
 bindsym $mod+Left move left 20 px
 bindsym $mod+Down move down 20 px
 bindsym $mod+Up move up 20 px
 bindsym $mod+Right move right 20 px
-
 # Move floating container to the center of all outputs
 bindsym mod4+c move absolute position center
-
-# Move container to the current position of the cursor
-bindsym mod4+shift+m move position mouse
-
-# change focus between tiling / floating windows
-# 焦点在平铺桌面和浮动桌面进行切换user super+space
+# 焦点在平铺桌面和浮动桌面进行切换
 bindsym mod1+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+shift+p focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
+# ===
+# === workspace
+# ===
 
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -187,6 +211,9 @@ bindsym mod1+Shift+8 move container to workspace number $ws8,workspace number $w
 bindsym mod1+Shift+9 move container to workspace number $ws9,workspace number $ws9
 bindsym mod1+Shift+0 move container to workspace number $ws10,workspace number $ws10
 
+# ===
+# === i3 配置加载/启动/关闭
+# ===
 
 # reload the configuration file
 bindsym mod1+Shift+c reload
@@ -228,8 +255,6 @@ bindsym mod1+r mode "resize"
 # bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
 # bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 
-# quick open application
-bindsym mod4+b exec google-chrome-stable
 bindsym F1 exec "flameshot gui"
 bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/01.png"
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
@@ -239,33 +264,15 @@ bindsym mod4+space exec "rofi -show drun"
 bindsym mod4+p exec "rofi -show window -modi drun"
 bindsym mod4+r exec "rofi -show run"
 
-# set float window
-# xprop | grep WM_CLASS
-for_window [class="netease-cloud-music"] floating enable
-for_window [class="Wine"] floating enable
-for_window [class="Nutstore"] floating enable
-for_window [class="icalingua"] floating enable
-for_window [class="TelegramDesktop"] floating enable  resize set 800 480
-for_window [class="yesplaymusic"] floating enable  resize set 640 480,move right 330px,move down 70px
-for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480,move right 330px,move down 70px
-for_window [class="Thunar"] floating enable  resize set 640 480,move right 330px,move down 70px
-
-# 特定应用指定窗口
-assign [class="Code"] 2
-assign [class="Code"] 2
-assign [class="icalingua"] 3
-assign [class="TelegramDesktop"] 3
-assign [class="Nutstore"] 3
-assign [class="netease-cloud-music"] 4
-assign [class="yesplaymusic"] 4
-assign [class="obsidian"] 7
-assign [class="jetbrains-idea"] 8
-assign [class="firefox"] $ws9
-
-# Scratch
+#===
+#=== Scratchpad
+#===
+exec --no-startup-id $term --class scratchpad
+bindsym $mod+minus exec $term --class scratchpad
+for_window [class="scratchpad"] floating enable
+for_window [class="scratchpad"] resize set 925 480
+for_window [class="scratchpad"] move scratchpad
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+o move scratchpad
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
-# bindsym mod1+m [class="Alacritty"] scratchpad show; move position center
-# exec_always --no-startup-id alacritty
+bindsym $mod+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
