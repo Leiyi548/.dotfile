@@ -17,6 +17,6 @@ initial_window_height 700
 
 
 # BEGIN_KITTY_THEME
-# GitHub Light
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
