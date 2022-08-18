@@ -2,9 +2,9 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     default: 1654509031
-    default.custom: 1659887961
+    default.custom: 1660827215
     flypy.custom: 0
-    flypy.schema: 1659887961
+    flypy.schema: 1660826897
     key_bindings: 1654509031
     key_bindings.custom: 0
     punctuation: 1654509031
@@ -87,7 +87,7 @@ key_binder:
     - {accept: Tab, send: Escape, when: composing}
     - {accept: Shift_R, send: Escape, when: composing}
     - {accept: "Control+period", toggle: ascii_punct, when: always}
-    - {accept: "Control+j", toggle: simplification, when: always}
+    - {accept: "Control+comma", toggle: simplification, when: always}
   import_preset: default
 menu:
   page_size: 9

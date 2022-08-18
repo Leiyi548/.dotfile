@@ -1,7 +1,7 @@
 # Rime default settings
 # encoding: utf-8
 
-config_version: "0.38"
+config_version: '0.38'
 
 schema_list:
   - schema: flypy
@@ -25,72 +25,72 @@ menu:
 
 punctuator:
   full_shape:
-    ' ' : { commit: '　' }
-    ',' : { commit: ， }
-    '.' : { commit: 。 }
-    '<' : [ 《, 〈, «, ‹ ]
-    '>' : [ 》, 〉, », › ]
-    '/' : { commit: 、 }
-    '?' : { commit: ？ }
-    ';' : { commit: ； }
-    ':' : { commit: ： }
-    '''' : { pair: [ '‘', '’' ] }
-    '"' : { pair: [ '“', '”' ] }
-    '\' : { commit: 、 }
-    '|' : '｜'
-    '`' : ｀
-    '~' : ～
-    '!' : { commit: ！ }
-    '@' : '＠'
-    '#' : '＃'
-    '%' : '％'
-    '$' : [ ￥, '$', '€', '£', '¥', '¢', '¤' ]
-    '^' : { commit: …… }
-    '&' : ＆
-    '*' : '＊'
-    '(' : （
-    ')' : ）
-    '-' : －
-    '_' : ——
-    '+' : ＋
-    '=' : ＝
-    '[' : [ 「, 【, 〔, ［ ]
-    ']' : [ 」, 】, 〕, ］ ]
-    '{' : [ 『, 〖, ｛ ]
-    '}' : [ 』, 〗, ｝ ]
+    ' ': { commit: '　' }
+    ',': { commit: ， }
+    '.': { commit: 。 }
+    '<': [《, 〈, «, ‹]
+    '>': [》, 〉, », ›]
+    '/': { commit: 、 }
+    '?': { commit: ？ }
+    ';': { commit: ； }
+    ':': { commit: ： }
+    "'": { pair: ['‘', '’'] }
+    '"': { pair: ['“', '”'] }
+    '\': { commit: 、 }
+    '|': '｜'
+    '`': ｀
+    '~': ～
+    '!': { commit: ！ }
+    '@': '＠'
+    '#': '＃'
+    '%': '％'
+    '$': [￥, '$', '€', '£', '¥', '¢', '¤']
+    '^': { commit: …… }
+    '&': ＆
+    '*': '＊'
+    '(': （
+    ')': ）
+    '-': －
+    '_': ——
+    '+': ＋
+    '=': ＝
+    '[': [「, 【, 〔, ［]
+    ']': [」, 】, 〕, ］]
+    '{': [『, 〖, ｛]
+    '}': [』, 〗, ｝]
   half_shape:
-    ',' : { commit: ， }
-    '.' : { commit: 。 }
-    '<' : [ 《, 〈, «, ‹ ]
-    '>' : [ 》, 〉, », › ]
-    '/' : { commit: 、 }
-    '?' : { commit: ？ }
-    ';' : { commit: ； }
-    ':' : { commit: ： }
-    '''' : { pair: [ '‘', '’' ] }
-    '"' : { pair: [ '“', '”' ] }
-    '\' : { commit: 、 }
-    '|' : '|'
-    '`' : '`'
-    '~' : { commit: ～ }
-    '!' : { commit: ！ }
-    '@' : '@'
-    '#' : '#'
-    '%' : { commit: '%' }
-    '$' : { commit: "$" }
-    '^' : { commit: …… }
-    '&' : '&'
-    '*' : { commit: '*' }
-    '(' : （
-    ')' : ）
-    '-' : '-'
-    '_' : ——
-    '+' : '+'
-    '=' : '='
-    '[' : { commit: '【' }
-    ']' : { commit: '】' }
-    '{' : { commit: '｛' }
-    '}' : { commit: '｝' }
+    ',': { commit: ， }
+    '.': { commit: 。 }
+    '<': [《, 〈, «, ‹]
+    '>': [》, 〉, », ›]
+    '/': { commit: 、 }
+    '?': { commit: ？ }
+    ';': { commit: ； }
+    ':': { commit: ： }
+    "'": { pair: ['‘', '’'] }
+    '"': { pair: ['“', '”'] }
+    '\': { commit: 、 }
+    '|': '|'
+    '`': '`'
+    '~': { commit: ～ }
+    '!': { commit: ！ }
+    '@': '@'
+    '#': '#'
+    '%': { commit: '%' }
+    '$': { commit: '$' }
+    '^': { commit: …… }
+    '&': '&'
+    '*': { commit: '*' }
+    '(': （
+    ')': ）
+    '-': '-'
+    '_': ——
+    '+': '+'
+    '=': '='
+    '[': { commit: '【' }
+    ']': { commit: '】' }
+    '{': { commit: '｛' }
+    '}': { commit: '｝' }
 
 key_binder:
   bindings:
@@ -134,13 +134,13 @@ key_binder:
 recognizer:
   patterns:
     uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
-    reverse_lookup: "[a-z`]*`+[a-z`]*"
-    punct: ""
+    reverse_lookup: '[a-z`]*`+[a-z`]*'
+    punct: ''
 
 ascii_composer:
   good_old_caps_lock: true
   switch_key:
-    Shift_L: inline_ascii
+    Shift_L: commit_code
     Shift_R: commit_code
     Control_L: noop
     Control_R: noop

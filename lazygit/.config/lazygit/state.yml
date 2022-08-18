@@ -1,6 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
+- /home/ewell/.local/share/nvim/site/pack/packer/start/cmp-flypy.nvim
 - /home/ewell/.config/nvim
 - /home/ewell/code/c/clang-tutorial
 - /home/ewell/.doom.d
