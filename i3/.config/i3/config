@@ -39,7 +39,7 @@ assign [class="firefox"] $ws9
 ###
 ### 开机启动项目
 ###
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id nutstore
@@ -78,7 +78,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #=== i3-gaps 设定
 #===
 gaps inner 8
-gaps outer 8
+gaps outer 2
 # 如果打开这个的话,如果你是只有一个窗口的话,那么就不显示 gaps 和 边框
 # smart_gaps on
 
