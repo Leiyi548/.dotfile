@@ -4,6 +4,7 @@
 set $mod Mod4
 set $term kitty
 set $explorer thunr
+set $editor emacs
 
 workspace_auto_back_and_forth yes
 # Font for window titles. Will also be used by the bar unless a different font
@@ -27,15 +28,16 @@ for_window [class="fcitx5-config-qt"] floating enable  resize set 800 480,move r
 
 # 特定应用指定窗口
 assign [class="Code"] 2
-assign [class="Emacs"] 2
+# assign [class="Emacs"] 2
 assign [class="icalingua"] 3
 assign [class="TelegramDesktop"] 3
 assign [class="Nutstore"] 3
 assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
+assign [class="obs"] 6
 assign [class="obsidian"] 7
 assign [class="jetbrains-idea"] 8
-assign [class="firefox"] $ws9
+# assign [class="firefox"] $ws9
 
 ###
 ### 开机启动项目
@@ -104,7 +106,7 @@ floating_maximum_size -1 x -1
 #===
 
 bindsym mod4+Return exec $term
-bindsym mod4+Shift+Return exec emacs
+bindsym mod4+Shift+Return exec $editor
 bindsym mod4+b exec google-chrome-stable
 
 #===

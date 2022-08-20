@@ -1,6 +1,6 @@
 [Hotkey]
 # Enumerate when press trigger key repeatedly
-EnumerateWithTriggerKeys=True
+EnumerateWithTriggerKeys=False
 # Temporally switch between first and current Input Method
 AltTriggerKeys=
 # Enumerate Input Method Forward
@@ -35,7 +35,7 @@ TogglePreedit=
 
 [Behavior]
 # Active By Default
-ActiveByDefault=False
+ActiveByDefault=True
 # Share Input State
 ShareInputState=No
 # Show preedit in application
@@ -43,13 +43,13 @@ PreeditEnabledByDefault=True
 # Show Input Method Information when switch input method
 ShowInputMethodInformation=True
 # Show Input Method Information when changing focus
-showInputMethodInformationWhenFocusIn=False
+showInputMethodInformationWhenFocusIn=True
 # Show compact input method information
 CompactInputMethodInformation=True
 # Show first input method information
 ShowFirstInputMethodInformation=True
 # Default page size
-DefaultPageSize=5
+DefaultPageSize=4
 # Override Xkb Option
 OverrideXkbOption=False
 # Custom Xkb Option
