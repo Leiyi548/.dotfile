@@ -1,0 +1,3 @@
+[submodule "z.lua"]
+	path = z.lua
+	url = git@github.com:skywind3000/z.lua

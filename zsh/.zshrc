@@ -81,7 +81,7 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	z
+	# z
 	fzf-tab
 )
 
@@ -103,6 +103,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+# z.lua
+eval "$(lua ~/.dotfile/z.lua/z.lua  --init zsh once enhanced)"
+alias zc='z -c'      # 严格匹配当前路径的子路径
+alias zz='z -i'      # 使用交互式选择模式
+alias zf='z -I'      # 使用 fzf 对多个结果进行选择
+alias zb='z -b'      # 快速回到父目录
+alias zh='z -I -t'   # 使用 fzf 搜索最近去过的目录
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -132,7 +139,7 @@ alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro sudo y
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
 bindkey -s ^f "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude (.deepinwine|.git)'
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 
 # path
 # cargo
