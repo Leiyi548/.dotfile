@@ -15,6 +15,8 @@ punctuator:
 
 switches:
   - name: ascii_mode
+    # 如果设置为0,输入法默认以中文启动
+    # 如果设置为1，就以英文启动
     reset: 0
     # states: [ 中文, 英文 ]
   - name: full_shape
