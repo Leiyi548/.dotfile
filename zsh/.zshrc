@@ -132,7 +132,7 @@ alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro sudo y
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
 bindkey -s ^f "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
-export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude (.deepinwine|.git)'
 
 # path
 # cargo
