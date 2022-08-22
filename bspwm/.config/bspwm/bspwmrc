@@ -37,4 +37,4 @@ fcitx5 &
 picom &
 flameshot &
 # 状态栏
-bash ~/.config/polybar/launch.sh --material
+bash ~/.config/polybar/launch.sh --cuts

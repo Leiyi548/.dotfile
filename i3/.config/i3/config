@@ -21,6 +21,7 @@ for_window [class="netease-cloud-music"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Nutstore"] floating enable
 for_window [class="icalingua"] floating enable
+# for_window [class="jetbrains-idea"] floating enable
 for_window [class="TelegramDesktop"] floating enable  resize set 800 480
 for_window [class="yesplaymusic"] floating enable  resize set 800 480
 for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480

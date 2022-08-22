@@ -90,10 +90,10 @@ set matchit
 " ===
 " === easymotion
 " ===
-nmap ss <Plug>(easymotion-s2)
-nmap E <Plug>(easymotion-s)
-nmap sl <Plug>(easymotion-bd-jk)
-nmap sw <Plug>(easymotion-bd-w)
+nmap s <Plug>(easymotion-s2)
+" nmap E <Plug>(easymotion-s)
+" nmap sl <Plug>(easymotion-bd-jk)
+nmap S <Plug>(easymotion-bd-w)
 " use easymotion to replace orginal f F t T
 " nmap f <Plug>(easymotion-fl)
 " nmap F <Plug>(easymotion-Fl)
@@ -137,6 +137,7 @@ nnoremap <C-e> :NERDTree<cr>
 nnoremap <leader>oo mm`m:action FileStructurePopup<cr>
 nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
 "--━━━━━━━━━━━━━━━━━━━━❰ end Open ❱━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
@@ -144,9 +145,9 @@ nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 "--━━━━━━━━━━━━━━━━━━━❰ Move ❱━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 " 取消vim s键原生映射
-nnoremap s <Nop>
-vnoremap s <Nop>
-xnoremap s <Nop>
+" nnoremap s <Nop>
+" vnoremap s <Nop>
+" xnoremap s <Nop>
 " 上下方法的移动
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
@@ -350,10 +351,8 @@ nnoremap <leader>fm :action ShowBookmarks<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-nnoremap <TAB> :action NextTab<cr>
-nnoremap <S-TAB> :action PreviousTab<cr>
-vnoremap <TAB> :action NextTab<cr>
-vnoremap <S-TAB> :action PreviousTab<cr>
+nnoremap ;w :action NextTab<cr>
+nnoremap ;s :action PreviousTab<cr>
 " buffer之间跳转
 nnoremap <leader>bb mm`m:action Switcher<cr>
 "关闭到只剩当前tab栏 close other buffer
@@ -435,13 +434,10 @@ nnoremap zd :action CollapseDocComments<cr>
 "--━━━━━━━━━━━━━━━━━━━❰ end Fold ❱━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Show or Select ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 " 取消高亮
 nnoremap <leader>h :nohl<cr>
 " 显示jumpList
-nnoremap <leader>sj :jumps<cr>
+nnoremap <leader>fj :jumps<cr>
 " 显示 history
 nnoremap <leader>sh :action LocalHistory<cr>
 " 相当于鼠标右键
@@ -450,6 +446,9 @@ nnoremap <leader>sp :action ShowPopupMenu<cr>
 nnoremap <leader>st :action ExpressionTypeInfo<cr>
 " Select in
 nnoremap <leader>si :action SelectIn<cr>
+" insert emoji
+nnoremap <leader>ie :action EmojiPicker.Open<cr>
+
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ end  ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
@@ -484,7 +483,7 @@ sethandler <C-S> a:ide
 sethandler <C-T> a:ide
 sethandler <C-U> a:vim
 sethandler <C-V> n:vim i-x:ide
-sethandler <C-W> a:ide
+sethandler <C-W> a:vim
 sethandler <C-X> n:vim i-x:ide
 sethandler <C-Y> a:vim
 sethandler <C-[> a:ide
