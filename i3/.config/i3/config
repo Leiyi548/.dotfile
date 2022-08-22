@@ -266,7 +266,7 @@ bindsym mod1+r mode "resize"
 # bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 
 bindsym F1 exec "flameshot gui"
-bindsym mod4+u exec "i3lock -i ~/.dotfile/wallpaper/01.png"
+bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 #rofi -modi drun,run -show drun rofi
