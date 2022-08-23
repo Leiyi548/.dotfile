@@ -279,10 +279,10 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
-nnoremap sc <C-W>c
-nnoremap sv :vsplit<cr>
-nnoremap sg :split<cr>
-nnoremap su :action UnsplitAll<cr>
+" nnoremap sc <C-W>c
+" nnoremap sv :vsplit<cr>
+" nnoremap sg :split<cr>
+" nnoremap su :action UnsplitAll<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ end 窗口篇 ❱━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
