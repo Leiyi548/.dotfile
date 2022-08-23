@@ -502,6 +502,7 @@
 统治	tsvi
 生育	ugyu
 起点	qidm
+男朋友	npy
 琳琅满目	llmm
 无知无畏	wvwy
 好逸恶劳	hyel

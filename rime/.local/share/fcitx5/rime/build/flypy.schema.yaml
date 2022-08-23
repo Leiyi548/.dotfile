@@ -4,7 +4,7 @@ __build_info:
     default: 1654509031
     default.custom: 1660994839
     flypy.custom: 0
-    flypy.schema: 1661074874
+    flypy.schema: 1661233120
     key_bindings: 1654509031
     key_bindings.custom: 0
     punctuation: 1654509031
@@ -82,6 +82,7 @@ key_binder:
     - {accept: comma, send: comma, when: paging}
     - {accept: period, send: period, when: has_menu}
     - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: apostrophe, send: 3, when: has_menu}
     - {accept: "Release+period", send: period, when: composing}
     - {accept: "Release+comma", send: comma, when: composing}
     - {accept: Tab, send: Escape, when: composing}
