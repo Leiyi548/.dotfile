@@ -51,7 +51,8 @@ assign [class="jetbrains-idea"] 8
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
 exec_always --no-startup-id flameshot
-exec_always --no-startup-id nutstore
+exec_always --no-startup-id icalingua
+# exec_always --no-startup-id nutstore
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 exec_always --no-startup-id Xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
@@ -112,7 +113,9 @@ floating_maximum_size -1 x -1
 
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
-bindsym mod4+b exec google-chrome-stable
+# 自动切换壁纸
+bindsym mod4+b exec feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png
+
 
 #===
 #=== i3 基础键位
