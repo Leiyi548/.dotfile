@@ -6758,7 +6758,8 @@ AA制	aav
 今	jb
 极	ji
 贱	jm
-居	ju
+# 8 月 23 日 移除
+# 居	ju
 佳	jx
 抠	kz
 溜	lq
@@ -6766,7 +6767,8 @@ AA制	aav
 美	mw
 浓	ns
 弃	qi
-缺	qt
+# 8 月 23 号 移除
+# 缺	qt
 惹	re
 忍	rf
 扔	rg
@@ -6779,7 +6781,8 @@ AA制	aav
 省	ug
 守	uz
 症	vg
-战	vj
+# 8 月 10 日 移除
+# 战	vj
 终	vs
 文	wf
 忘	wh
@@ -6788,7 +6791,8 @@ AA制	aav
 心	xb
 型	xk
 凶	xs
-隐	yb
+# 8 月 10 日 移除
+# 隐	yb
 野	ye
 杨	yh
 严	yj

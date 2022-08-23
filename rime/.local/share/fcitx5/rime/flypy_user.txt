@@ -499,6 +499,7 @@
 稳健	wfjm
 拥护	yshu
 宗师	zsui
+# 从这里开始自定义
 统治	tsvi
 生育	ugyu
 起点	qidm
@@ -509,3 +510,23 @@
 胡说八道	hsbd
 朝气蓬勃	iqpb
 有滋有味	yzyw
+# 二重简码
+# 8 月 10 号
+按键	aj
+回忆	hy
+版本	bb
+整句	vj
+即可	jk
+一边	yb
+# 8 月 19 号
+正在	vz
+周围	vw
+# 8 月 23 号
+自动	zd
+最终	zv
+及时	ju
+其他	qt
+距离	jl
+想到	xd
+不懂	bd
+
