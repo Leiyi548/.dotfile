@@ -76,6 +76,7 @@ set highlightedyank
 set textobj-entire
 set textobj-indent
 set matchit
+set clipboard=unnamedplus,unnamed
 " ===
 " === multiple-cursors
 " ===
@@ -165,16 +166,16 @@ vnoremap K :action MoveLineUp<cr>
 " 多行缩进在visual mode
 nnoremap > >gv
 vnoremap < <gv
-" 复制粘贴剪贴板
-nnoremap <leader>y "+y
-nnoremap <leader>yy "+yy
 " copy reference
 nnoremap <leader>yr :action CopyReference<cr>
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>y "+y
-vnoremap <leader>p "+p
-vnoremap <leader>P "+p
+" 复制粘贴剪贴板
+"nnoremap <leader>y "+y
+"nnoremap <leader>yy "+yy
+" nnoremap <leader>p "+p
+" nnoremap <leader>P "+P
+" vnoremap <leader>y "+y
+" vnoremap <leader>p "+p
+" vnoremap <leader>P "+p
 vnoremap Y y$
 nnoremap Y y$
 " 插入模式粘贴
@@ -357,8 +358,7 @@ nnoremap ;s :action PreviousTab<cr>
 nnoremap <leader>bb mm`m:action Switcher<cr>
 "关闭到只剩当前tab栏 close other buffer
 nnoremap <leader>bk :action CloseEditor<cr>
-nnoremap x :action CloseEditor<cr>
-nnoremap X :action ReopenClosedTab<cr>
+nnoremap <leader>bK :action ReopenClosedTab<cr>
 nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
 " 使用tab键快速切换buffers
 nnoremap <leader>1 1gt

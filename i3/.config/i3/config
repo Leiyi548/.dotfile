@@ -115,7 +115,7 @@ floating_maximum_size -1 x -1
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
 # 自动切换壁纸
-bindsym mod4+b exec feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png
+bindsym mod4+w exec feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png
 
 
 #===
@@ -150,9 +150,10 @@ bindsym mod4+g split v
 
 
 # use alt tab to switch recent workspace
-bindsym mod1+Tab workspace back_and_forth
+# bindsym mod1+Tab workspace back_and_forth
+bindsym mod4+b workspace back_and_forth
 
-# use super+bracketleft/bracketright to move workspace
+# use super+bracketleft/bracketright to previous/next workspace
 bindsym mod4+bracketleft workspace prev
 bindsym mod4+bracketright workspace next
 
