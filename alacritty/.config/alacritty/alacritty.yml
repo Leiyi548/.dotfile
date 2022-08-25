@@ -61,7 +61,7 @@ live_config_reload: true
 # Tab 缩进
 tabspaces: 4
 # 背景透明度
-window.opacity: 0.5
+window.opacity: 1
 
 window:
   # 启动窗口大小
@@ -127,8 +127,8 @@ font:
     # family: 'JetBrainsMono Nerd Font' # ubuntu
     style: Bold
   italic:
-    # family: 'JetBrainsMono Nerd Font'
-    family: 'Operator Mono'
+    family: 'JetBrainsMono Nerd Font'
+    # family: 'Operator Mono'
     # family: 'JetBrainsMono Nerd Font Mono' # for windows | ubuntu
     style: Italic
   bold_italic:
