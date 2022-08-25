@@ -53,6 +53,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
 exec_always --no-startup-id flameshot
 exec_always --no-startup-id icalingua
+exec_always --no-startup-id obsidian
 # exec_always --no-startup-id nutstore
 exec_always --no-startup-id ~/.dotfile/script/feh.sh
 exec_always --no-startup-id Xfce4-power-manager
