@@ -36,7 +36,6 @@ set incsearch
 set ignorecase
 " 显示模式
 "set showmode
-set idearefactormode=keep
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━❰ end Setting ❱━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
@@ -126,6 +125,7 @@ nmap S <Plug>(easymotion-bd-w)
 """"End""""
 " Toggle NERDTree
 nnoremap <leader>e :NERDTreeToggle<cr>
+" Change idea setting
 nnoremap <C-n> :NERDTreeToggle<cr>
 nnoremap <C-e> :NERDTree<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
@@ -475,7 +475,7 @@ sethandler <C-J> a:vim
 sethandler <C-K> a:vim
 sethandler <C-L> a:vim
 sethandler <C-M> a:ide
-sethandler <C-N> n:ide i-x:vim
+sethandler <C-N> a:ide
 sethandler <C-O> a:vim
 sethandler <C-P> a:ide
 sethandler <C-Q> a:vim
