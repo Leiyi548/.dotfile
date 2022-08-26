@@ -490,4 +490,4 @@ sethandler <C-[> a:ide
 sethandler <C-]> a:ide
 sethandler <C-\> a:ide
 sethandler <Tab> n:vim i-x:ide
-sethandler <S-Tab> n:vim i-x:ide
+sethandler <S-Tab> n:vim i-x:ideset clipboard+=ideaput

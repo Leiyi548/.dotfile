@@ -1,8 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
-- /home/ewell/.config/nvim
+- /home/ewell/code/50project50day
 - /home/ewell/NOTE
+- /home/ewell/.config/nvim
 - /home/ewell/code/c/clang-tutorial
 - /home/ewell/.doom.d
 - /home/ewell/code/bash/bash-tutorial
