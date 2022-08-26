@@ -28,6 +28,6 @@ map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Aquarium Dark
 include current-theme.conf
 # END_KITTY_THEME

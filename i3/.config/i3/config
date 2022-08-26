@@ -36,16 +36,16 @@ assign [class="Code"] 2
 # assign [class="Emacs"] 2
 assign [class="icalingua"] 3
 assign [class="TelegramDesktop"] 3
-assign [instance="wechat.exe"] 4
 assign [class="Nutstore"] 3
+assign [instance="wechat.exe"] 4
 assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
-assign [class="wps"] 5
-assign [class="et"] 5
+# assign [class="wps"] 5
+# assign [class="et"] 5
 assign [class="smplayer"] 6
 assign [class="obsidian"] 7
 assign [class="obs"] 6
-assign [instance="jetbrains-idea"] 8
+# assign [instance="jetbrains-idea"] 8
 # assign [class="firefox"] $ws9
 
 ###

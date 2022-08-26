@@ -126,6 +126,7 @@ nmap S <Plug>(easymotion-bd-w)
 """"End""""
 " Toggle NERDTree
 nnoremap <leader>e :NERDTreeToggle<cr>
+nnoremap <C-n> :NERDTreeToggle<cr>
 nnoremap <C-e> :NERDTree<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━❰ end Plugins ❱━━━━━━━━━━━━━━━━━--
