@@ -6,9 +6,11 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      FiraCode Nerd Font
-bold_font        FiraCode Nerd Font
-italic_font      JetBrainsMono Nerd Font
+font_family      FiraCode Nerd Font Mono
+bold_font        FiraCode Nerd Font Mono
+# italic_font      JetBrainsMono Nerd Font
+# italic_font      UbuntuMono Nerd Font
+italic_font      FiraCode Nerd Font Mono
 bold_italic_font Operator Mono
 font_size 16.0
 remember_window_size  no
@@ -28,6 +30,6 @@ map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# GitHub Light
 include current-theme.conf
 # END_KITTY_THEME
