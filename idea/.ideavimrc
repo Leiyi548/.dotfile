@@ -322,6 +322,7 @@ nnoremap <leader>fs :action SaveDocument<cr>
 nnoremap <leader>ft mm`m:action FindInPath<cr>
 vnoremap <leader>ft mm`m:action FindInPath<cr>
 " 最近查看文件间相互跳转
+nnoremap ;r mm`m:action RecentFiles<cr>
 nnoremap <leader>fr mm`m:action RecentFiles<cr>
 " 查找用法
 <leader>fu :action FindUsages<cr>

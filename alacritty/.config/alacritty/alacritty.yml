@@ -61,7 +61,7 @@ live_config_reload: true
 # Tab 缩进
 tabspaces: 4
 # 背景透明度
-window.opacity: 1
+window.opacity: 0
 
 window:
   # 启动窗口大小
@@ -84,7 +84,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.9
+  opacity: 1.0
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:

@@ -2,7 +2,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term kitty
+set $term alacritty
 set $explorer thunr
 set $editor emacs
 
@@ -22,7 +22,7 @@ for_window [class="Wine"] floating enable
 for_window [class="Nutstore"] floating enable
 for_window [class="icalingua"] floating enable
 # for_window [class="jetbrains-idea"] floating enable
-for_window [class="TelegramDesktop"] floating enable  resize set 800 480
+for_window [class="TelegramDesktop"] floating enable
 for_window [class="yesplaymusic"] floating enable  resize set 800 480
 for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480
 for_window [class="Thunar"] floating enable  resize set 800 480
@@ -35,11 +35,11 @@ for_window [instance="feh"] floating enable  resize set 800 480
 assign [class="Code"] 2
 # assign [class="Emacs"] 2
 assign [class="icalingua"] 3
-assign [class="TelegramDesktop"] 3
 assign [class="Nutstore"] 3
 assign [instance="wechat.exe"] 4
 assign [class="netease-cloud-music"] 4
 assign [class="yesplaymusic"] 4
+assign [class="TelegramDesktop"] 5
 # assign [class="wps"] 5
 # assign [class="et"] 5
 assign [class="smplayer"] 6

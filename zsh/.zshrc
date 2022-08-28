@@ -128,6 +128,7 @@ export PAGER=bat
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status -s"
 alias vim="nvim"
+alias vi="vim"
 alias ra="ranger"
 alias ll="ls -la"
 alias s="neofetch"
