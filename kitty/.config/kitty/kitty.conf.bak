@@ -10,9 +10,9 @@
 # bold_font        FiraCode Nerd Font Mono
 # italic_font      JetBrainsMono Nerd Font
 # italic_font      UbuntuMono Nerd Font
-font_family      Operator Mono
+font_family      Operator Mono Lig
 bold_font        Operator Mono
-italic_font      Operator Mono
+italic_font      Operator Mono Lig
 bold_italic_font Operator Mono
 font_size 16.0
 remember_window_size  no
@@ -32,6 +32,6 @@ map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
 # BEGIN_KITTY_THEME
-# GitHub Light
+# Aquarium Dark
 include current-theme.conf
 # END_KITTY_THEME
