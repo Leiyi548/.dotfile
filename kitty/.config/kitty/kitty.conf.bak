@@ -6,11 +6,13 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      FiraCode Nerd Font Mono
-bold_font        FiraCode Nerd Font Mono
+# font_family      FiraCode Nerd Font Mono
+# bold_font        FiraCode Nerd Font Mono
 # italic_font      JetBrainsMono Nerd Font
 # italic_font      UbuntuMono Nerd Font
-italic_font      FiraCode Nerd Font Mono
+font_family      Operator Mono
+bold_font        Operator Mono
+italic_font      Operator Mono
 bold_italic_font Operator Mono
 font_size 16.0
 remember_window_size  no
