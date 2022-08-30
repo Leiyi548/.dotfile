@@ -1,11 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
+- /home/ewell/.config/nvim
+- /home/ewell/neovim-plugin/zephyr-nvim
+- /home/ewell/.local/share/nvim/site/pack/packer/start/material.nvim
+- /home/ewell/code/javascript
 - /home/ewell/Downloads/fonts/Font-Operator-Mono-Lig
 - /home/ewell/test
-- /home/ewell/code/javascript
 - /home/ewell/NOTE
-- /home/ewell/.config/nvim
 - /home/ewell/.local/share/nvim/site/pack/packer/start/zephyr-nvim
 - /home/ewell/code/50project50day
 - /home/ewell/tmp/neovim
