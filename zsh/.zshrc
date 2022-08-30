@@ -137,7 +137,7 @@ alias cls="clear"
 alias cl="clear"
 alias lg="lazygit"
 alias pacfzfs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
-alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro sudo yay -S"
+alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 
 
