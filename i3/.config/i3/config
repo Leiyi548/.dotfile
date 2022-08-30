@@ -53,15 +53,15 @@ assign [class="obs"] 6
 ###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-exec_always --no-startup-id flameshot
-exec_always --no-startup-id icalingua
-exec_always --no-startup-id obsidian
+# exec_always --no-startup-id icalingua
 # exec_always --no-startup-id nutstore
-exec_always --no-startup-id ~/.dotfile/script/feh.sh
 exec_always --no-startup-id Xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
+exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id xset dpms 333 666
 exec --no-startup-id fcitx5
+exec --no-startup-id flameshot
+exec --no-startup-id obsidian
 exec --no-startup-id picom
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
