@@ -45,23 +45,24 @@ assign [class="TelegramDesktop"] 5
 assign [class="smplayer"] 6
 assign [class="obsidian"] 7
 assign [class="obs"] 6
-# assign [instance="jetbrains-idea"] 8
+assign [instance="jetbrains-idea"] 8
 # assign [class="firefox"] $ws9
 
 ###
 ### 开机启动项目
 ###
+# 添加exec_always那么重新启动i3就会再启动一次
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-# exec_always --no-startup-id icalingua
 # exec_always --no-startup-id nutstore
-exec_always --no-startup-id Xfce4-power-manager
+exec --no-startup-id Xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
 exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id xset dpms 333 666
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
 exec --no-startup-id obsidian
+exec --no-startup-id icalingua
 exec --no-startup-id picom
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -154,7 +155,6 @@ bindsym mod4+g split v
 
 # use alt tab to switch recent workspace
 bindsym mod1+Tab workspace back_and_forth
-bindsym mod4+b workspace back_and_forth
 
 # use super+bracketleft/bracketright to previous/next workspace
 bindsym mod4+bracketleft workspace prev

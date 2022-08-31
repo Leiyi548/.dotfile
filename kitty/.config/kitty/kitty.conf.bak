@@ -30,7 +30,10 @@ map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
 
+# 使用 ctrl + 鼠标右键打开链接
+mouse_map ctrl+left press ungrabbed,grabbed mouse_click_url
+
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# GitHub Light
 include current-theme.conf
 # END_KITTY_THEME

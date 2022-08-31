@@ -532,3 +532,4 @@
 他妈	tama
 确认	qr
 文本	wb
+核酸	hesr
