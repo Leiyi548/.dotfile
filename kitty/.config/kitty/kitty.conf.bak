@@ -1,11 +1,3 @@
-# vim:fileencoding=utf-8:foldmethod=marker
-
-#: Fonts {{{
-
-#: kitty has very powerful font management. You can configure
-#: individual font faces and even specify special fonts for particular
-#: characters.
-
 # font_family      FiraCode Nerd Font Mono
 # bold_font        FiraCode Nerd Font Mono
 # italic_font      JetBrainsMono Nerd Font
@@ -15,11 +7,17 @@ bold_font        Operator Mono
 italic_font      Operator Mono Lig
 bold_italic_font Operator Mono
 font_size 16.0
+
+# Initial_window_size
 remember_window_size  no
 initial_window_width  1000
 initial_window_height 700
 confirm_os_window_close 0
 
+# NO BELLS!
+enable_audio_bell no
+
+# mapping
 map alt+j          scroll_line_down
 map alt+k          scroll_line_up
 map alt+page_up    scroll_page_up
@@ -31,7 +29,8 @@ map cmd+n          new_tab
 map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
+
 # BEGIN_KITTY_THEME
-# Aquarium Dark
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME
