@@ -37,11 +37,12 @@ assign [class="Code"] 2
 assign [class="icalingua"] 3
 assign [class="Nutstore"] 3
 assign [instance="wechat.exe"] 4
-assign [class="netease-cloud-music"] 4
-assign [class="yesplaymusic"] 4
-assign [class="TelegramDesktop"] 5
+assign [instance="Wine"] 4
 # assign [class="wps"] 5
 # assign [class="et"] 5
+assign [class="TelegramDesktop"] 5
+assign [class="netease-cloud-music"] 6
+assign [class="yesplaymusic"] 6
 assign [class="smplayer"] 6
 assign [class="obsidian"] 7
 assign [class="obs"] 6
@@ -49,7 +50,7 @@ assign [instance="jetbrains-idea"] 8
 # assign [class="firefox"] $ws9
 
 ###
-### 开机启动项目
+### 开机启动项目 (start up)
 ###
 # 添加exec_always那么重新启动i3就会再启动一次
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
@@ -57,8 +58,10 @@ exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
 # exec_always --no-startup-id nutstore
 exec --no-startup-id Xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
-exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id xset dpms 333 666
+# 设置壁纸
+exec --no-startup-id ~/.dotfile/script/feh.sh
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
 exec --no-startup-id obsidian
@@ -74,9 +77,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-###
-### 窗口边框
-###
+#===
+#=== 窗口边框
+#===
 new_window none
 new_float normal
 hide_edge_borders both
