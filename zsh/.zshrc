@@ -128,7 +128,10 @@ export PAGER=bat
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status -s"
 alias vim="nvim"
-alias vi="vim"
+# Sometimes I knock incorrect word
+alias v="nvim"
+alias vi="nvim"
+alias im="nvim"
 alias r="ranger"
 alias ra="ranger"
 alias ll="ls -la"
@@ -155,6 +158,8 @@ export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exc
 export PATH=~/.cargo/bin:$PATH
 # go
 export PATH=~/go/bin:$PATH
+# python pip install package
+export PATH=~/.local/bin:$PATH
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # autorun script

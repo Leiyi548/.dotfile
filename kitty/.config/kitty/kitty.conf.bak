@@ -17,6 +17,10 @@ confirm_os_window_close 0
 # NO BELLS!
 enable_audio_bell no
 
+# icon (for nvim-nonicons)
+symbol_map U+f101-U+f208 nonicons
+
+
 # mapping
 # scroll
 map alt+j          scroll_line_down
@@ -38,6 +42,6 @@ mouse_map ctrl+leftpress ungrabbed,grabbed mouse_click_url
 # copy_on_select clipboard
 
 # BEGIN_KITTY_THEME
-# GitHub Dark
+# GitHub Light
 include current-theme.conf
 # END_KITTY_THEME
