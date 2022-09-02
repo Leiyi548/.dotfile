@@ -18,22 +18,26 @@ confirm_os_window_close 0
 enable_audio_bell no
 
 # mapping
+# scroll
 map alt+j          scroll_line_down
 map alt+k          scroll_line_up
 map alt+page_up    scroll_page_up
 map alt+page_down  scroll_page_up
-map alt+home       scroll_home
-map alt+end        scroll_end
-map alt+end        scroll_end
+map ctrl+home       scroll_home
+map ctrl+end        scroll_end
+# tab
 map cmd+n          new_tab
 map alt+q          close_tab
 map alt+l          next_tab
 map alt+h          previous_tab
 
+# mouse_action
 # 使用 ctrl + 鼠标右键打开链接
-mouse_map ctrl+left press ungrabbed,grabbed mouse_click_url
+mouse_map ctrl+leftpress ungrabbed,grabbed mouse_click_url
+# use left mouse select text will copy context
+# copy_on_select clipboard
 
 # BEGIN_KITTY_THEME
-# GitHub Light
+# GitHub Dark
 include current-theme.conf
 # END_KITTY_THEME
