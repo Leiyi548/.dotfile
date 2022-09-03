@@ -149,6 +149,13 @@ alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 [ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
 # enable completion
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
+# more information please see https://github.com/junegunn/fzf/wiki/Color-schemes
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#6A737D,hl:#61AFEF
+    --color=fg+:#E36209,bg+:#CDE0F7,hl+:#4271AE
+    --color=info:#98C379,prompt:#4271AE,pointer:#D7005F
+    --color=marker:#4271AE,spinner:#4271AE,header:#4271AE'
+
 # fuzzy find(fzf) use C-o
 bindkey -s '\eo' "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
