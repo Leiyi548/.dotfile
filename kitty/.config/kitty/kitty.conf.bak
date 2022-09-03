@@ -42,6 +42,6 @@ mouse_map ctrl+leftpress ungrabbed,grabbed mouse_click_url
 # copy_on_select clipboard
 
 # BEGIN_KITTY_THEME
-# GitHub Light
+# Tokyo Night
 include current-theme.conf
 # END_KITTY_THEME

@@ -149,11 +149,12 @@ alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 [ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
 # enable completion
 [ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
-bindkey -s ^f "~/.dotfile/script/fv.sh -a\n"
+# fuzzy find(fzf) use C-o
+bindkey -s '\eo' "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 
-# path
+# Language Path
 # cargo
 export PATH=~/.cargo/bin:$PATH
 # go
