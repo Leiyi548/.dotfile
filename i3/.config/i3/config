@@ -177,10 +177,10 @@ bindsym mod4+t layout tabbed
 bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
 # 将当前窗口浮动显示
-bindsym mod4+f floating toggle
+bindsym mod4+e floating toggle
 bindsym mod4+button2 floating toggle
-# 全屏显示
-bindsym mod1+f fullscreen toggle
+# 全屏显示 (为emacs快捷键让步)
+bindsym mod4+f fullscreen toggle
 # 移动浮动窗口,也能移动平铺窗口不过后面是没有,只是移动位置
 bindsym $mod+Left move left 20 px
 bindsym $mod+Down move down 20 px
