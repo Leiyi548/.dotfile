@@ -127,6 +127,7 @@ export PAGER=bat
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gs="git status -s"
+# if you want use vim you can type \vim use vim
 alias vim="nvim"
 # Sometimes I knock incorrect word
 alias v="nvim"
