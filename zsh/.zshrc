@@ -104,7 +104,10 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-# z.lua
+
+#===
+#=== z.lua
+#===
 eval "$(lua ~/.dotfile/z.lua/z.lua  --init zsh once enhanced)"
 alias zc='z -c'      # 严格匹配当前路径的子路径
 alias zz='z -i'      # 使用交互式选择模式
@@ -112,20 +115,17 @@ alias zf='z -I'      # 使用 fzf 对多个结果进行选择
 alias zb='z -b'      # 快速回到父目录
 alias zh='z -I -t'   # 使用 fzf 搜索最近去过的目录
 
-# ranger
+# ===
+# === ranger
+# ===
 # use nvim as editor
 export VISUAL=nvim
 # use bat preview file
 export PAGER=bat
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# ===
+# === alias
+# ===
 alias gs="git status -s"
 # if you want use vim you can type \vim use vim
 alias vim="nvim"
@@ -145,35 +145,45 @@ alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S
 alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 
 
-# fzf configuration
-# fzf 判断是否存在，然后引用。
-[ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
-# enable completion
-[ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
+# ===
+# === fzf
+# ===
 # more information please see https://github.com/junegunn/fzf/wiki/Color-schemes
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#6A737D,hl:#61AFEF
     --color=fg+:#E36209,bg+:#2E323C,hl+:#4271AE
     --color=info:#98C379,prompt:#4271AE,pointer:#D7005F
     --color=marker:#4271AE,spinner:#4271AE,header:#4271AE'
-
-# fuzzy find(fzf) use C-o
-bindkey -s '\eo' "~/.dotfile/script/fv.sh -a\n"
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
+# fzf script
+[ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
+[ -f ~/.dotfile/script/completion.zsh ] && source ~/.dotfile/script/completion.zsh
+# fzf keybinding
+# bindkey -s '\es' "~/.dotfile/script/fv.sh -a\n"
+bindkey -s '\eo' "vim **^I"
+bindkey -s '\ek' "kill **^I"
 
-# Language Path
+# ===
+# === Language Path
+# ===
 # cargo
 export PATH=~/.cargo/bin:$PATH
 # go
 export PATH=~/go/bin:$PATH
 # python pip install package
 export PATH=~/.local/bin:$PATH
+
+# ===
+# === powerlevel10k
+# ===
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# autorun script
-# neofetch
-# nvm
+
+
+#===
+#=== nvm
+#===
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
