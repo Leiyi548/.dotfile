@@ -43,7 +43,8 @@ https://help.flypy.com/#/gn	orm
 <	;n
 >	;m
 #次选词
-安装	av
+# remove 9.2
+# 安装	av
 爱恨情仇	ahqi
 暗器	anqi
 背景	bj
@@ -926,7 +927,8 @@ https://help.flypy.com/#/gn	orm
 似水流年	suln
 四书五经	suwj
 三月份	syf
-推倒	td
+# remove (9.2)
+# 推倒	td
 推广	tg
 推荐	tj
 淘汰	tt
@@ -6737,7 +6739,8 @@ AA制	aav
 笨	bf
 甭	bg
 逼	bi
-备	bw
+# 备	bw
+背	bw
 猜	cd
 达	da
 道	dc
@@ -6772,6 +6775,7 @@ AA制	aav
 惹	re
 忍	rf
 扔	rg
+涩	se
 寺	si
 淘	tc
 替	ti

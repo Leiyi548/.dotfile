@@ -504,6 +504,9 @@
 生育	ugyu
 起点	qidm
 男朋友	npy
+核酸	hesr
+广丰	glfg
+初始化	iuh
 琳琅满目	llmm
 无知无畏	wvwy
 好逸恶劳	hyel
@@ -511,20 +514,18 @@
 朝气蓬勃	iqpb
 有滋有味	yzyw
 # 二重简码
-# 8 月 10 号
+# 9月2号 （小鹤音形的更新记录是会整和的）
 按键	aj
 回忆	hy
 版本	bb
 整句	vj
 即可	jk
 一边	yb
-# 8 月 19 号
 正在	vz
 周围	vw
-# 8 月 23 号
 自动	zd
 最终	zv
-及时	ju
+即使	ju
 其他	qt
 距离	jl
 想到	xd
@@ -532,6 +533,4 @@
 他妈	tama
 确认	qr
 文本	wb
-核酸	hesr
-广丰	glfg
-初始化	iuh
+推倒	td
