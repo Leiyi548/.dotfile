@@ -153,7 +153,7 @@ alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 # more information please see https://github.com/junegunn/fzf/wiki/Color-schemes
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#6A737D,hl:#61AFEF
-    --color=fg+:#E36209,bg+:#CDE0F7,hl+:#4271AE
+    --color=fg+:#E36209,bg+:#2E323C,hl+:#4271AE
     --color=info:#98C379,prompt:#4271AE,pointer:#D7005F
     --color=marker:#4271AE,spinner:#4271AE,header:#4271AE'
 
