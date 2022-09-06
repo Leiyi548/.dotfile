@@ -47,7 +47,7 @@ assign [class="smplayer"] 6
 assign [class="obsidian"] 7
 assign [class="obs"] 6
 assign [instance="jetbrains-idea"] 8
-# assign [class="firefox"] $ws9
+assign [class="com.alibabainc.dingtalk"] 9
 
 ###
 ### 开机启动项目 (start up)
