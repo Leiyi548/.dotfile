@@ -2,7 +2,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term kitty
+set $term wezterm
 set $explorer thunr
 set $editor emacs
 
@@ -287,8 +287,8 @@ bindsym mod4+r exec "rofi -show run"
 #===
 #=== Scratchpad
 #===
-exec --no-startup-id $term --class scratchpad
-bindsym $mod+minus exec $term --class scratchpad
+exec --no-startup-id kitty --class scratchpad
+bindsym $mod+minus exec kitty --class scratchpad
 for_window [class="scratchpad"] floating enable
 for_window [class="scratchpad"] resize set 925 480
 for_window [class="scratchpad"] move scratchpad
@@ -296,3 +296,4 @@ for_window [class="scratchpad"] move scratchpad
 bindsym $mod+Shift+o move scratchpad
 # Show the first scratchpad window
 bindsym $mod+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
+bindsym $mod+b scratchpad show
