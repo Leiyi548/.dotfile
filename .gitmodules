@@ -1,6 +1,9 @@
 [submodule "z.lua"]
 	path = z.lua
-	url = git@github.com:skywind3000/z.lua
+	url = https://github.com/skywind3000/z.lua
 [submodule "tmux/.tmux/themes/catppuccin"]
 	path = tmux/.tmux/themes/catppuccin
-	url = git@github.com:catppuccin/tmux.git
+	url = https://github.com/catppuccin/tmux
+[submodule "ranger/.config/ranger/plugins/ranger_devicons"]
+	path = ranger/.config/ranger/plugins/ranger_devicons
+	url = https://github.com/alexanderjeurissen/ranger_devicons
