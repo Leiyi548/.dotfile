@@ -54,14 +54,14 @@ schemes:
       cyan: '0x29b7da'
       white: '0xd1d5da'
 
-colors: *light
+colors: *dark
 
 # 自动刷新
 live_config_reload: true
 # Tab 缩进
 tabspaces: 4
 # 背景透明度
-window.opacity: 0
+# window.opacity: 1
 
 window:
   # 启动窗口大小
@@ -79,12 +79,12 @@ window:
   # 窗口修饰
   # - full: 有边界+标题栏
   # - none: 无边界+标题栏
-  decorations: none
+  decorations: full
   # Background opacity
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1.0
+  opacity: 1
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -116,19 +116,21 @@ font:
   draw_bold_text_with_bright_colors: true
   # 字体
   normal:
-    family: 'FiraCode Nerd Font'
+    # family: 'FiraCode Nerd Font'
+    family: 'Operator Mono Lig'
     # family: 'JetBrainsMono Nerd Font' # arch linux
     # family: 'JetBrainsMono Nerd Font Mono' # ubuntu wsl
     # style: Medium
     style: Regular
   bold:
-    family: 'FiraCode Nerd Font'
+    family: 'Operator Mono Lig'
+    # family: 'FiraCode Nerd Font'
     # family: 'JetBrainsMono Nerd Font Mono' # arch linux
     # family: 'JetBrainsMono Nerd Font' # ubuntu
     style: Bold
   italic:
-    family: 'JetBrainsMono Nerd Font'
-    # family: 'Operator Mono'
+    family: 'Operator Mono Lig'
+    # family: 'JetBrainsMono Nerd Font'
     # family: 'JetBrainsMono Nerd Font Mono' # for windows | ubuntu
     style: Italic
   bold_italic:

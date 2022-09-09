@@ -2,7 +2,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term wezterm
+# wezterm kitty alacritty
+set $term alacritty
 set $explorer thunr
 set $editor emacs
 
@@ -55,6 +56,7 @@ assign [class="com.alibabainc.dingtalk"] 9
 # 添加exec_always那么重新启动i3就会再启动一次
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
+exec_always --no-startup-id picom
 # exec_always --no-startup-id nutstore
 exec --no-startup-id Xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
@@ -64,9 +66,8 @@ exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
-exec --no-startup-id obsidian
+# exec --no-startup-id obsidian
 exec --no-startup-id icalingua
-exec --no-startup-id picom
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -122,7 +123,7 @@ floating_maximum_size -1 x -1
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
 # 手动切换壁纸
-bindsym mod4+w exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
+bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
 
 
 #===
@@ -168,7 +169,7 @@ bindsym mod4+bracketright workspace next
 #===
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
-bindsym mod4+Shift+t layout stacking
+bindsym mod4+Shift+tu layout stacking
 # 打开平铺模式
 bindsym mod4+s layout toggle split
 # 打开标签(tabbed)模式
@@ -178,7 +179,7 @@ bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
 # 将当前窗口浮动显示
 bindsym mod4+e floating toggle
-bindsym mod4+button2 floating toggle
+# bindsym mod4+button2 floating toggle
 # 全屏显示 (为emacs快捷键让步)
 bindsym mod4+f fullscreen toggle
 # 移动浮动窗口,也能移动平铺窗口不过后面是没有,只是移动位置
@@ -288,12 +289,12 @@ bindsym mod4+r exec "rofi -show run"
 #=== Scratchpad
 #===
 exec --no-startup-id kitty --class scratchpad
-bindsym $mod+minus exec kitty --class scratchpad
+bindsym mod4+minus exec kitty --class scratchpad
 for_window [class="scratchpad"] floating enable
 for_window [class="scratchpad"] resize set 925 480
 for_window [class="scratchpad"] move scratchpad
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+o move scratchpad
+bindsym mod4+Shift+o move scratchpad
 # Show the first scratchpad window
-bindsym $mod+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
-bindsym $mod+b scratchpad show
+bindsym mod4+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
+bindsym mod4+b scratchpad show
