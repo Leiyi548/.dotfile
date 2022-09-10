@@ -18,6 +18,7 @@ font pango:FiraCode Nerd Font 12
 # set float window
 # xprop | grep WM_CLASS
 # for_window [class="dida"] floating enable  resize set 800 480,move right 330px,move down 70px
+for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Nutstore"] floating enable
 # for_window [class="icalingua"] floating enable
@@ -122,6 +123,8 @@ floating_maximum_size -1 x -1
 
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
+# 文件管理
+bindsym mod4+e exec $term --class scratchpad -e ranger
 # 手动切换壁纸
 bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
 
@@ -177,8 +180,6 @@ bindsym mod4+t layout tabbed
 # 将tabbed 模式的所有应用以平铺方式显示出来
 bindsym mod4+x layout toggle all
 # bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
-# 将当前窗口浮动显示
-bindsym mod4+e floating toggle
 # bindsym mod4+button2 floating toggle
 # 全屏显示 (为emacs快捷键让步)
 bindsym mod4+f fullscreen toggle
@@ -190,7 +191,7 @@ bindsym $mod+Right move right 20 px
 # Move floating container to the center of all outputs
 bindsym mod4+c move absolute position center
 # 焦点在平铺桌面和浮动桌面进行切换
-bindsym mod1+space focus mode_toggle
+bindsym mod1+t focus mode_toggle
 
 
 # ===
