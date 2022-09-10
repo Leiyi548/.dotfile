@@ -1,9 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
+- /home/ewell/.config/nvim
 - /home/ewell/.local/share/nvim/site/pack/packer/start/tokyonight.nvim
 - /home/ewell/NOTE
-- /home/ewell/.config/nvim
 - /home/ewell/.local/share/nvim/site/pack/packer/start/zephyr-nvim
 - /home/ewell/.local/share/nvim/site/pack/packer/start/github-nvim-theme
 - /home/ewell/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua
