@@ -87,6 +87,12 @@ quitOnTopLevelReturn: false
 disableStartupPopups: false
 notARepository: 'skip' # one of: 'prompt' | 'create' | 'skip'
 promptToReturnFromSubprocess: true # display confirmation when subprocess terminates
+customCommands:
+  - key: 'Z'
+    command: 'cz commit'
+    context: 'files'
+    loadingText: 'opening commitizen commit tool'
+    subprocess: true
 keybinding:
   universal:
     quit: 'q'

@@ -132,6 +132,7 @@ alias vim="nvim"
 alias v="nvim"
 alias vi="nvim"
 alias im="nvim"
+alias vimzsh="vim ~/.zshrc"
 alias r="ranger"
 alias ra="ranger"
 alias ll="ls -la"
@@ -142,6 +143,16 @@ alias lg="lazygit"
 alias pacfzfs="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
 alias yayfzfs="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
+
+# tmux alias
+# alias tn="tmux new -s (pwd | sed 's/.*\///g')"
+alias tn "tmux new -s (pwd | sed 's/.*\///g')"
+alias ta="tmux attach -t"
+alias tad="tmux attach -d -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
 
 
 # ===
