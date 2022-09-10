@@ -81,7 +81,6 @@ plugins=(
 	git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	# z
 	fzf-tab
 )
 
@@ -148,13 +147,15 @@ alias weather="curl -H "Accept-Language: zh" wttr.in/nanchang"
 # ===
 # === fzf
 # ===
-# more information please see https://github.com/junegunn/fzf/wiki/Color-schemes
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-    --color=fg:#6A737D,hl:#61AFEF
-    --color=fg+:#E36209,bg+:#2E323C,hl+:#4271AE
-    --color=info:#98C379,prompt:#4271AE,pointer:#D7005F
-    --color=marker:#4271AE,spinner:#4271AE,header:#4271AE'
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
+--color=fg:#c0caf5,bg:#1a1b26,hl:#bb9af7
+--color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
+--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
+--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 # fzf script
 [ -f ~/.dotfile/script/key-bindings.zsh ] && source ~/.dotfile/script/key-bindings.zsh
