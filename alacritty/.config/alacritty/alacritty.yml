@@ -267,6 +267,7 @@ key_bindings:
   - { key: NumpadSubtract, mods: Control, action: DecreaseFontSize }
 
   # xxd -psd
+  # tmux
   # navigation index in tmux window
   - { key: Key1, mods: Control, chars: "\x01\x31" }
   - { key: Key2, mods: Control, chars: "\x01\x32" }
@@ -280,3 +281,5 @@ key_bindings:
   # switch with tmux window
   - { key: H, mods: Alt, chars: "\x01\x08" }
   - { key: L, mods: Alt, chars: "\x01\x0c" }
+  # Enter copy mode
+  - { key: Space, mods: Alt, chars: "\x01\x76" }
