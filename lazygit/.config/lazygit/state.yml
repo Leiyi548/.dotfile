@@ -1,11 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ewell/.dotfile
-- /home/ewell/tmp/dotfiles
 - /home/ewell/.config/nvim
 - /home/ewell/.local/share/nvim/site/pack/packer/start/tokyonight.nvim
+- /home/ewell/gitcommit
+- /home/ewell/test
 - /home/ewell/NOTE
+- /home/ewell/.local/share/nvim/site/pack/packer/start/nvim-treesitter
 - /home/ewell/.local/share/nvim/site/pack/packer/start/zephyr-nvim
+- /home/ewell/tmp/dotfiles
 - /home/ewell/.local/share/nvim/site/pack/packer/start/github-nvim-theme
 - /home/ewell/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua
 - /home/ewell/code/vue/01-learn-vue3.0
@@ -18,7 +21,6 @@ recentrepos:
 - /home/ewell/code/html
 - /home/ewell/myGithub/novel
 - /home/ewell/code/javascript
-- /home/ewell/test
 - /home/ewell/.local/share/nvim/site/pack/packer/start/lualine.nvim
 - /home/ewell/neovim-plugin/zephyr-nvim
 - /home/ewell/Downloads/fonts/Font-Operator-Mono-Lig
