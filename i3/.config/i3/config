@@ -5,13 +5,13 @@ set $mod Mod4
 # wezterm kitty alacritty
 set $term alacritty
 set $explorer thunr
-set $editor emacs
+set $editor code
 
 workspace_auto_back_and_forth no
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
-font pango:FiraCode Nerd Font 12
+font pango:FiraCode Nerd Font 13
 # ===
 # === 设置特定效果
 # ===
@@ -32,6 +32,12 @@ for_window [class="fcitx5-config-qt"] floating enable  resize set 800 480
 for_window [class="dida"] floating enable  resize set 800 480
 for_window [instance="crx_ikhdkkncnoglghljlkmcimlnlhkeamad"] floating enable  resize set 800 480
 for_window [instance="feh"] floating enable  resize set 800 480
+# Manjaro
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
 
 # 特定应用指定窗口
 assign [class="Code"] 2
@@ -54,42 +60,34 @@ assign [class="com.alibabainc.dingtalk"] 9
 ###
 ### 开机启动项目 (start up)
 ###
-# 添加exec_always那么重新启动i3就会再启动一次
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
-exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-exec_always --no-startup-id picom
 # exec_always --no-startup-id nutstore
-exec --no-startup-id Xfce4-power-manager
+exec --no-startup-id xfce4-power-manager
 # 系统闲置333秒后灭屏，666秒后系统挂起。
-exec --no-startup-id xset dpms 333 666
+# exec --no-startup-id xset dpms 333 666
 # 设置壁纸
 exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
-# exec --no-startup-id obsidian
+exec --no-startup-id clipit
 exec --no-startup-id icalingua
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec_always --no-startup-id fix_xcursor
+# exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec_always --no-startup-id ff-theme-util
+
 #===
 #=== 窗口边框
 #===
+
 new_window none
 new_float normal
 hide_edge_borders both
 #border width
 default_border pixel 4
-# border colors
+# border colors #3082F1
 # <colorclass> <border> <background> <text> <indicator> <child_border>
-client.focused #3082F1 #3082F1 #F8F8F2 #3082F1 #3082F1
+client.focused #16a085 #16a085 #F8F8F2 #16a085 #16a085
 client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
 client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
@@ -97,25 +95,23 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #===
 #=== i3-gaps 设定
 #===
-gaps inner 8
-gaps outer 2
+gaps inner 14
+gaps outer -2
 # 如果打开这个的话,如果你是只有一个窗口的话,那么就不显示 gaps 和 边框
 # smart_gaps on
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec "amixer -q set Master 10%+ unmute; notify-send 'volume Up'"
+bindsym XF86AudioLowerVolume exec "amixer -q set Master 10%- unmute; notify-send 'volume Down'"
+bindsym XF86AudioMute exec  "amixer -q set Master toggle;notify-send 'Toggle Mute'"
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "light -A 10; notify-send 'brightness Up'"
+bindsym XF86MonBrightnessDown exec "light -U 10; notify-send 'brightness Down'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 floating_minimum_size 100 x 100
 floating_maximum_size -1 x -1
-# start a terminal
 
 #===
 #=== 启动常用软件
@@ -127,7 +123,6 @@ bindsym mod4+Shift+Return exec $editor
 bindsym mod4+e exec $term --class scratchpad -e ranger
 # 手动切换壁纸
 bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
-
 
 #===
 #=== i3 基础键位
@@ -154,11 +149,9 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # split in horizontal orientation (like vim vsplit)
-bindsym mod4+v split h
-
+bindsym mod4+v split h;exec notify-send 'vsplit'
 # split in vertical orientation (like vim hsplit)
-bindsym mod4+g split v
-
+bindsym mod4+g split v;exec notify-send 'split'
 
 # use alt tab to switch recent workspace
 bindsym mod1+Tab workspace back_and_forth
@@ -170,9 +163,10 @@ bindsym mod4+bracketright workspace next
 #===
 #=== 布局切换
 #===
+
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
-bindsym mod4+Shift+tu layout stacking
+bindsym mod4+Shift+t layout stacking
 # 打开平铺模式
 bindsym mod4+s layout toggle split
 # 打开标签(tabbed)模式
@@ -233,6 +227,18 @@ bindsym mod1+Shift+8 move container to workspace number $ws8,workspace number $w
 bindsym mod1+Shift+9 move container to workspace number $ws9,workspace number $ws9
 bindsym mod1+Shift+0 move container to workspace number $ws10,workspace number $ws10
 
+# Move focused container to workspace
+bindsym mod1+Ctrl+1 move container to workspace $ws1
+bindsym mod1+Ctrl+2 move container to workspace $ws2
+bindsym mod1+Ctrl+3 move container to workspace $ws3
+bindsym mod1+Ctrl+4 move container to workspace $ws4
+bindsym mod1+Ctrl+5 move container to workspace $ws5
+bindsym mod1+Ctrl+6 move container to workspace $ws6
+bindsym mod1+Ctrl+7 move container to workspace $ws7
+bindsym mod1+Ctrl+8 move container to workspace $ws8
+bindsym mod1+Ctrl+9 move container to workspace $ws9
+bindsym mod1+Ctrl+0 move container to workspace $ws10
+
 # ===
 # === i3 配置加载/启动/关闭
 # ===
@@ -246,42 +252,36 @@ bindsym mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keyshhh
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keyshhh
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym mod4+r mode "default"
+# back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym mod4+r mode "default"
 }
 
 bindsym mod1+r mode "resize"
-
-# control light and  sound
-# bindsym mod4+a exec "light -A 10"
-# bindsym mod4+d exec "light -U 10"
-# bindsym mod4+shift+a exec "amixer -q set Master 5%+ unmute"
-# bindsym mod4+shift+d exec "amixer -q set Master 5%- unmute"
 
 bindsym F1 exec "flameshot gui"
 bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
-#rofi -modi drun,run -show drun rofi
+# rofi -modi drun,run -show drun rofi
 bindsym mod4+space exec "rofi -show drun"
 bindsym mod4+p exec "rofi -show window -modi drun"
 bindsym mod4+r exec "rofi -show run"
@@ -299,3 +299,28 @@ bindsym mod4+Shift+o move scratchpad
 # Show the first scratchpad window
 bindsym mod4+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
 bindsym mod4+b scratchpad show
+
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+bar {
+  i3bar_command i3bar
+    status_command i3status
+    position top
+## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#       tray_output primary
+#       tray_output eDP1
+    bindsym button4 nop
+    bindsym button5 nop
+#   font xft:URWGothic-Book 11
+    strip_workspace_numbers yes
+    colors {
+      background #222D31
+        statusline #F9FAF9
+        separator  #454947
+#                  border  backgr. text
+        focused_workspace  #F9FAF9 #16a085 #292F34
+        active_workspace   #595B5B #353836 #FDF6E3
+
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
+    }
+}
