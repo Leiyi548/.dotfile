@@ -153,6 +153,8 @@ nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 " 上下方法的移动
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
+inoremap C-b <left>
+inoremap C-f <right>
 " 多个项目窗口之间的移动
 nnoremap <leader>wp :action PreviousProjectWindow<cr>
 nnoremap <leader>wn :action NextProjectWindow<cr>
@@ -464,11 +466,11 @@ sethandler <C-S-6> a:ide
 sethandler <C-;> a:ide
 sethandler <C-S-;> a:ide
 sethandler <C-A> n:vim i:ide
-sethandler <C-B> a:ide
+sethandler <C-B> n:vim i:ide
 sethandler <C-C> a:ide
 sethandler <C-D> a:vim
 sethandler <C-E> a:vim
-sethandler <C-F> a:ide
+sethandler <C-F> n:vim i:ide
 sethandler <C-G> a:ide
 sethandler <C-H> a:vim
 sethandler <C-I> a:vim
