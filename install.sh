@@ -12,8 +12,6 @@ install_fonts(){
   else
     mkdir -p "$FDIR"
     cp -rf $DIR/fonts/* "$FDIR"
-	echo -e "\n[*] Installing Comic font ..."
-    yay -S install ttf-comic-mono-git
 }
 
 main(){
