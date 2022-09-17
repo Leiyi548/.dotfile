@@ -7,6 +7,7 @@ set ignorecase
 set noswapfile
 set so=8
 set mouse=a
+set clipboard="unnamedplus"
 
 let mapleader=" "
 set timeoutlen=500

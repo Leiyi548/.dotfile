@@ -85,7 +85,7 @@ schemes:
       - { index: 16, color: '0xff9e64' }
       - { index: 17, color: '0xdb4b4b' }
 
-colors: *dark
+colors: *tokynight
 
 # 自动刷新
 live_config_reload: true
@@ -143,19 +143,18 @@ scrolling:
   auto_scroll: true
 
 font:
-  size: 14
+  size: 12
   draw_bold_text_with_bright_colors: true
   # 字体
   normal:
-    # family: 'Comic Mono'
+    family: 'Comic Mono'
     # family: 'FiraCode Nerd Font'
     # family: 'Operator Mono Lig'
-    family: 'JetBrainsMono Nerd Font' # arch linux
+    # family: 'JetBrainsMono Nerd Font' # arch linux
     # family: 'JetBrainsMono Nerd Font Mono' # ubuntu wsl
     style: Regular # Medium
   bold:
-    family: 'JetBrainsMono Nerd Font' # arch linux
-    # family: 'Comic Mono'
+    family: 'Comic Mono'
     # family: 'Operator Mono Lig'
     # family: 'FiraCode Nerd Font'
     # family: 'JetBrainsMono Nerd Font Mono' # arch linux

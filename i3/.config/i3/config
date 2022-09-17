@@ -62,8 +62,6 @@ assign [class="com.alibabainc.dingtalk"] 9
 ###
 # exec_always --no-startup-id nutstore
 exec --no-startup-id xfce4-power-manager
-# 系统闲置333秒后灭屏，666秒后系统挂起。
-# exec --no-startup-id xset dpms 333 666
 # 设置壁纸
 exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id google-chrome-stable
@@ -73,7 +71,9 @@ exec --no-startup-id clipit
 exec --no-startup-id icalingua
 exec --no-startup-id nm-applet
 exec_always --no-startup-id fix_xcursor
-# exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker blurlock
+# 系统闲置333秒后灭屏，666秒后系统挂起。
+# exec --no-startup-id xset dpms 333 666
 # exec_always --no-startup-id ff-theme-util
 
 #===
@@ -95,8 +95,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 #===
 #=== i3-gaps 设定
 #===
-gaps inner 14
-gaps outer -2
+gaps inner 10
+gaps outer 6
 # 如果打开这个的话,如果你是只有一个窗口的话,那么就不显示 gaps 和 边框
 # smart_gaps on
 
@@ -279,6 +279,7 @@ bindsym mod1+r mode "resize"
 
 bindsym F1 exec "flameshot gui"
 bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
+bindsym mod4+9 exec --no-startup-id blurlock
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 # rofi -modi drun,run -show drun rofi
