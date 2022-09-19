@@ -41,9 +41,11 @@ for_window [urgent=latest] focus
 
 # 特定应用指定窗口
 assign [class="Code"] 2
+assign [class="jetbrains-webstorm"] 2
 # assign [class="Emacs"] 2
-assign [class="icalingua"] 3
-assign [class="Nutstore"] 3
+assign [instance="jetbrains-idea"] 3
+assign [class="icalingua"] 4
+assign [class="Nutstore"] 4
 assign [instance="wechat.exe"] 4
 assign [instance="Wine"] 4
 # assign [class="wps"] 5
@@ -54,12 +56,13 @@ assign [class="yesplaymusic"] 6
 assign [class="smplayer"] 6
 assign [class="obsidian"] 7
 assign [class="obs"] 6
-assign [instance="jetbrains-idea"] 8
 assign [class="com.alibabainc.dingtalk"] 9
 
 ###
 ### 开机启动项目 (start up)
 ###
+# polybar
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 # exec_always --no-startup-id nutstore
 exec --no-startup-id xfce4-power-manager
 # 设置壁纸
@@ -173,8 +176,7 @@ bindsym mod4+s layout toggle split
 bindsym mod4+t layout tabbed
 # 将tabbed 模式的所有应用以平铺方式显示出来
 bindsym mod4+x layout toggle all
-# bindsym mod4+m exec "~/.cargo/bin/i3-autolayout tabmode --file-layout ~/tmp/i3-autolayout-tabmode.save"
-# bindsym mod4+button2 floating toggle
+bindsym $mod+w floating toggle
 # 全屏显示 (为emacs快捷键让步)
 bindsym mod4+f fullscreen toggle
 # 移动浮动窗口,也能移动平铺窗口不过后面是没有,只是移动位置
@@ -185,7 +187,7 @@ bindsym $mod+Right move right 20 px
 # Move floating container to the center of all outputs
 bindsym mod4+c move absolute position center
 # 焦点在平铺桌面和浮动桌面进行切换
-bindsym mod1+t focus mode_toggle
+bindsym mod1+space focus mode_toggle
 
 
 # ===

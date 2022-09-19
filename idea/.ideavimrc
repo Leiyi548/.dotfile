@@ -282,8 +282,18 @@ nnoremap <leader>wt :action ActivateTODOToolWindow<cr>
 " vim窗口操作
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+"nnoremap <C-h> <C-W>h
+"nnoremap <C-l> <C-W>l
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+
+nnoremap <leader>wv :vsplit<cr>
+nnoremap <leader>wd  <C-W>d
+nnoremap <leader>wc  <C-W>c
+nnoremap <leader>wh  <C-w>h
+nnoremap <leader>wj  <C-w>j
+nnoremap <leader>wk  <C-w>k
+nnoremap <leader>wl  <C-w>l
 nnoremap sc <C-W>c
 nnoremap sv :vsplit<cr>
 nnoremap sg :split<cr>
@@ -406,7 +416,7 @@ nnoremap gl :action ShowErrorDescription<cr>
 " 弹出参数信息(打类的时候有奇效)
 nnoremap gp :action ParameterInfo<cr>
 " 弹出类型定义
-nnoremap gt mm`m:action GotoTypeDeclaration<cr>
+" nnoremap gt mm`m:action GotoTypeDeclaration<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ end LSP ❱━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
