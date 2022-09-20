@@ -65,7 +65,7 @@ assign [class="com.alibabainc.dingtalk"] 9
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 # exec_always --no-startup-id nutstore
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
 exec --no-startup-id xfce4-power-manager
 # 设置壁纸
 exec --no-startup-id ~/.dotfile/script/feh.sh

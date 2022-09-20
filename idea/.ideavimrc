@@ -90,10 +90,13 @@ set clipboard=unnamedplus,unnamed
 " ===
 " === easymotion
 " ===
-nmap ss <Plug>(easymotion-s2)
-nmap sl <Plug>(easymotion-bd-jk)
-nmap S <Plug>(easymotion-bd-w)
-nmap sw <Plug>(easymotion-bd-w)
+nmap ;f <Plug>(easymotion-bd-w)
+nmap ;g <Plug>(easymotion-bd-jk)
+nmap ;j <Plug>(easymotion-s2)
+" nmap ss <Plug>(easymotion-s2)
+" nmap sl <Plug>(easymotion-bd-jk)
+" nmap S <Plug>(easymotion-bd-w)
+" nmap sw <Plug>(easymotion-bd-w)
 " nmap E <Plug>(easymotion-s)
 " use easymotion to replace orginal f F t T
 " nmap f <Plug>(easymotion-fl)
@@ -186,7 +189,7 @@ nnoremap <leader>yr :action CopyReference<cr>
 vnoremap Y y$
 nnoremap Y y$
 " 插入模式粘贴
-inoremap <C-v> <esc>"+pa
+" inoremap <C-v> <esc>"+pa
 " 其他模式快速移动
 nnoremap H ^
 nnoremap L $
