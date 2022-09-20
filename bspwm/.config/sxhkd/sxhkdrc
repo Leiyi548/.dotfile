@@ -187,7 +187,7 @@ super + p
   rofi -theme ~/.config/awesome/rofis/rofi/config.rasi  -show window
 
 super + u
-  i3lock -i ~/.dotfile/wallpaper/lock.png
+  i3lock -i ~/.dotfile/lock/02.png
 
 F1
   flameshot gui

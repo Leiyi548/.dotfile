@@ -3,7 +3,7 @@
 
 set $mod Mod4
 # wezterm kitty alacritty
-set $term alacritty
+set $term kitty
 set $explorer thunr
 set $editor code
 
@@ -64,6 +64,8 @@ assign [class="com.alibabainc.dingtalk"] 9
 # polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 # exec_always --no-startup-id nutstore
+exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
+exec_always --no-startup-id picom
 exec --no-startup-id xfce4-power-manager
 # 设置壁纸
 exec --no-startup-id ~/.dotfile/script/feh.sh
@@ -115,6 +117,20 @@ bindsym XF86MonBrightnessDown exec "light -U 10; notify-send 'brightness Down'"
 floating_modifier $mod
 floating_minimum_size 100 x 100
 floating_maximum_size -1 x -1
+
+#===
+#=== mouse keybinding
+#===
+
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
+# The middle button and a modifer over any part of the window kills the window
+bindsym --whole-window $mod+button2 kill
+
+# The right button toggles floating
+bindsym button3 floating toggle
+bindsym $mod+button3 floating toggle
 
 #===
 #=== 启动常用软件
@@ -176,9 +192,9 @@ bindsym mod4+s layout toggle split
 bindsym mod4+t layout tabbed
 # 将tabbed 模式的所有应用以平铺方式显示出来
 bindsym mod4+x layout toggle all
-bindsym $mod+w floating toggle
+bindsym $mod+f floating toggle
 # 全屏显示 (为emacs快捷键让步)
-bindsym mod4+f fullscreen toggle
+bindsym mod1+f fullscreen toggle
 # 移动浮动窗口,也能移动平铺窗口不过后面是没有,只是移动位置
 bindsym $mod+Left move left 20 px
 bindsym $mod+Down move down 20 px

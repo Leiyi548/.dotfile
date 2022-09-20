@@ -128,7 +128,7 @@ nmap sw <Plug>(easymotion-bd-w)
 nnoremap <leader>e :NERDTreeToggle<cr>
 " Change idea setting
 nnoremap <C-n> :NERDTreeToggle<cr>
-nnoremap <C-e> :NERDTree<cr>
+" nnoremap <C-e> :NERDTree<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━❰ end Plugins ❱━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
@@ -154,6 +154,9 @@ nnoremap <leader>os :action ActivateStructureToolWindow<cr>
 " 上下方法的移动
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
+nnoremap <C-k> :action MethodUp<cr>
+nnoremap <C-j> :action MethodDown<cr>
+" emacs style move
 inoremap C-b <left>
 inoremap C-f <right>
 " 多个项目窗口之间的移动
@@ -280,8 +283,8 @@ nnoremap <leader>wd :action ActivateDebugToolWindow<cr>
 "激活todo的窗口
 nnoremap <leader>wt :action ActivateTODOToolWindow<cr>
 " vim窗口操作
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
+"nnoremap <C-j> <C-W>j
+"nnoremap <C-k> <C-W>k
 "nnoremap <C-h> <C-W>h
 "nnoremap <C-l> <C-W>l
 nnoremap <C-h> gT
@@ -367,9 +370,10 @@ nnoremap <leader>fm :action ShowBookmarks<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-nnoremap ;w :action NextTab<cr>
-nnoremap ;s :action PreviousTab<cr>
+" nnoremap ;w :action NextTab<cr>
+" nnoremap ;s :action PreviousTab<cr>
 " buffer之间跳转
+nnoremap ;s :e #<cr>
 nnoremap <leader>bb mm`m:action Switcher<cr>
 "关闭到只剩当前tab栏 close other buffer
 nnoremap <leader>bk :action CloseEditor<cr>
@@ -467,6 +471,17 @@ nnoremap <leader>ie :action EmojiPicker.Open<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ end  ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+" 驼峰删除，idea自带是[w ]w
+map ;w [w
+map c;w c[w
+map ;b [b
+map c;b c[b
+
+nmap g; :action JumpToLastChange<cr>
+nmap g, :action JumpToNextChange<cr>
+
+
 """ option config ----------------------------
 " Don't use Ex mode, use Q for formatting.
 map Q gq

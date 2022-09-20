@@ -104,14 +104,12 @@ schemes:
       cyan: "#56b6c2"
       white: "#bfc5ce"
 
-colors: *onedarkpro
+colors: *dark
 
 # 自动刷新
 live_config_reload: true
 # Tab 缩进
 tabspaces: 4
-# 背景透明度
-# window.opacity: 1
 
 window:
   # 启动窗口大小
@@ -134,7 +132,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 1
+  opacity: 1.0
   # Startup Mode (changes require restart)
   #
   # Values for `startup_mode`:
@@ -146,7 +144,7 @@ window:
   # Window title
   # title: Alacritty-neovim
   # Allow terminal applications to change Alacritty's window title.
-  dynamic_title: false
+  dynamic_title: true
 
 scrolling:
   # 历史保留行数
