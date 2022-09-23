@@ -1,13 +1,16 @@
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           logo                           │
+" ╰──────────────────────────────────────────────────────────╯
 "                                  __                                                         "
 "     ___     ___    ___   __  __ /\_\    ___ ___                                             "
 "    / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\                                           "
 "   /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \                                          "
 "   \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\                                         "
 "    \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/                                         "
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ 替换小技巧 ❱━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+
+" ╭──────────────────────────────────────────────────────────╮
+" │                        substitute                        │
+" ╰──────────────────────────────────────────────────────────╯
 "  :s/old/new - 用new替换当前行第一个old。
 "  :s/old/new/g - 用new替换当前行所有的old。
 "  :n3,n2s/old/new/g - 用new替换文件n1行到n2行所有的old。
@@ -15,14 +18,13 @@
 "  :%s/^/xxx/g - 在每一行的行首插入xxx，^表示行首。
 "  :%s/$/xxx/g - 在每一行的行尾插入xxx，$表示行尾。
 "  有替换命令末尾加上c，每个替换都将需要用户确认。 如：%s/old/new/gc，加上i则忽略大小写(ignore)。
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Setting ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-" 设置leader键为空格
+" ╭──────────────────────────────────────────────────────────╮
+" │                         setting                          │
+" ╰──────────────────────────────────────────────────────────╯
 let mapleader=" "
 set timeoutlen=500
 " 防止按leader键乱移动
-nnoremap <SPACE> <nop>
+nmap <SPACE> <nop>
 " 相对数字
 set number
 set relativenumber
@@ -36,13 +38,20 @@ set incsearch
 set ignorecase
 " 显示模式
 "set showmode
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end Setting ❱━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ UI and Terminal ❱━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+set clipboard+=ideaputset clipboard+=ideaput
+" ╭──────────────────────────────────────────────────────────╮
+" │                       vim buitlin                        │
+" ╰──────────────────────────────────────────────────────────╯
+" 取消高亮
+nnoremap <leader>h :nohl<cr>
+" 显示jumpList
+nnoremap <leader>fj :jumps<cr>
+" fold
+vnoremap za :action CollapseSelection<cr>
+nnoremap zd :action CollapseDocComments<cr>
+" ╭──────────────────────────────────────────────────────────╮
+" │                     UI and Terminal                      │
+" ╰──────────────────────────────────────────────────────────╯
 " change colorscheme
 nnoremap <leader>sc :action ChangeColorScheme<cr>
 " 改变视图
@@ -50,17 +59,9 @@ nnoremap <leader>Z :action ChangeView<cr>
 nnoremap <leader>z :action ToggleDistractionFreeMode<cr>
 " focus terminal
 " nnoremap <c-t> :action ActivateTerminalToolWindow<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end UI and Terminal ❱━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Plugins ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-" ===
-" === Open Plugins
-" ===
-" reference: https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+" ╭──────────────────────────────────────────────────────────╮
+" │                         Plugins                          │
+" ╰──────────────────────────────────────────────────────────╯
 set ideajoin
 set NERDTree
 set surround
@@ -76,9 +77,9 @@ set textobj-entire
 set textobj-indent
 set matchit
 set clipboard=unnamedplus,unnamed
-" ===
-" === multiple-cursors
-" ===
+" ╭──────────────────╮
+" │ multiple-cursors │
+" ╰──────────────────╯
 " 目前使用默认键位
 " <A-n> start multiple-cursor | next match
 " <A-x> skip this match
@@ -87,9 +88,9 @@ set clipboard=unnamedplus,unnamed
 " map mc <A-n>
 " map mc <A-x>
 " map mc <A-p>
-" ===
-" === easymotion
-" ===
+" ╭────────────╮
+" │ easymotion │
+" ╰────────────╯
 nmap ;f <Plug>(easymotion-bd-w)
 nmap ;g <Plug>(easymotion-bd-jk)
 nmap ;j <Plug>(easymotion-s2)
@@ -109,10 +110,9 @@ nmap ;j <Plug>(easymotion-s2)
 " vmap F <Plug>(easymotion-Fl)
 " vmap t <Plug>(easymotion-tl)
 " vmap T <Plug>(easymotion-Tl)
-
-" ===
-" === NERDTree
-" ===
+" ╭──────────╮
+" │ NERDTree │
+" ╰──────────╯
 """"Usage""""
 " o <key> open menu in NERDTree
 " O <key> Recursively open the selected directory
@@ -132,37 +132,47 @@ nnoremap <leader>e :NERDTreeToggle<cr>
 " Change idea setting
 nnoremap <C-n> :NERDTreeToggle<cr>
 " nnoremap <C-e> :NERDTree<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end Plugins ❱━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━❰ Open ❱━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                        Open                              │
+" ╰──────────────────────────────────────────────────────────╯
 " 弹出文件结构信息(相当于显示大纲)
 nnoremap <leader>oo mm`m:action FileStructurePopup<cr>
 nnoremap <leader>os :action ActivateStructureToolWindow<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━❰ end Open ❱━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Move ❱━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           move                           │
+" ╰──────────────────────────────────────────────────────────╯
+" ╭───────────────────────╮
+" │ I hate click this key │
+" ╰───────────────────────╯
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
+vnoremap Y y$
+nnoremap Y y$
+nnoremap > >>
+nnoremap < <<
+vnoremap > >gv
+vnoremap < <gv
+nmap g; :action JumpToLastChange<cr>
+nmap g, :action JumpToNextChange<cr>
+" ╭──────────────────╮
+" │ emacs style move │
+" ╰──────────────────╯
+inoremap C-b <left>
+inoremap C-f <right>
+" ╭─────────────╮
+" │ Method Jump │
+" ╰─────────────╯
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
 " 取消vim s键原生映射
 " nnoremap s <Nop>
 " vnoremap s <Nop>
 " xnoremap s <Nop>
-" 上下方法的移动
-nnoremap [m :action MethodUp<cr>
-nnoremap ]m :action MethodDown<cr>
-nnoremap <C-k> :action MethodUp<cr>
-nnoremap <C-j> :action MethodDown<cr>
-" emacs style move
-inoremap C-b <left>
-inoremap C-f <right>
-" 多个项目窗口之间的移动
+" ╭──────────────╮
+" │ Project Jump │
+" ╰──────────────╯
 nnoremap <leader>wp :action PreviousProjectWindow<cr>
 nnoremap <leader>wn :action NextProjectWindow<cr>
 nnoremap [e :action PreviousProjectWindow<cr>
@@ -170,52 +180,36 @@ nnoremap ]e :action PreviousProjectWindow<cr>
 " 左右移动视野
 nnoremap zh :action EditorScrollLeft<cr>
 nnoremap zl :action EditorScrollRight<cr>
+" ╭───────────╮
+" │ move Line │
+" ╰───────────╯
 " 像vscode一样行移动
 vnoremap J :action MoveLineDown<cr>
 vnoremap K :action MoveLineUp<cr>
-" 多行缩进在visual mode
-nnoremap > >gv
-vnoremap < <gv
 " copy reference
 nnoremap <leader>yr :action CopyReference<cr>
-" 复制粘贴剪贴板
-"nnoremap <leader>y "+y
-"nnoremap <leader>yy "+yy
-" nnoremap <leader>p "+p
-" nnoremap <leader>P "+P
-" vnoremap <leader>y "+y
-" vnoremap <leader>p "+p
-" vnoremap <leader>P "+p
-vnoremap Y y$
-nnoremap Y y$
 " 插入模式粘贴
 " inoremap <C-v> <esc>"+pa
 " 其他模式快速移动
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L $
 " 快速进行缩进
-nnoremap > >>
-nnoremap < <<
 " 更好的n N效果
 nnoremap n nzz
 nnoremap N Nzz
 " 更好的J效果
 nnoremap J mzJ`z
+" ╭──────────────────────────────────────────────────────────╮
+" │                      custom textobj                      │
+" ╰──────────────────────────────────────────────────────────╯
 " 快速选择一行操作不包括换行
 nnoremap cil ^C
 nnoremap dil ^D
-" 后退功能
-"nnoremap <leader>gb :action Back<cr>
-"nnoremap <leader>gb :action JumpToLastChange<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end Move ❱━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Debug ❱━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+map ;w [w
+map c;w c[w
+map ;b [b
+map c;b c[b
+" ╭──────────────────────────────────────────────────────────╮
+" │                          Debug                           │
+" ╰──────────────────────────────────────────────────────────╯
 " 打上断点或取消断点
 nnoremap <leader>dt :action ToggleLineBreakpoint<cr>
 " 取消所有的断点
@@ -239,13 +233,9 @@ nnoremap <leader>du :action StepOut<cr>
 nnoremap <leader>dc :action ForceRunToCursor<cr>
 " 结束debug
 nnoremap <leader>dq :action Stop<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end Debug ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Run ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           Run                            │
+" ╰──────────────────────────────────────────────────────────╯
 " 设置运行配置 (未知)
 nnoremap <leader>rc :action RunConfiguration<cr>
 " 运行上次运行类
@@ -257,10 +247,6 @@ nnoremap <leader>ru :action EditorPopupMenu.Run<cr>
 " 停止运行
 nnoremap <leader>rp :action Stop<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━❰ end Run ❱━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ 重构篇 ❱━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 " 抽取方法重构(不熟悉)
@@ -270,10 +256,40 @@ nnoremap <leader>rp :action Stop<cr>
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━❰ end 重构篇 ❱━━━━━━━━━━━━━━━━--
 "--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ 窗口篇 ❱━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                          Window                          │
+" ╰──────────────────────────────────────────────────────────╯
+" ╭─────────────╮
+" │ jump window │
+" ╰─────────────╯
+" vim窗口操作
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+nnoremap <leader>wh  <C-w>h
+nnoremap <leader>wj  <C-w>j
+nnoremap <leader>wk  <C-w>k
+nnoremap <leader>wl  <C-w>l
+" ╭──────────────╮
+" │ split window │
+" ╰──────────────╯
+nnoremap <leader>ws :split<cr>
+nnoremap <leader>wv :vsplit<cr>
+nnoremap <leader>wd  <C-W>d
+nnoremap <leader>wc  <C-W>c
+nnoremap sv :vsplit<cr>
+nnoremap sg :split<cr>
+nnoremap su :action UnsplitAll<cr>
+" ╭──────────────╮
+" │ close window │
+" ╰──────────────╯
+nnoremap sc <C-W>c
+nnoremap <leader>wd  <C-w>c
+nnoremap <leader>wc  <C-w>c
+" ╭───────────────╮
+" │ active window │
+" ╰───────────────╯
 " 激活run的运行窗口
 nnoremap <leader>wr  :action ActivateRunToolWindow<cr>
 " 隐藏窗口(windows hide)
@@ -285,32 +301,9 @@ nnoremap <leader>wd :action ActivateDebugToolWindow<cr>
 " nnoremap <leader>z :action MaximizeToolWindow<cr>
 "激活todo的窗口
 nnoremap <leader>wt :action ActivateTODOToolWindow<cr>
-" vim窗口操作
-"nnoremap <C-j> <C-W>j
-"nnoremap <C-k> <C-W>k
-"nnoremap <C-h> <C-W>h
-"nnoremap <C-l> <C-W>l
-nnoremap <C-h> gT
-nnoremap <C-l> gt
-
-nnoremap <leader>wv :vsplit<cr>
-nnoremap <leader>wd  <C-W>d
-nnoremap <leader>wc  <C-W>c
-nnoremap <leader>wh  <C-w>h
-nnoremap <leader>wj  <C-w>j
-nnoremap <leader>wk  <C-w>k
-nnoremap <leader>wl  <C-w>l
-nnoremap sc <C-W>c
-nnoremap sv :vsplit<cr>
-nnoremap sg :split<cr>
-nnoremap su :action UnsplitAll<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end 窗口篇 ❱━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ create ❱━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           New                            │
+" ╰──────────────────────────────────────────────────────────╯
 " 新建类
 nnoremap <leader>nc :action NewClass<cr>
 " 新建项目
@@ -324,13 +317,9 @@ nnoremap <leader>ny :action CopyElement<cr>
 " 代码环绕(快速添加if 或者while)
 nnoremap <leader>ns :action SurroundWith<cr>
 vnoremap <leader>ns :action SurroundWith<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end create ❱━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ 文件和跳转 ❱━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           File                           │
+" ╰──────────────────────────────────────────────────────────╯
 " 重命名文件
 nnoremap <leader>rn :action RenameFile<cr>
 " 查找文件
@@ -341,10 +330,40 @@ nnoremap <leader>fs :action SaveDocument<cr>
 nnoremap <leader>ft mm`m:action FindInPath<cr>
 vnoremap <leader>ft mm`m:action FindInPath<cr>
 " 最近查看文件间相互跳转
-nnoremap ;r mm`m:action RecentFiles<cr>
 nnoremap <leader>fr mm`m:action RecentFiles<cr>
 " 查找用法
-<leader>fu :action FindUsages<cr>
+nnoremap <leader>fu :action FindUsages<cr>
+" ╭──────────────────────────────────────────────────────────╮
+" │                          Buffer                          │
+" ╰──────────────────────────────────────────────────────────╯
+" ╭─────────────╮
+" │ jump buffer │
+" ╰─────────────╯
+nnoremap Tab :action NextTab<cr>
+nnoremap S-Tab :action PreviousTab<cr>
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+" ╭──────────────────────╮
+" │ Switch recent buffer │
+" ╰──────────────────────╯
+" buffer之间跳转
+nnoremap ;s :e #<cr>
+" ╭──────────────╮
+" │ close buffer │
+" ╰──────────────╯
+nnoremap <leader>bk :action CloseEditor<cr>
+nnoremap <leader>bK :action ReopenClosedTab<cr>
+nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
+" ╭──────────────────────────────────────────────────────────╮
+" │                         lsp jump                         │
+" ╰──────────────────────────────────────────────────────────╯
 "跳转到声明
 nnoremap gd mm`m:action GotoDeclaration<cr>
 " 打开General菜单
@@ -366,40 +385,6 @@ nnoremap <leader>fm :action ShowBookmarks<cr>
 " cmd + [ (mac) ctrl + [ (windows)
 " 跳转下一个位置
 " cmd + ] (mac) ctrl + ] (windows)
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end 文件和跳转 ❱━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-" nnoremap ;w :action NextTab<cr>
-" nnoremap ;s :action PreviousTab<cr>
-" buffer之间跳转
-nnoremap ;s :e #<cr>
-nnoremap <leader>bb mm`m:action Switcher<cr>
-"关闭到只剩当前tab栏 close other buffer
-nnoremap <leader>bk :action CloseEditor<cr>
-nnoremap <leader>bK :action ReopenClosedTab<cr>
-nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
-" 使用tab键快速切换buffers
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader>4 4gt
-nnoremap <leader>5 5gt
-nnoremap <leader>6 6gt
-nnoremap <leader>7 7gt
-nnoremap <leader>8 8gt
-nnoremap <leader>9 9gt
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end Buffer ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ LSP ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
 " 显示action
 nnoremap <leader>; :action GotoAction<cr>
 " 格式化代码
@@ -424,13 +409,9 @@ nnoremap gl :action ShowErrorDescription<cr>
 nnoremap gp :action ParameterInfo<cr>
 " 弹出类型定义
 " nnoremap gt mm`m:action GotoTypeDeclaration<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end LSP ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Git ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
+" ╭──────────────────────────────────────────────────────────╮
+" │                           Git                            │
+" ╰──────────────────────────────────────────────────────────╯
 " 显示git菜单
 nnoremap <leader>gm :action Git.Menu<cr>
 nnoremap <leader>ga :action Git.Add<cr>
@@ -441,25 +422,8 @@ nnoremap <leader>gB :action Github.Open.In.Browser<cr>
 " git-gutter emulation
 nnoremap ]d :action VcsShowNextChangeMarker<cr>
 nnoremap [d :action VcsShowPrevChangeMarker<cr>
-" nnoremap <leader>hu :action Vcs.RollbackChangedLines<cr>
+nnoremap <leader>gr :action Vcs.RollbackChangedLines<cr>
 " nnoremap <leader>hp :action Vcs.ShowHistoryForBlock<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end Git ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ Fold ❱━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-vnoremap za :action CollapseSelection<cr>
-nnoremap zd :action CollapseDocComments<cr>
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end Fold ❱━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-" 取消高亮
-nnoremap <leader>h :nohl<cr>
-" 显示jumpList
-nnoremap <leader>fj :jumps<cr>
 " 显示 history
 nnoremap <leader>sh :action LocalHistory<cr>
 " 相当于鼠标右键
@@ -468,23 +432,16 @@ nnoremap <leader>sp :action ShowPopupMenu<cr>
 nnoremap <leader>st :action ExpressionTypeInfo<cr>
 " Select in
 nnoremap <leader>si :action SelectIn<cr>
-" insert emoji
+" ╭──────────────────────────────────────────────────────────╮
+" │                          Insert                          │
+" ╰──────────────────────────────────────────────────────────╯
+" ╭───────╮
+" │ emoji │
+" ╰───────╯
 nnoremap <leader>ie :action EmojiPicker.Open<cr>
-
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━❰ end  ❱━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-"--━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━--
-
-" 驼峰删除，idea自带是[w ]w
-map ;w [w
-map c;w c[w
-map ;b [b
-map c;b c[b
-
-nmap g; :action JumpToLastChange<cr>
-nmap g, :action JumpToNextChange<cr>
-
-
+" ╭──────────────────────────────────────────────────────────╮
+" │                    ide vim keybinding                    │
+" ╰──────────────────────────────────────────────────────────╯
 """ option config ----------------------------
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -523,4 +480,4 @@ sethandler <C-[> a:ide
 sethandler <C-]> a:ide
 sethandler <C-\> a:ide
 sethandler <Tab> n:vim i-x:ide
-sethandler <S-Tab> n:vim i-x:ideset clipboard+=ideaputset clipboard+=ideaput
+sethandler <S-Tab> n:vim i-x:ide

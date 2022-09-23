@@ -1,23 +1,24 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                      basic setting                       │
+#  ╰──────────────────────────────────────────────────────────╯
 set $mod Mod4
 # wezterm kitty alacritty
 set $term kitty
 set $explorer thunr
 set $editor code
-
 workspace_auto_back_and_forth no
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
 font pango:FiraCode Nerd Font 13
-# ===
-# === 设置特定效果
-# ===
-# set float window
-# xprop | grep WM_CLASS
-# for_window [class="dida"] floating enable  resize set 800 480,move right 330px,move down 70px
+
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                   assign float window                    │
+#  ╰──────────────────────────────────────────────────────────╯
 for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Nutstore"] floating enable
@@ -35,11 +36,12 @@ for_window [instance="feh"] floating enable  resize set 800 480
 # Manjaro
 for_window [class="Manjaro-hello"] floating enable
 for_window [class="Manjaro Settings Manager"] floating enable border normal
-
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# 特定应用指定窗口
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                  assign special workspace                │
+#  ╰──────────────────────────────────────────────────────────╯
 assign [class="Code"] 2
 assign [class="jetbrains-webstorm"] 2
 # assign [class="Emacs"] 2
@@ -58,9 +60,9 @@ assign [class="obsidian"] 7
 assign [class="obs"] 6
 assign [class="com.alibabainc.dingtalk"] 9
 
-###
-### 开机启动项目 (start up)
-###
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                         Start up                         │
+#  ╰──────────────────────────────────────────────────────────╯
 # polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 # exec_always --no-startup-id nutstore
@@ -72,19 +74,21 @@ exec --no-startup-id ~/.dotfile/script/feh.sh
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id fcitx5
 exec --no-startup-id flameshot
+# 剪贴板
 exec --no-startup-id clipit
 exec --no-startup-id icalingua
 exec --no-startup-id nm-applet
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id xautolock -time 10 -locker blurlock
+# 光速jk
+exec --no-startup-id "xset r rate 210 410"
 # 系统闲置333秒后灭屏，666秒后系统挂起。
 # exec --no-startup-id xset dpms 333 666
 # exec_always --no-startup-id ff-theme-util
 
-#===
-#=== 窗口边框
-#===
-
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                          border                          │
+#  ╰──────────────────────────────────────────────────────────╯
 new_window none
 new_float normal
 hide_edge_borders both
@@ -97,14 +101,18 @@ client.focused_inactive #343746 #343746 #F8F8F2 #21222C #21222C
 client.unfocused #343746 #343746 #F8F8F2 #21222C #21222C
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-#===
-#=== i3-gaps 设定
-#===
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                          i3-gap                          │
+#  ╰──────────────────────────────────────────────────────────╯
 gaps inner 10
 gaps outer 6
 # 如果打开这个的话,如果你是只有一个窗口的话,那么就不显示 gaps 和 边框
 # smart_gaps on
 
+
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                        keybinding                        │
+#  ╰──────────────────────────────────────────────────────────╯
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 10%+ unmute; notify-send 'volume Up'"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 10%- unmute; notify-send 'volume Down'"
 bindsym XF86AudioMute exec  "amixer -q set Master toggle;notify-send 'Toggle Mute'"
@@ -118,9 +126,9 @@ floating_modifier $mod
 floating_minimum_size 100 x 100
 floating_maximum_size -1 x -1
 
-#===
-#=== mouse keybinding
-#===
+#  ╭──────────────────╮
+#  │ mouse keybinding │
+#  ╰──────────────────╯
 
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
@@ -132,21 +140,28 @@ bindsym --whole-window $mod+button2 kill
 bindsym button3 floating toggle
 bindsym $mod+button3 floating toggle
 
-#===
-#=== 启动常用软件
-#===
-
+#  ╭────────────────────╮
+#  │ program keybinding │
+#  ╰────────────────────╯
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
+bindsym F1 exec "flameshot gui"
+bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
+bindsym mod4+9 exec --no-startup-id blurlock
+# bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
+
+# rofi -modi drun,run -show drun rofi
+bindsym mod4+space exec "rofi -show drun"
+bindsym mod4+p exec "rofi -show window -modi drun"
+bindsym mod4+r exec "rofi -show run"
 # 文件管理
 bindsym mod4+e exec $term --class scratchpad -e ranger
 # 手动切换壁纸
 bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
 
-#===
-#=== i3 基础键位
-#===
-
+#  ╭─────────────────────╮
+#  │ i3 basic keybinding │
+#  ╰─────────────────────╯
 # close window
 bindsym mod4+q kill
 
@@ -179,10 +194,9 @@ bindsym mod1+Tab workspace back_and_forth
 bindsym mod4+bracketleft workspace prev
 bindsym mod4+bracketright workspace next
 
-#===
-#=== 布局切换
-#===
-
+#  ╭────────╮
+#  │ layout │
+#  ╰────────╯
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
 bindsym mod4+Shift+t layout stacking
@@ -205,11 +219,9 @@ bindsym mod4+c move absolute position center
 # 焦点在平铺桌面和浮动桌面进行切换
 bindsym mod1+space focus mode_toggle
 
-
-# ===
-# === workspace
-# ===
-
+#  ╭───────────╮
+#  │ workspace │
+#  ╰───────────╯
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -268,46 +280,35 @@ bindsym mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+#  ╭────────╮
+#  │ resize │
+#  ╰────────╯
 mode "resize" {
-# These bindings trigger as soon as you enter the resize mode
-
-# Pressing left will shrink the window’s width.
-# Pressing right will grow the window’s width.
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
-  bindsym h resize shrink width 10 px or 10 ppt
+    # These bindings trigger as soon as you enter the resize mode
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 10 px or 10 ppt
     bindsym j resize grow height 10 px or 10 ppt
     bindsym k resize shrink height 10 px or 10 ppt
     bindsym l resize grow width 10 px or 10 ppt
 
-# same bindings, but for the arrow keyshhh
+    # same bindings, but for the arrow keyshhh
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
-# back to normal: Enter or Escape or $mod+r
+    # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym mod4+r mode "default"
 }
-
 bindsym mod1+r mode "resize"
-
-bindsym F1 exec "flameshot gui"
-bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
-bindsym mod4+9 exec --no-startup-id blurlock
-# bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
-
-# rofi -modi drun,run -show drun rofi
-bindsym mod4+space exec "rofi -show drun"
-bindsym mod4+p exec "rofi -show window -modi drun"
-bindsym mod4+r exec "rofi -show run"
-
-#===
-#=== Scratchpad
-#===
+#  ╭────────────╮
+#  │ Scratchpad │
+#  ╰────────────╯
 exec --no-startup-id kitty --class scratchpad
 bindsym mod4+minus exec kitty --class scratchpad
 for_window [class="scratchpad"] floating enable
@@ -318,24 +319,25 @@ bindsym mod4+Shift+o move scratchpad
 # Show the first scratchpad window
 bindsym mod4+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
 bindsym mod4+b scratchpad show
-
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                          i3bar                           │
+#  ╰──────────────────────────────────────────────────────────╯
 bar {
-  i3bar_command i3bar
+    i3bar_command i3bar
     status_command i3status
     position top
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#       tray_output primary
-#       tray_output eDP1
+    # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+    # tray_output primary
+    # tray_output eDP1
     bindsym button4 nop
     bindsym button5 nop
-#   font xft:URWGothic-Book 11
+    # font xft:URWGothic-Book 11
     strip_workspace_numbers yes
     colors {
       background #222D31
         statusline #F9FAF9
         separator  #454947
-#                  border  backgr. text
+        #                  border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
         active_workspace   #595B5B #353836 #FDF6E3
 
