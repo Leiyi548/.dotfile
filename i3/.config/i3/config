@@ -22,6 +22,7 @@ font pango:FiraCode Nerd Font 13
 for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Nutstore"] floating enable
+for_window [class="dolphin"] floating enable
 # for_window [class="icalingua"] floating enable
 for_window [class="Wine"] floating enable
 # for_window [class="jetbrains-idea"] floating enable
@@ -52,7 +53,7 @@ assign [instance="wechat.exe"] 4
 assign [instance="Wine"] 4
 # assign [class="wps"] 5
 # assign [class="et"] 5
-assign [class="TelegramDesktop"] 5
+assign [class="Foxit Reader"] 5
 assign [class="netease-cloud-music"] 6
 assign [class="yesplaymusic"] 6
 assign [class="smplayer"] 6
@@ -138,13 +139,15 @@ bindsym --whole-window $mod+button2 kill
 
 # The right button toggles floating
 bindsym button3 floating toggle
-bindsym $mod+button3 floating toggle
+bindsym $mod+button3 floating toggldolphia
 
 #  ╭────────────────────╮
 #  │ program keybinding │
 #  ╰────────────────────╯
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
+bindsym mod4+e exec dolphin
+# bindsym mod4+e exec $term --class scratchpad -e ranger
 bindsym F1 exec "flameshot gui"
 bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
 bindsym mod4+9 exec --no-startup-id blurlock
@@ -154,8 +157,6 @@ bindsym mod4+9 exec --no-startup-id blurlock
 bindsym mod4+space exec "rofi -show drun"
 bindsym mod4+p exec "rofi -show window -modi drun"
 bindsym mod4+r exec "rofi -show run"
-# 文件管理
-bindsym mod4+e exec $term --class scratchpad -e ranger
 # 手动切换壁纸
 bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
 
