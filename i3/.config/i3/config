@@ -155,7 +155,7 @@ bindsym mod4+9 exec --no-startup-id blurlock
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 # rofi -modi drun,run -show drun rofi
-bindsym mod4+space exec "rofi -show drun"
+bindsym mod1+space exec "rofi -show drun"
 bindsym mod4+p exec "rofi -show window -modi drun"
 bindsym mod4+r exec "rofi -show run"
 # 手动切换壁纸
@@ -219,7 +219,7 @@ bindsym $mod+Right move right 20 px
 # Move floating container to the center of all outputs
 bindsym mod4+c move absolute position center
 # 焦点在平铺桌面和浮动桌面进行切换
-bindsym mod1+space focus mode_toggle
+bindsym mod4+space focus mode_toggle
 
 #  ╭───────────╮
 #  │ workspace │
