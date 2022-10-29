@@ -1,13 +1,21 @@
-font_family      FiraCode Nerd Font Mono
+# font_family      FiraCode Nerd Font Mono
+# font_family        JetBrainsMono Nerd Font
+bold_font          JetBrainsMono Nerd Font
+italic_font        JetBrainsMono Nerd Font
+bold_italic_font   JetBrainsMono Nerd Font
+# font_family        GoMono Nerd Font
+# bold_font          GoMono Nerd Font
+# italic_font        GoMono Nerd Font
+# bold_italic_font   GoMono Nerd Font
 # bold_font        FiraCode Nerd Font Mono
 # italic_font      JetBrainsMono Nerd Font
 # italic_font      UbuntuMono Nerd Font
 # font_family      Operator Mono Lig
 # font_family      Comic Mono
-bold_font        Operator Mono Lig
-italic_font      Operator Mono Lig
-bold_italic_font Operator Mono Lig
-font_size 16.0
+# bold_font        Operator Mono Lig
+# italic_font      Operator Mono Lig
+# bold_italic_font Operator Mono Lig
+font_size 15.0
 
 # Initial_window_size
 remember_window_size  no
@@ -18,9 +26,11 @@ confirm_os_window_close 0
 # NO BELLS!
 enable_audio_bell no
 
+transparency=yes
+background_opacity 0.9
+
 # icon (for nvim-nonicons)
 # symbol_map U+f101-U+f208 nonicons
-
 
 # mapping
 # scroll

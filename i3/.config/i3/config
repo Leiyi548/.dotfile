@@ -14,7 +14,8 @@ workspace_auto_back_and_forth no
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
-font pango:FiraCode Nerd Font 13
+# font pango:FiraCode Nerd Font 13
+font pango:LXGW WenKai 13
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                   assign float window                    │
@@ -43,7 +44,6 @@ for_window [urgent=latest] focus
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                  assign special workspace                │
 #  ╰──────────────────────────────────────────────────────────╯
-assign [class="Code"] 2
 assign [class="jetbrains-webstorm"] 2
 # assign [class="Emacs"] 2
 assign [instance="jetbrains-idea"] 3
@@ -57,8 +57,9 @@ assign [class="Foxit Reader"] 5
 assign [class="netease-cloud-music"] 6
 assign [class="yesplaymusic"] 6
 assign [class="smplayer"] 6
-assign [class="obsidian"] 7
 assign [class="obs"] 6
+assign [class="obsidian"] 7
+assign [class="Code"] 8
 assign [class="com.alibabainc.dingtalk"] 9
 
 #  ╭──────────────────────────────────────────────────────────╮
@@ -68,7 +69,7 @@ assign [class="com.alibabainc.dingtalk"] 9
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 # exec_always --no-startup-id nutstore
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
-# exec_always --no-startup-id picom
+exec_always --no-startup-id picom
 exec --no-startup-id xfce4-power-manager
 # 设置壁纸
 exec --no-startup-id ~/.dotfile/script/feh.sh
