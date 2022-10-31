@@ -906,6 +906,8 @@ makepkg -si
 
 然后我们就能愉快的使用 colorpicker 获得颜色了。在终端
 
+如果你想用gui的页面，那么你就使用这个`Gcolor2`
+
 ### 14.8. 思维导图
 
 - minder
