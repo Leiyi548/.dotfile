@@ -10,7 +10,7 @@ set $mod Mod4
 set $term kitty
 set $explorer thunr
 set $editor code
-workspace_auto_back_and_forth no
+workspace_auto_back_and_forth yes
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # make this font larger
@@ -18,7 +18,7 @@ workspace_auto_back_and_forth no
 font pango:LXGW WenKai 13
 
 #  ╭──────────────────────────────────────────────────────────╮
-#  │                   assign float window                    │
+#  │                    window setting                        │
 #  ╰──────────────────────────────────────────────────────────╯
 for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
@@ -44,14 +44,10 @@ for_window [urgent=latest] focus
 #  │                  assign special workspace                │
 #  ╰──────────────────────────────────────────────────────────╯
 assign [class="jetbrains-webstorm"] 2
-# assign [class="Emacs"] 2
 assign [instance="jetbrains-idea"] 3
-assign [class="icalingua"] 4
 assign [class="Nutstore"] 4
 assign [instance="wechat.exe"] 4
 assign [instance="Wine"] 4
-# assign [class="wps"] 5
-# assign [class="et"] 5
 assign [class="Foxit Reader"] 5
 assign [class="netease-cloud-music"] 6
 assign [class="yesplaymusic"] 6
@@ -60,6 +56,9 @@ assign [class="obs"] 6
 assign [class="obsidian"] 7
 assign [class="Code"] 8
 assign [class="com.alibabainc.dingtalk"] 9
+assign [class="icalingua"] icalingua
+assign [class="Google-chrome"] chrome
+assign [class="TelegramDesktop"] telegram
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                         Start up                         │
@@ -149,8 +148,8 @@ bindsym mod4+Shift+Return exec $editor
 bindsym mod4+e exec dolphin
 # bindsym mod4+e exec $term --class scratchpad -e ranger
 bindsym F1 exec "flameshot gui"
-bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
-bindsym mod4+9 exec --no-startup-id blurlock
+# bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
+# bindsym mod4+9 exec --no-startup-id blurlock
 # bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 # rofi -modi drun,run -show drun rofi
@@ -184,9 +183,9 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # split in horizontal orientation (like vim vsplit)
-bindsym mod4+v split h;exec notify-send 'vsplit'
+bindsym mod1+v split h;exec notify-send 'vsplit'
 # split in vertical orientation (like vim hsplit)
-bindsym mod4+g split v;exec notify-send 'split'
+bindsym mod1+g split v;exec notify-send 'split'
 
 # use alt tab to switch recent workspace
 bindsym mod1+Tab workspace back_and_forth
@@ -200,13 +199,13 @@ bindsym mod4+bracketright workspace next
 #  ╰────────╯
 # change container layout (stacked, tabbed, toggle split)
 # 上下标签栏(推叠式)
-bindsym mod4+Shift+t layout stacking
+bindsym mod1+Shift+t layout stacking
 # 打开平铺模式
-bindsym mod4+s layout toggle split
+bindsym mod1+s layout toggle spli1
 # 打开标签(tabbed)模式
-bindsym mod4+t layout tabbed
+bindsym mod1+t layout tabbed
 # 将tabbed 模式的所有应用以平铺方式显示出来
-bindsym mod4+x layout toggle all
+bindsym mod1+x layout toggle all
 bindsym $mod+f floating toggle
 # 全屏显示 (为emacs快捷键让步)
 bindsym mod1+f fullscreen toggle
@@ -235,40 +234,43 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym mod1+1 workspace number $ws1
-bindsym mod1+2 workspace number $ws2
-bindsym mod1+3 workspace number $ws3
-bindsym mod1+4 workspace number $ws4
-bindsym mod1+5 workspace number $ws5
-bindsym mod1+6 workspace number $ws6
-bindsym mod1+7 workspace number $ws7
-bindsym mod1+8 workspace number $ws8
-bindsym mod1+9 workspace number $ws9
-bindsym mod1+0 workspace number $ws10
+bindsym mod4+1 workspace number $ws1
+bindsym mod4+2 workspace number $ws2
+bindsym mod4+3 workspace number $ws3
+bindsym mod4+4 workspace number $ws4
+bindsym mod4+5 workspace number $ws5
+bindsym mod4+6 workspace number $ws6
+bindsym mod4+7 workspace number $ws7
+bindsym mod4+8 workspace number $ws8
+bindsym mod4+9 workspace number $ws9
+bindsym mod4+0 workspace number $ws10
+bindsym mod4+g workspace chrome
+bindsym mod4+t workspace telegram
+bindsym mod1+q workspace icalingua
 
 # move focused container to workspace
-bindsym mod1+Shift+1 move container to workspace number $ws1,workspace number $ws1
-bindsym mod1+Shift+2 move container to workspace number $ws2,workspace number $ws2
-bindsym mod1+Shift+3 move container to workspace number $ws3,workspace number $ws3
-bindsym mod1+Shift+4 move container to workspace number $ws4,workspace number $ws4
-bindsym mod1+Shift+5 move container to workspace number $ws5,workspace number $ws5
-bindsym mod1+Shift+6 move container to workspace number $ws6,workspace number $ws6
-bindsym mod1+Shift+7 move container to workspace number $ws7,workspace number $ws7
-bindsym mod1+Shift+8 move container to workspace number $ws8,workspace number $ws8
-bindsym mod1+Shift+9 move container to workspace number $ws9,workspace number $ws9
-bindsym mod1+Shift+0 move container to workspace number $ws10,workspace number $ws10
+bindsym mod4+Shift+1 move container to workspace number $ws1,workspace number $ws1
+bindsym mod4+Shift+2 move container to workspace number $ws2,workspace number $ws2
+bindsym mod4+Shift+3 move container to workspace number $ws3,workspace number $ws3
+bindsym mod4+Shift+4 move container to workspace number $ws4,workspace number $ws4
+bindsym mod4+Shift+5 move container to workspace number $ws5,workspace number $ws5
+bindsym mod4+Shift+6 move container to workspace number $ws6,workspace number $ws6
+bindsym mod4+Shift+7 move container to workspace number $ws7,workspace number $ws7
+bindsym mod4+Shift+8 move container to workspace number $ws8,workspace number $ws8
+bindsym mod4+Shift+9 move container to workspace number $ws9,workspace number $ws9
+bindsym mod4+Shift+0 move container to workspace number $ws10,workspace number $ws10
 
 # Move focused container to workspace
-bindsym mod1+Ctrl+1 move container to workspace $ws1
-bindsym mod1+Ctrl+2 move container to workspace $ws2
-bindsym mod1+Ctrl+3 move container to workspace $ws3
-bindsym mod1+Ctrl+4 move container to workspace $ws4
-bindsym mod1+Ctrl+5 move container to workspace $ws5
-bindsym mod1+Ctrl+6 move container to workspace $ws6
-bindsym mod1+Ctrl+7 move container to workspace $ws7
-bindsym mod1+Ctrl+8 move container to workspace $ws8
-bindsym mod1+Ctrl+9 move container to workspace $ws9
-bindsym mod1+Ctrl+0 move container to workspace $ws10
+bindsym mod4+Ctrl+1 move container to workspace $ws1
+bindsym mod4+Ctrl+2 move container to workspace $ws2
+bindsym mod4+Ctrl+3 move container to workspace $ws3
+bindsym mod4+Ctrl+4 move container to workspace $ws4
+bindsym mod4+Ctrl+5 move container to workspace $ws5
+bindsym mod4+Ctrl+6 move container to workspace $ws6
+bindsym mod4+Ctrl+7 move container to workspace $ws7
+bindsym mod4+Ctrl+8 move container to workspace $ws8
+bindsym mod4+Ctrl+9 move container to workspace $ws9
+bindsym mod4+Ctrl+0 move container to workspace $ws10
 
 # ===
 # === i3 配置加载/启动/关闭
@@ -295,7 +297,7 @@ mode "resize" {
     bindsym k resize shrink height 10 px or 10 ppt
     bindsym l resize grow width 10 px or 10 ppt
 
-    # same bindings, but for the arrow keyshhh
+    # same bindings, but for the arrow key
     bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
     bindsym Up resize shrink height 10 px or 10 ppt
