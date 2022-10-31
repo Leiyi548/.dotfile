@@ -56,9 +56,9 @@ assign [class="obs"] 6
 assign [class="obsidian"] 7
 assign [class="Code"] 8
 assign [class="com.alibabainc.dingtalk"] 9
-assign [class="icalingua"] icalingua
-assign [class="Google-chrome"] chrome
-assign [class="TelegramDesktop"] telegram
+assign [class="icalingua"] qq
+assign [class="Google-chrome"] gg
+assign [class="TelegramDesktop"] tg
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                         Start up                         │
@@ -244,9 +244,9 @@ bindsym mod4+7 workspace number $ws7
 bindsym mod4+8 workspace number $ws8
 bindsym mod4+9 workspace number $ws9
 bindsym mod4+0 workspace number $ws10
-bindsym mod4+g workspace chrome
-bindsym mod4+t workspace telegram
-bindsym mod1+q workspace icalingua
+bindsym mod4+g workspace gg
+bindsym mod4+t workspace tg
+bindsym mod1+q workspace qq
 
 # move focused container to workspace
 bindsym mod4+Shift+1 move container to workspace number $ws1,workspace number $ws1
