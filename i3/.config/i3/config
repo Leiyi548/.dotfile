@@ -24,10 +24,9 @@ for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
 for_window [class="Nutstore"] floating enable
 for_window [class="dolphin"] floating enable
-# for_window [class="icalingua"] floating enable
-for_window [class="Wine"] floating enable
+for_window [class="icalingua"] layout tabbed
+for_window [class="TelegramDesktop"] layout tabbed
 # for_window [class="jetbrains-idea"] floating enable
-for_window [class="TelegramDesktop"] floating enable
 for_window [class="yesplaymusic"] floating enable
 for_window [class="Xfce4-power-manager-settings"] floating enable  resize set 640 480
 for_window [class="Thunar"] floating enable  resize set 800 480
@@ -67,8 +66,8 @@ assign [class="com.alibabainc.dingtalk"] 9
 #  ╰──────────────────────────────────────────────────────────╯
 # polybar
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
-# exec_always --no-startup-id nutstore
 exec_always --no-startup-id "~/.cargo/bin/i3-autolayout autolayout"
+exec_always --no-startup-id "keyd-application-mapper"
 exec_always --no-startup-id picom
 exec --no-startup-id xfce4-power-manager
 # 设置壁纸
@@ -81,7 +80,7 @@ exec --no-startup-id clipit
 exec --no-startup-id icalingua
 exec --no-startup-id nm-applet
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xaut;olock -time 10 -locker blurlock
 # 光速jk
 exec --no-startup-id "xset r rate 210 410"
 # 系统闲置333秒后灭屏，666秒后系统挂起。
