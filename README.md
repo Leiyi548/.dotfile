@@ -752,7 +752,17 @@ yay -S deepin-wine-wechat icalingua++
 ```
 ![wine](https://img-blog.csdnimg.cn/1b8226414ca445cda609b2404f75f06a.png)
 
+#### 解决出现阴影在微信屏幕上
 
+每次重新启动，都会重新出现。
+
+下载依赖
+
+```sh
+sudo pacman -S winctrl xwininfo
+```
+
+更多详细信息请看这 <https://zhuanlan.zhihu.com/p/106926984>
 
 ##### 14.4. 解决wechat中文字体乱码
 
