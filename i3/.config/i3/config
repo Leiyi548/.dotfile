@@ -46,7 +46,6 @@ for_window [urgent=latest] focus
 assign [class="jetbrains-webstorm"] 2
 assign [instance="jetbrains-idea"] 3
 assign [class="Nutstore"] 4
-assign [instance="wechat.exe"] 4
 assign [instance="Wine"] 4
 assign [class="Foxit Reader"] 5
 assign [class="netease-cloud-music"] 6
@@ -56,6 +55,7 @@ assign [class="obs"] 6
 assign [class="obsidian"] 7
 assign [class="Code"] 8
 assign [class="com.alibabainc.dingtalk"] 9
+assign [instance="wechat.exe"] wt
 assign [class="icalingua"] qq
 assign [class="Google-chrome"] gg
 assign [class="TelegramDesktop"] tg
@@ -244,6 +244,7 @@ bindsym mod4+7 workspace number $ws7
 bindsym mod4+8 workspace number $ws8
 bindsym mod4+9 workspace number $ws9
 bindsym mod4+0 workspace number $ws10
+bindsym mod4+w workspace wt
 bindsym mod4+g workspace gg
 bindsym mod4+t workspace tg
 bindsym mod1+q workspace qq
@@ -322,6 +323,7 @@ bindsym mod4+Shift+o move scratchpad
 # Show the first scratchpad window
 bindsym mod4+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
 bindsym mod4+b scratchpad show
+bindsym ctrl+mod4+w exec "xdotool windowunmap $(wmctrl -l -G -p -x |grep wechat |grep 0019 |tail -n 1 |awk '{print $1}')"
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                          i3bar                           │
 #  ╰──────────────────────────────────────────────────────────╯
