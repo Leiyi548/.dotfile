@@ -117,7 +117,7 @@ gaps outer 6
 #  ╰──────────────────────────────────────────────────────────╯
 bindsym XF86AudioRaiseVolume exec "amixer -q set Master 10%+ unmute; notify-send 'volume Up'"
 bindsym XF86AudioLowerVolume exec "amixer -q set Master 10%- unmute; notify-send 'volume Down'"
-bindsym XF86AudioMute exec  "amixer -q set Master toggle;notify-send 'Toggle Mute'"
+bindsym XF86AudioMute exec  "pactl set-sink-mute 0 toggle"
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec "light -A 10; notify-send 'brightness Up'"
