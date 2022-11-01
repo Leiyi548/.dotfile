@@ -537,7 +537,7 @@
 推倒	td
 推倒	td
 # 添加微信表情
-[笑哭]	owxk
+[破涕为笑]	owxk
 [微笑]	owwx
 [撇嘴]	owpz
 [合十]	owbt
@@ -641,3 +641,16 @@
 [叹气]	owtq
 [苦涩]	owks
 [裂开]	owlk
+# 添加qq(icalingua++)表情
+# 笑哭
+[Face: 182]	oqxk
+# 呲牙
+[Face: 013]	oqcy
+# 捂脸
+[Face: 264]	oqwl
+# 菜旺
+[Face: 317]	oqcw
+# 流泪
+[Face: 005]	oqll
+# 斜眼笑
+[Face: 178]	oqxy

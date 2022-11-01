@@ -22,6 +22,9 @@ font pango:LXGW WenKai 13
 #  ╰──────────────────────────────────────────────────────────╯
 for_window [instance="scratchpad"] floating enable
 for_window [class="netease-cloud-music"] floating enable
+for_window [class="qt5ct"] floating enable
+for_window [class="qt5ct"] floating enable
+for_window [class="Lxappearance"] floating enable
 for_window [class="Nutstore"] floating enable
 for_window [class="dolphin"] floating enable
 for_window [class="icalingua"] layout tabbed
@@ -46,19 +49,17 @@ for_window [urgent=latest] focus
 assign [class="jetbrains-webstorm"] 2
 assign [instance="jetbrains-idea"] 3
 assign [class="Nutstore"] 4
-assign [instance="Wine"] 4
 assign [class="Foxit Reader"] 5
 assign [class="netease-cloud-music"] 6
 assign [class="yesplaymusic"] 6
 assign [class="smplayer"] 6
-assign [class="obs"] 6
-assign [class="obsidian"] 7
 assign [class="Code"] 8
 assign [class="com.alibabainc.dingtalk"] 9
-assign [instance="wechat.exe"] wt
-assign [class="icalingua"] qq
-assign [class="Google-chrome"] gg
-assign [class="TelegramDesktop"] tg
+assign [instance="wechat.exe"] w
+assign [class="icalingua"] q
+assign [class="obsidian"] m
+assign [class="Google-chrome"] i
+assign [class="TelegramDesktop"] t
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                         Start up                         │
@@ -244,10 +245,13 @@ bindsym mod4+7 workspace number $ws7
 bindsym mod4+8 workspace number $ws8
 bindsym mod4+9 workspace number $ws9
 bindsym mod4+0 workspace number $ws10
-bindsym mod4+w workspace wt
-bindsym mod4+g workspace gg
-bindsym mod4+t workspace tg
-bindsym mod1+q workspace qq
+# not number
+bindsym mod1+o workspace o
+bindsym mod4+w workspace w
+bindsym mod4+m workspace m
+bindsym mod4+g workspace i
+bindsym mod4+t workspace t
+bindsym mod1+q workspace q
 
 # move focused container to workspace
 bindsym mod4+Shift+1 move container to workspace number $ws1,workspace number $ws1
@@ -260,6 +264,13 @@ bindsym mod4+Shift+7 move container to workspace number $ws7,workspace number $w
 bindsym mod4+Shift+8 move container to workspace number $ws8,workspace number $ws8
 bindsym mod4+Shift+9 move container to workspace number $ws9,workspace number $ws9
 bindsym mod4+Shift+0 move container to workspace number $ws10,workspace number $ws10
+# not number
+bindsym mod1+Shift+o move container to workspace o,workspace o
+bindsym mod4+Shift+w move container to workspace w,workspace w
+bindsym mod4+Shift+m move container to workspace m,workspace m
+bindsym mod4+Shift+g move container to workspace i,workspace i
+bindsym mod4+Shift+t move container to workspace t,workspace t
+bindsym mod1+Shift+q move container to workspace q,workspace q
 
 # Move focused container to workspace
 bindsym mod4+Ctrl+1 move container to workspace $ws1
