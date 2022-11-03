@@ -613,10 +613,14 @@
 [Face: 264]	oqwl
 # 菜旺
 [Face: 317]	oqcw
+# 旺财
+[Face: 227]	oqwc
 # 流泪
 [Face: 005]	oqll
 # 斜眼笑
 [Face: 178]	oqxy
+# 喝茶
+[Face: 287	oqhi
 # 从这里开始自定义
 起点	qidm
 男朋友	npy
