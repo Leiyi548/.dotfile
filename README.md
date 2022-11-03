@@ -17,7 +17,19 @@ SigLevel = Optional TrustAll
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
-然后 mirrorlist 就把带有 china 的移动到最上面就可以了。
+- mirrorlist
+
+```txt
+## Country : China
+# 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+## 163
+Server = http://mirrors.163.com/archlinux/$repo/os/$arch
+## aliyun
+Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
+# 上海交通大学
+Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch
+```
 
 ## 1. 配置 git
 

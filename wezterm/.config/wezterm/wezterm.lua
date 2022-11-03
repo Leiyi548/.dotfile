@@ -22,8 +22,9 @@ return {
 	custom_block_glyphs = true,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
-	default_cursor_style = "BlinkingBlock",
+	default_cursor_style = "SteadyBar",
 	cursor_blink_ease_in = "Constant",
 	cursor_blink_ease_out = "Constant",
 	enable_csi_u_key_encoding = true,
+	window_background_opacity = 0.8,
 }

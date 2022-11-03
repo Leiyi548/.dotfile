@@ -80,7 +80,7 @@ exec --no-startup-id clipit
 exec --no-startup-id icalingua
 exec --no-startup-id nm-applet
 exec_always --no-startup-id fix_xcursor
-exec --no-startup-id xaut;olock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker blurlock
 # 光速jk
 exec --no-startup-id "xset r rate 210 410"
 # 系统闲置333秒后灭屏，666秒后系统挂起。
@@ -147,11 +147,10 @@ bindsym $mod+button3 floating toggldolphia
 bindsym mod4+Return exec $term
 bindsym mod4+Shift+Return exec $editor
 bindsym mod4+e exec dolphin
-# bindsym mod4+e exec $term --class scratchpad -e ranger
+# bindsym mod4+e exec kitty --class scratchpad -e ranger
 bindsym F1 exec "flameshot gui"
-# bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
+bindsym mod4+u exec "i3lock -i ~/.dotfile/lock/02.png"
 # bindsym mod4+9 exec --no-startup-id blurlock
-# bindsym mod4+u exec "~/.config/polybar/script/sysmenu"
 
 # rofi -modi drun,run -show drun rofi
 bindsym mod1+space exec "rofi -show drun"
@@ -159,6 +158,8 @@ bindsym mod4+p exec "rofi -show window -modi drun"
 bindsym mod4+r exec "rofi -show run"
 # 手动切换壁纸
 bindsym mod4+n exec "feh --randomize --bg-fill ~/.dotfile/wallpaper/*.png"
+# 锁屏
+bindsym mod4+z exec --no-startup-id blurlock
 
 #  ╭─────────────────────╮
 #  │ i3 basic keybinding │
@@ -245,13 +246,19 @@ bindsym mod4+7 workspace number $ws7
 bindsym mod4+8 workspace number $ws8
 bindsym mod4+9 workspace number $ws9
 bindsym mod4+0 workspace number $ws10
-# not number
-bindsym mod1+o workspace o
-bindsym mod4+w workspace w
-bindsym mod4+m workspace m
-bindsym mod4+g workspace i
-bindsym mod4+t workspace t
-bindsym mod1+q workspace q
+# program
+# code
+bindsym mod4+ctrl+o workspace o
+# wechat
+bindsym mod4+ctrl+w workspace w
+# obsidian
+bindsym mod4+ctrl+m workspace m
+# chrome
+bindsym mod4+ctrl+g workspace i
+# telegram
+bindsym mod4+ctrl+t workspace t
+# icalingua++ → qq
+bindsym mod4+ctrl+q workspace q
 
 # move focused container to workspace
 bindsym mod4+Shift+1 move container to workspace number $ws1,workspace number $ws1
@@ -334,7 +341,7 @@ bindsym mod4+Shift+o move scratchpad
 # Show the first scratchpad window
 bindsym mod4+o [class="scratchpad"] scratchpad show [class="scratchpad"] move position center
 bindsym mod4+b scratchpad show
-bindsym ctrl+mod4+w exec "xdotool windowunmap $(wmctrl -l -G -p -x |grep wechat |grep 0019 |tail -n 1 |awk '{print $1}')"
+bindsym ctrl+mod1+w exec "xdotool windowunmap $(wmctrl -l -G -p -x |grep wechat |grep 0019 |tail -n 1 |awk '{print $1}')"
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                          i3bar                           │
 #  ╰──────────────────────────────────────────────────────────╯
