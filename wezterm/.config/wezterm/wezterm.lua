@@ -1,13 +1,22 @@
 -- more information please see https://wezfurlong.org/wezterm/index.html
 local wt = require("wezterm")
 
-local scheme = wt.get_builtin_color_schemes()["Andromeda"]
-scheme.cursor_bg = "#52ad70"
-scheme.cursor_fg = "black"
+local function get_theme()
+	local _time = os.date("*t")
+	if _time.hour >= 1 and _time.hour < 9 then
+		return "Rosé Pine (base16)"
+	elseif _time.hour >= 9 and _time.hour < 17 then
+		return "tokyonight_night"
+	elseif _time.hour >= 17 and _time.hour < 21 then
+		return "Catppuccin Mocha"
+	elseif _time.hour >= 21 and _time.hour < 24 or _time.hour >= 0 and _time.hour < 1 then
+		return "kanagawabones"
+	end
+end
 
 return {
 	window_padding = {
-		left = 2,
+		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
@@ -15,10 +24,8 @@ return {
 	enable_tab_bar = false,
 	font = wt.font("Operator Mono Lig", { weight = 325 }),
 	font_size = 16,
-	color_schemes = {
-		["Andromeda"] = scheme,
-	},
-	color_scheme = "Andromeda",
+	bold_brightens_ansi_colors = true,
+	color_scheme = get_theme(),
 	custom_block_glyphs = true,
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
