@@ -352,6 +352,9 @@ set -gu prefix
 unbind C-b
 set -g prefix C-9
 set -g prefix2 C-a
+# remove oh-my-tmux default keybinding
+unbind C-h
+unbind C-l
 # remove confirm step when killing a window or pane
 bind-key & kill-window
 bind-key x kill-pane
@@ -361,18 +364,16 @@ bind o last-window        # move to last active window
 bind _ split-window -v
 # split current window vertically bind+_
 bind - split-window -h
-# swap current window to top
-bind T swap-window -t 1
+# 与最前面那个窗口互换位置
+bind T swap-window -t 1\; select-window -t 1
 # move window
-bind-key -n C-M-h swap-window -t -1\; select-window -t -1
-bind-key -n C-M-l swap-window -t +1\; select-window -t +1
+# 让tmux的窗口向左移动
+bind -r C-j swap-window -t -1\; select-window -t -1
+# 让tmux的窗口向右移动
+bind -r C-k swap-window -t +1\; select-window -t +1
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind v new-window -c #{pane_current_path} #!important
-
-# move status line to top
-#set -g status-position top
-
-
+#
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here
