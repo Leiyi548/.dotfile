@@ -94,9 +94,9 @@ nmap ciQ ci'
 " ╭────────────╮
 " │ easymotion │
 " ╰────────────╯
-nmap <leader>k <Plug>(easymotion-bd-w)
-nmap <leader>ll <Plug>(easymotion-bd-jk)
-nmap <leader>K <Plug>(easymotion-s2)
+nmap S <Plug>(easymotion-bd-w)
+nmap sl <Plug>(easymotion-bd-jk)
+nmap s <Plug>(easymotion-s2)
 " nmap ss <Plug>(easymotion-s2)
 " nmap sl <Plug>(easymotion-bd-jk)
 " nmap S <Plug>(easymotion-bd-w)
