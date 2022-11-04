@@ -23,22 +23,15 @@
 " ╰──────────────────────────────────────────────────────────╯
 let mapleader=" "
 set timeoutlen=500
-" 防止按leader键乱移动
 nmap <SPACE> <nop>
-" 相对数字
 set number
 set relativenumber
-" 屏幕滚动时在光标上下方保留8行预览代码
 set so=8
-" 取消高亮
-" 设置寻找高亮
 set hlsearch
 set incsearch
-" 不区分大小写
 set ignorecase
-" 显示模式
-"set showmode
 set clipboard+=ideaputset clipboard+=ideaput
+"set showmode
 " ╭──────────────────────────────────────────────────────────╮
 " │                       vim buitlin                        │
 " ╰──────────────────────────────────────────────────────────╯
@@ -53,12 +46,13 @@ nnoremap zd :action CollapseDocComments<cr>
 " │                     UI and Terminal                      │
 " ╰──────────────────────────────────────────────────────────╯
 " change colorscheme
-nnoremap <leader>sc :action ChangeColorScheme<cr>
+" nnoremap <leader>sc :action ChangeColorScheme<cr>
+nnoremap <leader>sc :action ChangeLaf<cr>
 " 改变视图
 nnoremap <leader>Z :action ChangeView<cr>
 nnoremap <leader>z :action ToggleDistractionFreeMode<cr>
 " focus terminal
-" nnoremap <c-t> :action ActivateTerminalToolWindow<cr>
+nnoremap <leader>tt :action ActivateTerminalToolWindow<cr>
 " ╭──────────────────────────────────────────────────────────╮
 " │                         Plugins                          │
 " ╰──────────────────────────────────────────────────────────╯
@@ -69,7 +63,7 @@ set surround
 set multiple-cursors
 set commentary "能用gcc gc+motion来注释代码
 " bug: 这个是有 bug 有时候回不去输入法，不知道为什么
-set keep-english-in-normal-and-restore-in-insert
+:set keep-english-in-normal-and-restore-in-insert
 set easymotion
 set argtextobj
 set highlightedyank
@@ -89,11 +83,20 @@ set clipboard=unnamedplus,unnamed
 " map mc <A-x>
 " map mc <A-p>
 " ╭────────────╮
+" │ vim-surround           │
+" ╰────────────╯
+nmap diq di"
+nmap diQ di'
+nmap viq vi"
+nmap viQ vi'
+nmap ciq ci"
+nmap ciQ ci'
+" ╭────────────╮
 " │ easymotion │
 " ╰────────────╯
-nmap ;f <Plug>(easymotion-bd-w)
-nmap ;g <Plug>(easymotion-bd-jk)
-nmap ;j <Plug>(easymotion-s2)
+nmap <leader>k <Plug>(easymotion-bd-w)
+nmap <leader>ll <Plug>(easymotion-bd-jk)
+nmap <leader>K <Plug>(easymotion-s2)
 " nmap ss <Plug>(easymotion-s2)
 " nmap sl <Plug>(easymotion-bd-jk)
 " nmap S <Plug>(easymotion-bd-w)
@@ -159,8 +162,13 @@ nmap g, :action JumpToNextChange<cr>
 " ╭──────────────────╮
 " │ emacs style move │
 " ╰──────────────────╯
-inoremap C-b <left>
-inoremap C-f <right>
+" BUG: C-j not useful
+" inoremap C-j <Esc>o
+inoremap <C-b> <left>
+inoremap <C-f> <right>
+inoremap <C-w> <Esc>diwa
+inoremap <C-j> <Esc>o
+nnoremap <home> <C-a>
 " ╭─────────────╮
 " │ Method Jump │
 " ╰─────────────╯
@@ -201,12 +209,13 @@ nnoremap J mzJ`z
 " │                      custom textobj                      │
 " ╰──────────────────────────────────────────────────────────╯
 " 快速选择一行操作不包括换行
+nnoremap vil ^v$
 nnoremap cil ^C
 nnoremap dil ^D
-map ;w [w
-map c;w c[w
-map ;b [b
-map c;b c[b
+" map ;w [w
+" map c;w c[w
+" map ;b [b
+" map c;b c[b
 " ╭──────────────────────────────────────────────────────────╮
 " │                          Debug                           │
 " ╰──────────────────────────────────────────────────────────╯
@@ -265,7 +274,8 @@ nnoremap <leader>rp :action Stop<cr>
 " vim窗口操作
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
+"nnoremap <C-h> <C-W>h
+nnoremap <BS> <C-W>h
 nnoremap <C-l> <C-W>l
 nnoremap <leader>wh  <C-w>h
 nnoremap <leader>wj  <C-w>j
@@ -278,13 +288,13 @@ nnoremap <leader>ws :split<cr>
 nnoremap <leader>wv :vsplit<cr>
 nnoremap <leader>wd  <C-W>d
 nnoremap <leader>wc  <C-W>c
-nnoremap sv :vsplit<cr>
-nnoremap sg :split<cr>
-nnoremap su :action UnsplitAll<cr>
+" nnoremap sv :vsplit<cr>
+" nnoremap sg :split<cr>
+" nnoremap su :action UnsplitAll<cr>
 " ╭──────────────╮
 " │ close window │
 " ╰──────────────╯
-nnoremap sc <C-W>c
+" nnoremap sc <C-W>c
 nnoremap <leader>wd  <C-w>c
 nnoremap <leader>wc  <C-w>c
 " ╭───────────────╮
@@ -339,8 +349,8 @@ nnoremap <leader>fu :action FindUsages<cr>
 " ╭─────────────╮
 " │ jump buffer │
 " ╰─────────────╯
-nnoremap Tab :action NextTab<cr>
-nnoremap S-Tab :action PreviousTab<cr>
+nnoremap <Tab> :action NextTab<cr>
+nnoremap <S-Tab> :action PreviousTab<cr>
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -355,7 +365,7 @@ nnoremap <leader>9 9gt
 " ╰──────────────────────╯
 " buffer之间跳转
 nnoremap ;s :e #<cr>
-" ╭──────────────╮
+" ╭──────────────
 " │ close buffer │
 " ╰──────────────╯
 nnoremap <leader>bk :action CloseEditor<cr>
@@ -365,7 +375,7 @@ nnoremap <leader>bo :action CloseAllEditorsButActive<cr>
 " │                         lsp jump                         │
 " ╰──────────────────────────────────────────────────────────╯
 "跳转到声明
-nnoremap gd mm`m:action GotoDeclaration<cr>
+"nnoremap gd mm`m:action GotoDeclaration<cr>
 " 打开General菜单
 nnoremap go :action Generate<cr>
 " go to reference
@@ -394,9 +404,11 @@ nnoremap gs :action GotoSymbol<cr>
 " 跳转下一个错误
 nnoremap <leader>lj :action GotoNextError<cr>
 nnoremap ]e :action GotoNextError<cr>
+nnoremap <leader>j :action GotoNextError<cr>
 " 跳转上一个错误
 nnoremap <leader>lk :action GotoPreviousError<cr>
 nnoremap [e :action GotoPreviousError<cr>
+nnoremap <leader>k :action GotoPreviousError<cr>
 " 命名元素
 nnoremap <leader>lr :action RenameElement<cr>
 " 快速显示文档
@@ -465,18 +477,18 @@ sethandler <C-K> a:vim
 sethandler <C-L> n:vim i:ide
 sethandler <C-M> a:ide
 sethandler <C-N> a:ide
-sethandler <C-O> a:vim
+sethandler <C-O> n:vim i:ide
 sethandler <C-P> a:ide
 sethandler <C-Q> a:vim
 sethandler <C-R> a:vim
 sethandler <C-S> a:ide
-sethandler <C-T> a:ide
+sethandler <C-T> a:vim
 sethandler <C-U> a:vim
 sethandler <C-V> n:vim i-x:ide
 sethandler <C-W> a:vim
 sethandler <C-X> n:vim i-x:ide
 sethandler <C-Y> a:vim
-sethandler <C-[> a:ide
+sethandler <C-[> a:vim
 sethandler <C-]> a:ide
 sethandler <C-\> a:ide
 sethandler <Tab> n:vim i-x:ide

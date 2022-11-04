@@ -1,5 +1,5 @@
 # font_family      FiraCode Nerd Font Mono
-# font_family        JetBrainsMono Nerd Font
+font_family        JetBrainsMono Nerd Font
 bold_font          JetBrainsMono Nerd Font
 italic_font        JetBrainsMono Nerd Font
 bold_italic_font   JetBrainsMono Nerd Font
@@ -16,6 +16,7 @@ bold_italic_font   JetBrainsMono Nerd Font
 # italic_font      Operator Mono Lig
 # bold_italic_font Operator Mono Lig
 font_size 15.0
+modify_font underline_position 4
 
 # Initial_window_size
 remember_window_size  no
@@ -26,7 +27,10 @@ confirm_os_window_close 0
 # NO BELLS!
 enable_audio_bell no
 
+# transparency
 transparency=yes
+# 0 是完全透明
+# 1 是不透明
 background_opacity 0.9
 
 # icon (for nvim-nonicons)
